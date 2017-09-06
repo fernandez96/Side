@@ -1,0 +1,368 @@
+﻿<!-- #section:basics/sidebar -->
+<div id="sidebar" class="sidebar responsive compact  sidebar-fixed menu-min">
+    <script type="text/javascript">
+                    try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+    </script>
+
+    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+            <div class="breadcrumbs" id="breadcrumbs2">
+                <ul class="breadcrumb">
+                    <li style="width:80px;">
+                        <i class="ace-icon fa  fa-cog home-icon"></i>
+                        <a href="#">PANEL</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+            <span class="btn btn-success"></span>
+
+            <span class="btn btn-info"></span>
+
+            <span class="btn btn-warning"></span>
+
+            <span class="btn btn-danger"></span>
+        </div>
+    </div><!-- /.sidebar-shortcuts -->
+
+        <ul class="nav nav-list">
+            @if (WebSession.Usuario != null)
+            {
+                if (WebSession.Usuario.RolId == ConstantesWeb.RolAdministrador)
+                {
+                    <li class="hover">
+                        <a href="#" class="dropdown-toggle">
+                            <i class="menu-icon fa fa-folder-open-o"></i>
+                            <span class="menu-text"> ADMINISTRACI&Oacute;N  </span>
+                        </a>
+                        <b class="arrow"></b>
+                        <ul class="submenu nav-show" style="display: block;">
+
+                            <li class="">
+                                <a href="@Url.Action("Index", "Usuario")">
+                                    <i class="menu-icon fa fa-caret-left"></i>
+                                    USUARIO
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="@Url.Action("", "")">
+                                    <i class="menu-icon fa fa-caret-left"></i>
+                                    ACCESOS
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="@Url.Action("", "")">
+                                    <i class="menu-icon fa fa-caret-left"></i>
+                                    PERMISOS
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                            <li class="">
+                                <a href="@Url.Action("", "")">
+                                    <i class="menu-icon fa fa-caret-left"></i>
+                                    PARAMETROS DEL SISTEMA
+                                </a>
+
+                                <b class="arrow"></b>
+                            </li>
+                        </ul>
+                    </li>
+                            <li class="hover">
+                                <a href="#" class="dropdown-toggle">
+                                    <i class="menu-icon fa fa-hospital-o"></i>
+                                    <span class="menu-text"> ALMACEN </span>
+                                </a>
+                                <b class="arrow open hover"></b>
+                                <ul class="submenu nav-show" style="display: block;">
+
+                                    <li class="">
+                                        <a href="@Url.Action("", "")">
+                                            <i class="menu-icon fa fa-caret-left"></i>
+                                            PRODUCTOS
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                    <li class="">
+                                        <a href="@Url.Action("", "")">
+                                            <i class="menu-icon fa fa-caret-left"></i>
+                                            ALMACENES
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                    <li class="">
+                                        <a href="@Url.Action("", "")">
+                                            <i class="menu-icon fa fa-caret-left"></i>
+                                            NOTA INGRESO
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                    <li class="">
+                                        <a href="@Url.Action("", "")">
+                                            <i class="menu-icon fa fa-caret-left"></i>
+                                            NOTA SALIDA
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                    <li class="">
+                                        <a href="@Url.Action("", "")">
+                                            <i class="menu-icon fa fa-caret-left"></i>
+                                            GUIAS REMISI&Oacute;N
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                    <li class="">
+                                        <a href="@Url.Action("", "")">
+                                            <i class="menu-icon fa fa-caret-left"></i>
+                                            CONTROL STOCK
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                    <li class="">
+                                        <a href="@Url.Action("", "")">
+                                            <i class="menu-icon fa fa-caret-left"></i>
+                                            DEVOLUCI&Oacute;N MERCADERIA
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                    <li class="">
+                                        <a href="@Url.Action("", "")">
+                                            <i class="menu-icon fa fa-caret-left"></i>
+                                            INVENTARIO
+                                        </a>
+
+                                        <b class="arrow"></b>
+                                    </li>
+                                </ul>
+                            </li>
+
+                                <li class="hover">
+                                    <a href="#" class="dropdown-toggle">
+                                        <i class="menu-icon fa fa-money"></i>
+                                        <span class="menu-text"> COMPRAS </span>
+                                    </a>
+                                    <b class="arrow open hover"></b>
+                                    <ul class="submenu nav-show" style="display: block;">
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                PROVEEDORES
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                NOTA CREDITO
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                COMPRAS POR FECHA
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                DOCUMENTOS POR PAGAR
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                ADELANTOS
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                CUENTAS DE PROVEEDOR
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+
+                                        </ul>
+                                     
+                                      </li>
+
+                                <li class="hover">
+                                    <a href="#" class="dropdown-toggle">
+                                        <i class="menu-icon fa fa-bullhorn"></i>
+                                        <span class="menu-text"> VENTAS </span>
+                                    </a>
+                                    <b class="arrow open hover"></b>
+                                    <ul class="submenu nav-show" style="display: block;">
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                CLIENTES
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                FACTURACI&Oacute;N
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                    BOLETA
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                NOTA DE CREDITO
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                VENTAS
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                DOCUMENTO POR COBRAR
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                       
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                ADELANTOS
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                CUENTAS DE CLIENTE
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+
+                                        </ul>
+                                  </li>
+
+                                <li class="hover">
+                                    <a href="#" class="dropdown-toggle">
+                                        <i class="menu-icon fa fa-briefcase"></i>
+                                        <span class="menu-text"> CAJA </span>
+                                    </a>
+                                    <b class="arrow open hover"></b>
+                                    <ul class="submenu nav-show" style="display: block;">
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                CAJA
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                PAGOS DE PROVEEDOR
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                COBROS CLIENTE
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                INGRESOS EGRESOS
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                ESTADOS DE CUENTA
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+                                        <li class="">
+                                            <a href="@Url.Action("", "")">
+                                                <i class="menu-icon fa fa-caret-left"></i>
+                                                DOCUMENTO POR COBRAR
+                                            </a>
+
+                                            <b class="arrow"></b>
+                                        </li>
+
+                                    </ul>
+                                </li>
+                }
+
+
+            }
+        </ul><!-- /.nav-list -->
+
+
+
+     
+
+
+
+    <!-- #section:basics/sidebar.layout.minimize -->
+    <div class="sidebar-toggle sidebar-collapse " id="sidebar-collapse">
+        <i class="ace-icon fa fa-angle-double-right" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+    </div>
+
+    <!-- /section:basics/sidebar.layout.minimize -->
+    <script type="text/javascript">
+                    try{ace.settings.check('sidebar' , 'collapsed')
+                }catch(e){}
+    </script>
+</div>

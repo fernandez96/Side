@@ -1,0 +1,378 @@
+﻿using Base.BusinessEntity;
+using Base.BusinessLogic;
+using Base.Common;
+using Base.Common.DataTable;
+using Base.DTO;
+using Base.DTO.AutoMapper;
+using Base.Web.ApiService;
+using Base.Web.Core;
+using Base.Web.Models;
+using Base.Web.Utilities;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Web.Mvc;
+
+namespace Base.Web.Controllers
+{
+    public class UsuarioController : BaseController
+    {
+        // GET: Usuario
+        public ActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+        public JsonResult Listar(DataTableModel<UsuarioFilterModel, int> dataTableModel)
+        {
+            try
+            {
+                FormatDataTable(dataTableModel);
+                var jsonResponse = new JsonResponse { Success = false };
+                var usuarioList = UsuarioBL.Instancia.GetAllPaging(new PaginationParameter<int>
+                {
+                    AmountRows = dataTableModel.length,
+                    WhereFilter = dataTableModel.whereFilter,
+                    Start = dataTableModel.start,
+                    OrderBy = dataTableModel.orderBy
+                });
+              //  var usuarioDTOList = MapperHelper.Map<IEnumerable<Usuario>, IEnumerable<UsuarioDTO>>(usuarioList);
+                jsonResponse.Data = usuarioList;
+           
+                var usuarioPaginationModelList = (List<UsuarioPaginationModel>)JsonConvert.DeserializeObject(jsonResponse.Data.ToString(), (new List<UsuarioPaginationModel>()).GetType());
+                dataTableModel.data = usuarioPaginationModelList;
+                if (usuarioPaginationModelList.Count > 0)
+                {
+                    dataTableModel.recordsTotal = usuarioPaginationModelList[0].Cantidad;
+                    dataTableModel.recordsFiltered = dataTableModel.recordsTotal;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+
+                ViewBag.MessageError = ex.Message;
+                dataTableModel.data = new List<UsuarioPaginationModel>();
+            }
+            return Json(dataTableModel);
+        }
+
+        [HttpPost]
+        public JsonResponse Add(UsuarioDTO usuarioDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+            try
+            {
+                int resultado = 0;
+                var usuario = MapperHelper.Map<UsuarioDTO, Usuario>(usuarioDTO);
+
+                if (!UsuarioBL.Instancia.Exists(usuario))
+                {
+                    resultado = UsuarioBL.Instancia.Add(usuario);
+
+                    if (resultado > 0)
+                    {
+                        jsonResponse.Title = Title.TitleRegistro;
+                        jsonResponse.Message = Mensajes.RegistroSatisfactorio;
+                    }
+                    else
+                    {
+                        jsonResponse.Title = Title.TitleAlerta;
+                        jsonResponse.Warning = true;
+                        jsonResponse.Message = Mensajes.RegistroFallido;
+                    }
+                }
+                else
+                {
+                    jsonResponse.Title = Title.TitleAlerta;
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.YaExisteRegistro;
+                }
+
+                LogBL.Instancia.Add(new Log
+                {
+                    Accion = Mensajes.Add,
+                    Controlador = Mensajes.UsuarioController,
+                    Identificador = resultado,
+                    Mensaje = jsonResponse.Message,
+                    Usuario = usuarioDTO.UsuarioRegistro,
+                    Objeto = JsonConvert.SerializeObject(usuarioDTO)
+                });
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Title = Title.TitleAlerta;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+
+                LogBL.Instancia.Add(new Log
+                {
+                    Accion = Mensajes.Add,
+                    Controlador = Mensajes.UsuarioController,
+                    Identificador = 0,
+                    Mensaje = ex.Message,
+                    Usuario = usuarioDTO.UsuarioRegistro,
+                    Objeto = JsonConvert.SerializeObject(usuarioDTO)
+                });
+            }
+
+            return jsonResponse;
+        }
+
+        [HttpPost]
+        public JsonResponse Delete(UsuarioDTO usuarioDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+            try
+            {
+                var usuario = MapperHelper.Map<UsuarioDTO, Usuario>(usuarioDTO);
+                int resultado = UsuarioBL.Instancia.Delete(usuario);
+
+                if (resultado > 0)
+                {
+                    jsonResponse.Title = Title.TitleEliminar;
+                    jsonResponse.Message = Mensajes.EliminacionSatisfactoria;
+                }
+                else
+                {
+                    jsonResponse.Title = Title.TitleAlerta;
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.EliminacionFallida;
+                }
+
+                LogBL.Instancia.Add(new Log
+                {
+                    Accion = Mensajes.Delete,
+                    Controlador = Mensajes.UsuarioController,
+                    Identificador = resultado,
+                    Mensaje = jsonResponse.Message,
+                    Usuario = usuarioDTO.UsuarioRegistro,
+                    Objeto = JsonConvert.SerializeObject(usuarioDTO)
+                });
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Title = Title.TitleAlerta;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+
+                LogBL.Instancia.Add(new Log
+                {
+                    Accion = Mensajes.Delete,
+                    Controlador = Mensajes.UsuarioController,
+                    Identificador = 0,
+                    Mensaje = ex.Message,
+                    Usuario = usuarioDTO.UsuarioRegistro,
+                    Objeto = JsonConvert.SerializeObject(usuarioDTO)
+                });
+            }
+
+            return jsonResponse;
+        }
+
+        [HttpPost]
+        public JsonResponse GetAllPaging(PaginationParameter<int> paginationParameters)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var usuarioList = UsuarioBL.Instancia.GetAllPaging(paginationParameters);
+                var usuarioDTOList = MapperHelper.Map<IEnumerable<Usuario>, IEnumerable<UsuarioDTO>>(usuarioList);
+                jsonResponse.Data = usuarioDTOList;
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return jsonResponse;
+        }
+
+        [HttpPost]
+        public JsonResponse GetById(UsuarioDTO usuarioDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var usuario = MapperHelper.Map<UsuarioDTO, Usuario>(usuarioDTO);
+                var usuarioResult = UsuarioBL.Instancia.GetById(usuario);
+                if (usuarioResult != null)
+                {
+                    usuarioDTO = MapperHelper.Map<Usuario, UsuarioDTO>(usuarioResult);
+                    jsonResponse.Data = usuarioDTO;
+                }
+                else
+                {
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.UsuarioNoExiste;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return jsonResponse;
+        }
+
+        [HttpPost]
+        public JsonResponse GetByUsername(LoginDTO loginDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username);
+                if (usuario != null)
+                {
+                    var usuarioLoginDTO = MapperHelper.Map<Usuario, UsuarioLoginDTO>(usuario);
+                    jsonResponse.Data = usuarioLoginDTO;
+                }
+                else
+                {
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.UsuarioNoExiste;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return jsonResponse;
+        }
+
+        [HttpPost]
+        public JsonResponse Update(UsuarioDTO usuarioDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+            try
+            {
+                var usuario = MapperHelper.Map<UsuarioDTO, Usuario>(usuarioDTO);
+                int resultado = UsuarioBL.Instancia.Update(usuario);
+
+                if (resultado > 0)
+                {
+                    jsonResponse.Title = Title.TitleActualizar;
+                    jsonResponse.Message = Mensajes.ActualizacionSatisfactoria;
+                }
+                if (resultado == 0)
+                {
+                    jsonResponse.Title = Title.TitleAlerta;
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.ActualizacionFallida;
+                }
+                if (resultado == -2)
+                {
+                    jsonResponse.Title = Title.TitleAlerta;
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.YaExisteRegistro;
+                }
+
+                LogBL.Instancia.Add(new Log
+                {
+                    Accion = Mensajes.Update,
+                    Controlador = Mensajes.UsuarioController,
+                    Identificador = resultado,
+                    Mensaje = jsonResponse.Message,
+                    Usuario = usuarioDTO.UsuarioRegistro,
+                    Objeto = JsonConvert.SerializeObject(usuarioDTO)
+                });
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Title = Title.TitleAlerta;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+
+                LogBL.Instancia.Add(new Log
+                {
+                    Accion = Mensajes.Update,
+                    Controlador = Mensajes.UsuarioController,
+                    Identificador = 0,
+                    Mensaje = ex.Message,
+                    Usuario = usuarioDTO.UsuarioRegistro,
+                    Objeto = JsonConvert.SerializeObject(usuarioDTO)
+                });
+            }
+
+            return jsonResponse;
+        }
+
+
+        [HttpPost]
+        public JsonResponse GetCargoAll(PaginationParameter<int> paginationParameters)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var usuarioList = CargoBL.Instancia.GetAll(paginationParameters);
+                var usuarioDTOList = MapperHelper.Map<IEnumerable<Cargo>, IEnumerable<CargoDTO>>(usuarioList);
+                jsonResponse.Data = usuarioDTOList;
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return jsonResponse;
+        }
+
+        [HttpPost]
+        public JsonResponse GetAllActives()
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var rolList = RolBL.Instancia.GetAllActives();
+                var rolDTOList = MapperHelper.Map<IEnumerable<Rol>, IEnumerable<RolDTO>>(rolList);
+                jsonResponse.Data = rolDTOList;
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return jsonResponse;
+        }
+        #region Métodos Privados
+
+        public void FormatDataTable(DataTableModel<UsuarioFilterModel, int> dataTableModel)
+        {
+            for (int i = 0; i < dataTableModel.order.Count; i++)
+            {
+                var columnIndex = dataTableModel.order[0].column;
+                var columnDir = dataTableModel.order[0].dir.ToUpper();
+                var column = dataTableModel.columns[columnIndex].data;
+                dataTableModel.orderBy = (" [" + column + "] " + columnDir + " ");
+            }
+
+            dataTableModel.whereFilter = "WHERE U.Estado IN (1,2)";
+
+            if (dataTableModel.filter.RolIdSearch > 0)
+                dataTableModel.whereFilter += (" AND R.Id = " + dataTableModel.filter.RolIdSearch);
+
+            if (!string.IsNullOrWhiteSpace(dataTableModel.filter.UsernameSearch))
+                dataTableModel.whereFilter += (" AND U.Username LIKE '%" + dataTableModel.filter.UsernameSearch + "%'");
+        }
+
+        #endregion
+    }
+}
