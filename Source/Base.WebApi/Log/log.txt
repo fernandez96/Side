@@ -1,0 +1,508 @@
+2017-08-04 21:04:33,676 ERROR  - Mensaje: Invalid object name 'GiftCard.Usuario'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.DataAccess\UsuarioRepository.cs:línea 93
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.WebApi.Controllers.UsuarioController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\UsuarioController.cs:línea 138
+2017-08-04 21:06:49,761 ERROR  - Mensaje: Invalid object name 'GiftCard.Rol'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.DataAccess\UsuarioRepository.cs:línea 93
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.WebApi.Controllers.UsuarioController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\UsuarioController.cs:línea 138
+2017-08-05 01:48:00,947 ERROR  - Mensaje: Invalid column name 'Anio'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.DataAccess\UsuarioRepository.cs:línea 93
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.WebApi.Controllers.UsuarioController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\UsuarioController.cs:línea 138
+2017-08-05 01:48:52,430 ERROR  - Mensaje: Invalid column name 'Anio'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.DataAccess\UsuarioRepository.cs:línea 93
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.WebApi.Controllers.UsuarioController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\UsuarioController.cs:línea 138
+2017-08-05 01:49:08,838 ERROR  - Mensaje: Invalid column name 'Anio'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.DataAccess\UsuarioRepository.cs:línea 93
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.WebApi.Controllers.UsuarioController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\UsuarioController.cs:línea 138
+2017-08-05 01:49:56,666 ERROR  - Mensaje: Invalid column name 'Anio'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.DataAccess\UsuarioRepository.cs:línea 93
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.WebApi.Controllers.UsuarioController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\UsuarioController.cs:línea 138
+2017-08-05 01:50:36,993 ERROR  - Mensaje: Invalid column name 'Anio'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.DataAccess\UsuarioRepository.cs:línea 93
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.WebApi.Controllers.UsuarioController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\UsuarioController.cs:línea 138
+2017-08-05 01:51:51,028 ERROR  - Mensaje: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Reporte -> ReporteDTO
+Base.BusinessEntity.Reporte -> Base.DTO.ReporteDTO
+
+Destination path:
+IEnumerable`1[0]
+
+Source value:
+Base.BusinessEntity.Reporte Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\EnumerableMapperBase.cs:línea 44
+   en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 120
+   en AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 78
+   en AutoMapper.Mapper.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 73
+   en Base.DTO.AutoMapper.MapperHelper.Map[TSource,TDest](TSource source)
+   en Base.WebApi.Controllers.ReporteController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\ReporteController.cs:línea 23
+2017-08-05 01:52:04,114 ERROR  - Mensaje: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Reporte -> ReporteDTO
+Base.BusinessEntity.Reporte -> Base.DTO.ReporteDTO
+
+Destination path:
+IEnumerable`1[0]
+
+Source value:
+Base.BusinessEntity.Reporte Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\EnumerableMapperBase.cs:línea 44
+   en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.MappingEngine.MapCore(Object source, Type sourceType, Type destinationType, MappingOperationOptions options) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 131
+   en AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 120
+   en AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 78
+   en AutoMapper.Mapper.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\Mapper.cs:línea 73
+   en Base.DTO.AutoMapper.MapperHelper.Map[TSource,TDest](TSource source)
+   en Base.WebApi.Controllers.ReporteController.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\ReporteController.cs:línea 23
+2017-08-05 09:05:55,171 ERROR  - Mensaje: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Shared Memory Provider, error: 40 - No se pudo abrir una conexión con SQL Server) Trace:    en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.GetNewOpenConnection()
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.GetWrappedConnection()
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetByUsername(String username) en E:\Proyectos\Base\Source\Base.DataAccess\UsuarioRepository.cs:línea 160
+   en Base.BusinessLogic.UsuarioBL.GetByUsername(String username) en E:\Proyectos\Base\Source\Base.BusinessLogic\UsuarioBL.cs:línea 45
+   en Base.WebApi.Controllers.AccountController.Login(LoginDTO loginDTO) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\AccountController.cs:línea 58
+2017-08-13 02:54:54,036 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 23
+2017-08-13 03:02:48,370 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 23
+2017-08-13 03:03:12,207 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 23
+2017-08-13 03:03:23,500 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 23
+2017-08-13 03:03:40,137 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 23
+2017-08-13 03:05:51,009 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream)
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 26
+2017-08-13 03:06:24,456 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream)
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 26
+2017-08-13 03:09:51,896 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream)
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 03:11:00,920 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream)
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 03:30:47,989 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream)
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 03:35:21,513 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream)
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 03:36:11,596 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream)
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 03:50:05,499 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 03:51:11,429 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 08:56:16,272 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 09:00:31,758 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 09:03:05,413 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 09:05:25,169 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 09:09:50,921 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 09:14:08,163 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 09:15:54,646 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 21
+2017-08-13 09:21:26,279 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 09:21:45,202 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 09:23:35,459 ERROR  - Mensaje: La entrada no es una cadena Base 64 válida porque contiene un carácter que no es Base 64, más de dos caracteres de relleno o un carácter no válido entre los caracteres de relleno.  Trace:    en System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   en System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   en System.Convert.FromBase64String(String s)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 09:24:46,545 ERROR  - Mensaje: La entrada no es una cadena Base 64 válida porque contiene un carácter que no es Base 64, más de dos caracteres de relleno o un carácter no válido entre los caracteres de relleno.  Trace:    en System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   en System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   en System.Convert.FromBase64String(String s)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 09:25:02,161 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 09:34:41,125 ERROR  - Mensaje: La entrada no es una cadena Base 64 válida porque contiene un carácter que no es Base 64, más de dos caracteres de relleno o un carácter no válido entre los caracteres de relleno.  Trace:    en System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   en System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   en System.Convert.FromBase64String(String s)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 09:41:10,554 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 09:41:46,824 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 09:43:05,393 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 09:50:41,515 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail)
+2017-08-13 10:35:12,984 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 10:51:11,398 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 10:55:02,665 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 10:56:15,146 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 11:06:11,873 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 11:06:37,830 ERROR  - Mensaje: La entrada no es una cadena Base 64 válida porque contiene un carácter que no es Base 64, más de dos caracteres de relleno o un carácter no válido entre los caracteres de relleno.  Trace:    en System.Convert.FromBase64_Decode(Char* startInputPtr, Int32 inputLength, Byte* startDestPtr, Int32 destLength)
+   en System.Convert.FromBase64CharPtr(Char* inputPtr, Int32 inputLength)
+   en System.Convert.FromBase64String(String s)
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 22
+2017-08-13 11:13:44,832 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 11:14:20,269 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 11:31:21,672 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 11:56:32,342 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-13 12:00:57,870 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 24
+2017-08-15 23:12:44,755 ERROR  - Mensaje: Invalid Hyperlink: Malformed URI is embedded as a hyperlink in the document. Trace:    en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.Load()
+   en DocumentFormat.OpenXml.Packaging.OpenXmlPackage.OpenCore(Stream stream, Boolean readWriteMode)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable, OpenSettings openSettings)
+   en DocumentFormat.OpenXml.Packaging.SpreadsheetDocument.Open(Stream stream, Boolean isEditable)
+   en ClosedXML.Excel.XLWorkbook.LoadSheets(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 50
+   en ClosedXML.Excel.XLWorkbook.Load(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook_Load.cs:línea 39
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream, XLEventTracking eventTracking) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 729
+   en ClosedXML.Excel.XLWorkbook..ctor(Stream stream) en C:\Git\ClosedXML\ClosedXML\Excel\XLWorkbook.cs:línea 719
+   en Base.WebApi.Controllers.EnvioEmailController.Upload(EnvioEmailDTO envioemail) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\EnvioEmailController.cs:línea 30
+2017-09-05 20:55:22,860 ERROR  - Mensaje: Invalid object name 'GiftCard.Cargo'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.CargoRepository.GetAll(PaginationParameter`1 paginationParameter) en E:\Proyectos\Base\Source\Base.DataAccess\CargoRepository.cs:línea 27
+   en Base.BusinessLogic.CargoBL.GetAll(PaginationParameter`1 paginationParameter) en E:\Proyectos\Base\Source\Base.BusinessLogic\CargoBL.cs:línea 18
+   en Base.WebApi.Controllers.CargoController.GetAll(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\CargoController.cs:línea 24
+2017-09-05 21:05:03,738 ERROR  - Mensaje: Invalid object name 'GiftCard.Cargo'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.CargoRepository.GetAll(PaginationParameter`1 paginationParameter) en E:\Proyectos\Base\Source\Base.DataAccess\CargoRepository.cs:línea 27
+   en Base.BusinessLogic.CargoBL.GetAll(PaginationParameter`1 paginationParameter) en E:\Proyectos\Base\Source\Base.BusinessLogic\CargoBL.cs:línea 18
+   en Base.WebApi.Controllers.CargoController.GetAll(PaginationParameter`1 paginationParameters) en E:\Proyectos\Base\Source\Base.WebApi\Controllers\CargoController.cs:línea 24
