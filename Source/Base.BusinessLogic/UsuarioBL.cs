@@ -40,9 +40,9 @@ namespace Base.BusinessLogic
             return UsuarioRepository.Instancia.GetByIdGetById(entity);
         }
 
-        public Usuario GetByUsername(string username)
+        public Usuario GetByUsername(string username, string pass)
         {
-            return UsuarioRepository.Instancia.GetByUsername(username);
+            return UsuarioRepository.Instancia.GetByUsername(username, pass);
         }
 
         public int Update(Usuario entity)

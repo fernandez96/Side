@@ -5,6 +5,6 @@ namespace Base.DataAccess.Interfaces
         where T :class
     {
         bool Exists(T entity);
-        T GetByUsername(string username);
+        T GetByUsername(string username, string pass);
     }
 }

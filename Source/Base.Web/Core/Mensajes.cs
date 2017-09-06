@@ -8,7 +8,7 @@ namespace Base.Web.Core
     public class Mensajes
     {
         public static string IntenteloMasTarde = "Hubo un error, inténtelo más tarde.";
-        public static string UsuarioNoExiste = "El usuario no pertenece al sistema.";
+        public static string UsuarioNoExiste = "El usuario no pertenece al sistema o contraseña incorrecta.";
         public static string CiudadNoExiste = "La ciudad no pertenece al sistema.";
         public static string PiezaNoExiste = "La pieza no pertenece al sistema.";
         public static string MapaCampanaNoExiste = "El mapa de campaña no pertenece al sistema.";

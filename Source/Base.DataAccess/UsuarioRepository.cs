@@ -150,13 +150,13 @@ namespace Base.DataAccess
             return usuario;
         }
 
-        public Usuario GetByUsername(string username)
+        public Usuario GetByUsername(string username, string pass)
         {
             Usuario usuario = null;
-            using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "UsuarioGetByUsername")))
+            using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "UsuarioLogin")))
             {
                 _database.AddInParameter(comando, "@Username", DbType.String, username);
-
+                _database.AddInParameter(comando, "@Password", DbType.String, pass);
                 using (var lector = _database.ExecuteReader(comando))
                 {
                     if (lector.Read())
@@ -203,6 +203,8 @@ namespace Base.DataAccess
             return id;
         }
 
+
+    
         #endregion
     }
 }

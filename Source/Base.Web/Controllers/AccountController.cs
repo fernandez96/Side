@@ -40,17 +40,12 @@ namespace Base.Web.Controllers
             try
             {
                 var jsonResponse = new JsonResponse { Success = false };
-                accountModel.ValidacionAD = ConfigurationAppSettings.ValidacionAD();
-             
-         
+                accountModel.ValidacionAD = ConfigurationAppSettings.ValidacionAD();               
                 jsonResponse = Login_(accountModel);
 
                 if (jsonResponse.Success && !jsonResponse.Warning)
                 {
-                    //var usuarioModel = (UsuarioModel)JsonConvert.DeserializeObject(jsonResponse.Data.ToString(), (new UsuarioModel()).GetType());
-                    //var usuarioModel = (UsuarioModel)jsonResponse.Data;
-                    //GenerarTickectAutenticacion(usuarioModel);
-
+        
                     return RedirectToAction(ConstantesWeb.HomeAction, ConstantesWeb.HomeController);
                 }
                 else if (jsonResponse.Warning)
@@ -98,7 +93,7 @@ namespace Base.Web.Controllers
             return Json(jsonResponse);
         }
 
-        [HttpPost]
+
         public JsonResponse Login_(AccountModel loginDTO)
         {
             var jsonResponse = new JsonResponse { Success = true };
@@ -110,11 +105,13 @@ namespace Base.Web.Controllers
                     UsuarioAD usuarioAD = new UsuarioAD();
                     if (usuarioAD.AutenticarEnDominio(loginDTO.Username, loginDTO.Password))
                     {
-                        var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username);
+                        var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username,loginDTO.Password);
                         if (usuario != null)
                         {
-                            //var usuarioLoginDTO = MapperHelper.Map<Usuario, UsuarioLoginDTO>(usuario);
-                            jsonResponse.Data = usuario;
+                            var usuarioLoginDTO = MapperHelper.Map<Usuario, UsuarioLoginDTO>(usuario);
+                            jsonResponse.Data = usuarioLoginDTO;
+
+                            GenerarTickectAutenticacion(usuarioLoginDTO);
 
                             LogBL.Instancia.Add(new Log
                             {
@@ -140,12 +137,12 @@ namespace Base.Web.Controllers
                 }
                 else
                 {
-                    var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username);
+                    var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username,loginDTO.Password);
                     if (usuario != null)
                     {
-                       //var usuarioLoginDTO = MapperHelper.Map<Usuario, UsuarioLoginDTO>(usuario);
-                        jsonResponse.Data = usuario;
-
+                        var usuarioLoginDTO = MapperHelper.Map<Usuario, UsuarioLoginDTO>(usuario);
+                        jsonResponse.Data = usuarioLoginDTO;
+                        GenerarTickectAutenticacion(usuarioLoginDTO);
                         LogBL.Instancia.Add(new Log
                         {
                             Accion = Mensajes.Login,
@@ -175,8 +172,12 @@ namespace Base.Web.Controllers
 
         #region Metodos Privados
 
-        private void GenerarTickectAutenticacion(UsuarioModel usuarioModel)
+        private void GenerarTickectAutenticacion(UsuarioLoginDTO u)
         {
+            UsuarioModel usuarioModel = new UsuarioModel();
+            usuarioModel.Username = u.Username;
+            usuarioModel.RolId = u.RolId;
+            usuarioModel.RolNombre = u.RolNombre;
             usuarioModel.TimeZoneId = ConfigurationAppSettings.TimeZoneId();
             usuarioModel.TimeZoneGMT = ConfigurationAppSettings.TimeZoneGMT();
 

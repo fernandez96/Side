@@ -36,14 +36,11 @@ namespace Base.Web.Controllers
                     Start = dataTableModel.start,
                     OrderBy = dataTableModel.orderBy
                 });
-              //  var usuarioDTOList = MapperHelper.Map<IEnumerable<Usuario>, IEnumerable<UsuarioDTO>>(usuarioList);
-                jsonResponse.Data = usuarioList;
-           
-                var usuarioPaginationModelList = (List<UsuarioPaginationModel>)JsonConvert.DeserializeObject(jsonResponse.Data.ToString(), (new List<UsuarioPaginationModel>()).GetType());
-                dataTableModel.data = usuarioPaginationModelList;
-                if (usuarioPaginationModelList.Count > 0)
+                var usuarioDTOList = MapperHelper.Map<IEnumerable<Usuario>, IEnumerable<UsuarioDTO>>(usuarioList);
+                dataTableModel.data = usuarioList;
+                if (usuarioList.Count > 0)
                 {
-                    dataTableModel.recordsTotal = usuarioPaginationModelList[0].Cantidad;
+                    dataTableModel.recordsTotal = usuarioList[0].Cantidad;
                     dataTableModel.recordsFiltered = dataTableModel.recordsTotal;
                 }
             }
@@ -58,7 +55,7 @@ namespace Base.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResponse Add(UsuarioDTO usuarioDTO)
+        public JsonResult Add(UsuarioDTO usuarioDTO)
         {
             var jsonResponse = new JsonResponse { Success = true };
             try
@@ -117,11 +114,11 @@ namespace Base.Web.Controllers
                 });
             }
 
-            return jsonResponse;
+            return Json(jsonResponse);
         }
 
         [HttpPost]
-        public JsonResponse Delete(UsuarioDTO usuarioDTO)
+        public JsonResult Delete(UsuarioDTO usuarioDTO)
         {
             var jsonResponse = new JsonResponse { Success = true };
             try
@@ -169,11 +166,11 @@ namespace Base.Web.Controllers
                 });
             }
 
-            return jsonResponse;
+            return Json(jsonResponse);
         }
 
         [HttpPost]
-        public JsonResponse GetAllPaging(PaginationParameter<int> paginationParameters)
+        public JsonResult GetAllPaging(PaginationParameter<int> paginationParameters)
         {
             var jsonResponse = new JsonResponse { Success = true };
 
@@ -190,11 +187,11 @@ namespace Base.Web.Controllers
                 jsonResponse.Message = Mensajes.IntenteloMasTarde;
             }
 
-            return jsonResponse;
+            return Json(jsonResponse);
         }
 
         [HttpPost]
-        public JsonResponse GetById(UsuarioDTO usuarioDTO)
+        public JsonResult GetById(UsuarioDTO usuarioDTO)
         {
             var jsonResponse = new JsonResponse { Success = true };
 
@@ -220,7 +217,7 @@ namespace Base.Web.Controllers
                 jsonResponse.Message = Mensajes.IntenteloMasTarde;
             }
 
-            return jsonResponse;
+            return Json(jsonResponse);
         }
 
         [HttpPost]
@@ -230,7 +227,7 @@ namespace Base.Web.Controllers
 
             try
             {
-                var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username);
+                var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username,loginDTO.Password);
                 if (usuario != null)
                 {
                     var usuarioLoginDTO = MapperHelper.Map<Usuario, UsuarioLoginDTO>(usuario);
@@ -253,7 +250,7 @@ namespace Base.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResponse Update(UsuarioDTO usuarioDTO)
+        public JsonResult Update(UsuarioDTO usuarioDTO)
         {
             var jsonResponse = new JsonResponse { Success = true };
             try
@@ -307,12 +304,12 @@ namespace Base.Web.Controllers
                 });
             }
 
-            return jsonResponse;
+            return Json(jsonResponse);
         }
 
 
         [HttpPost]
-        public JsonResponse GetCargoAll(PaginationParameter<int> paginationParameters)
+        public JsonResult GetCargoAll(PaginationParameter<int> paginationParameters)
         {
             var jsonResponse = new JsonResponse { Success = true };
 
@@ -329,11 +326,11 @@ namespace Base.Web.Controllers
                 jsonResponse.Message = Mensajes.IntenteloMasTarde;
             }
 
-            return jsonResponse;
+            return Json(jsonResponse);
         }
 
         [HttpPost]
-        public JsonResponse GetAllActives()
+        public JsonResult GetAllActives()
         {
             var jsonResponse = new JsonResponse { Success = true };
 
@@ -350,7 +347,7 @@ namespace Base.Web.Controllers
                 jsonResponse.Message = Mensajes.IntenteloMasTarde;
             }
 
-            return jsonResponse;
+            return Json(jsonResponse);
         }
         #region Métodos Privados
 

@@ -6,12 +6,13 @@ using System.Web.Routing;
 using System.Linq;
 using log4net;
 using Base.Common;
-
+using System.Text;
 namespace Base.Web.Core
 {
     public class BaseController:Controller
     {
         protected static readonly ILog logger = LogManager.GetLogger(string.Empty);
+
 
         #region Control Error
 
@@ -70,6 +71,17 @@ namespace Base.Web.Core
 
         #endregion Control Error
 
+        protected JsonResult Json(object data)
+        {
+            return new JsonResult()
+            {
+                Data = data,
+                ContentType = "application/json; charset=utf-8",
+                ContentEncoding = Encoding.UTF8,
+                JsonRequestBehavior = JsonRequestBehavior.AllowGet,
+                MaxJsonLength = Int32.MaxValue
+            };
+        }
         protected string GetWhere(string columna, string operacion, string valor)
         {
             var opciones = new Dictionary<string, string>();

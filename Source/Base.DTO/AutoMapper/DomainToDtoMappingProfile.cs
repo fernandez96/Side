@@ -15,7 +15,7 @@ namespace Base.DTO.AutoMapper
             
             Mapper.CreateMap<Usuario, UsuarioLoginDTO>()
                .ForMember(d => d.RolNombre, x => x.MapFrom(p => p.Rol.Nombre));
-
+          
             Mapper.CreateMap<Usuario, UsuarioDTO>()
                 .ForMember(d => d.RolNombre, x => x.MapFrom(p => p.Rol.Nombre));
             Mapper.CreateMap<Rol, RolDTO>();

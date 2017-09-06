@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using Base.DTO.AutoMapper;
+using System.Web.Mvc;
 using System.Web.Routing;
 
 namespace Base.Web
@@ -10,6 +11,7 @@ namespace Base.Web
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             log4net.Config.XmlConfigurator.Configure();
+            AutoMapperConfiguration.Configure();
         }
     }
 }

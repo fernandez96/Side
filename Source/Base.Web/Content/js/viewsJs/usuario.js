@@ -4,7 +4,7 @@ var delRowPos = null;
 var delRowID = 0;
 var urlListar = baseUrl + 'Usuario/Listar';
 var urlMantenimiento = baseUrl + 'Usuario/';
-var urlListaCargo = baseUrlApiService + 'Cargo/';
+var urlListaCargo = baseUrl + 'Usuario/';
 var rowUsuario = null;
 
 $(document).ready(function () { 
@@ -428,7 +428,7 @@ function CargarCargo() {
 function CargarRol(){
 
     webApp.Ajax({
-        url: baseUrlApiService + 'Rol/GetAllActives',
+        url: urlMantenimiento + 'GetAllActives',
         async: false,
     }, function(response){
         if(response.Success){
@@ -444,6 +444,7 @@ function CargarRol(){
                 $.each(response.Data, function(index, item){
                     $("#RolId,#RolIdSearch").append('<option value="' + item.Id + '">' + item.Nombre + '</option>');
                 });
+                console.log(response.Data);
                 webApp.clearForm('UsuarioSearchForm');
             }
         }else{
