@@ -123,7 +123,7 @@ input[type=radio].ace + .lbl:hover::before {
 }
 
 .table-striped > tbody > tr:hover {
-    background: rgba(188, 207, 28, 0.5);
+    background: #b9ddf3;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
@@ -132,8 +132,8 @@ input[type=radio].ace + .lbl:hover::before {
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
-    color: #007936!important;
-    background:#bccf1c;
+    color: #FFFFFF!important;
+    background:#438EB9;
     border: 0px;
 }
 

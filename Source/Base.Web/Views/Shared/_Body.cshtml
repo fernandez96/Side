@@ -32,6 +32,19 @@
             <!-- #section:basics/navbar.dropdown -->
             <div class="navbar-buttons navbar-header pull-right" role="navigation">
                 <ul id="listaAlerta" class="nav ace-nav">
+                    <li class="green dropdown-modal">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                            <i class="ace-icon fa fa-bell"></i>
+                            <span class="badge badge-success">0</span>
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
+                            <li class="dropdown-header">
+                                <i class="ace-icon fa fa-exclamation-triangle"></i>
+                                0 Producto(s) con bajo stock
+                            </li>
+                        </ul>
+                    </li>
                     <li class="light-blue">
                         <a data-toggle="dropdown" href="javascript:void(0)" class="dropdown-toggle">
                             <img class="nav-user-photo" src="@Url.Content("~/Content/images/avatar2.png")" alt="User's Photo" />
