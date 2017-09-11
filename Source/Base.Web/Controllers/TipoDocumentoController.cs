@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Base.Web.Controllers
 {
-    public class ExpositorController : Controller
+    public class TipoDocumentoController : Controller
     {
-        // GET: Expositor
+        // GET: TipoDocumento
         public ActionResult Index()
         {
             return View();

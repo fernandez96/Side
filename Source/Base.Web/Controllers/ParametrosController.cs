@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Base.Web.Controllers
 {
-    public class ModalidadController : Controller
+    public class ParametrosController : Controller
     {
-        // GET: Modalidad
+        // GET: Parametros
         public ActionResult Index()
         {
             return View();

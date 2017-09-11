@@ -221,3 +221,53 @@ Base.BusinessEntity.Usuario Trace:    en AutoMapper.MappingEngine.AutoMapper.IMa
    en Base.DataAccess.UsuarioRepository.Exists(Usuario entity) en D:\ejemplo_01\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 68
    en Base.BusinessLogic.UsuarioBL.Exists(Usuario entity) en D:\ejemplo_01\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 25
    en Base.Web.Controllers.UsuarioController.Add(UsuarioDTO usuarioDTO) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 66
+2017-09-11 17:22:31,019 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:22:48,398 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:22:50,536 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:22:51,209 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:22:51,634 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:22:52,209 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:22:53,209 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:22:53,693 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:23:45,234 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:27:25,265 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:27:50,624 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:27:51,298 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 366
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:30:30,527 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.UsuarioController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 356
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-11 17:49:30,278 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.AccesoController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 55
+   en Base.Web.Controllers.AccesoController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 29
+2017-09-11 17:51:30,629 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.AccesoController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 55
+   en Base.Web.Controllers.AccesoController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 29
+2017-09-11 17:51:51,166 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.AccesoController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 55
+   en Base.Web.Controllers.AccesoController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 29
+2017-09-11 17:53:33,510 ERROR  - Mensaje: Referencia a objeto no establecida como instancia de un objeto. Trace:    en Base.Web.Controllers.AccesoController.FormatDataTable(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 55
+   en Base.Web.Controllers.AccesoController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 29
+2017-09-11 17:59:12,134 ERROR  - Mensaje: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Rol -> RolBL
+Base.BusinessEntity.Rol -> Base.BusinessLogic.RolBL
+
+Destination path:
+IEnumerable`1[0]
+
+Source value:
+Base.BusinessEntity.Rol Trace:    en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.Mappers.EnumerableMapperBase`1.Map(ResolutionContext context, IMappingEngineRunner mapper) en c:\dev\AutoMapper\src\AutoMapper\Mappers\EnumerableMapperBase.cs:línea 44
+   en AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 250
+   en AutoMapper.MappingEngine.Map[TSource,TDestination](TSource source) en c:\dev\AutoMapper\src\AutoMapper\MappingEngine.cs:línea 78
+   en Base.DTO.AutoMapper.MapperHelper.Map[TSource,TDest](TSource source) en D:\ejemplo_01\Side\Source\Base.DTO\AutoMapper\MapperHelper.cs:línea 9
+   en Base.Web.Controllers.AccesoController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\AccesoController.cs:línea 33

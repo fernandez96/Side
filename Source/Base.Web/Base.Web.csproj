@@ -350,6 +350,7 @@
     <Content Include="Content\js\respond.js" />
     <Content Include="Content\js\ui.datepicker-es.js" />
     <Content Include="Content\js\validCampoFranz.js" />
+    <Content Include="Content\js\viewsJs\Acceso.js" />
     <Content Include="Content\js\viewsJs\account.js" />
     <Content Include="Content\js\viewsJs\alerta.js" />
     <Content Include="Content\js\viewsJs\Campana.js" />
@@ -378,16 +379,17 @@
     <Compile Include="ApiService\InvokeHelper.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.cs" />
+    <Compile Include="Controllers\AccesoController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\campanaController.cs" />
     <Compile Include="Controllers\CursoController.cs" />
     <Compile Include="Controllers\DiplomadoController.cs" />
-    <Compile Include="Controllers\EnvioEmailController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
-    <Compile Include="Controllers\ExpositorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ModalidadController.cs" />
+    <Compile Include="Controllers\ParametrosController.cs" />
     <Compile Include="Controllers\ReporteController.cs" />
+    <Compile Include="Controllers\TipoDocumentoController.cs" />
+    <Compile Include="Controllers\TipoOpcionesController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Core\BaseController.cs" />
     <Compile Include="Core\Mensajes.cs" />
@@ -401,6 +403,7 @@
     <Compile Include="Models\FormularioModel.cs" />
     <Compile Include="Models\ReporteFilterModel.cs" />
     <Compile Include="Models\ReportePaginationModel.cs" />
+    <Compile Include="Models\RolFilterModel.cs" />
     <Compile Include="Models\UsuarioFilterModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Models\UsuarioPaginationModel.cs" />
@@ -507,11 +510,11 @@
     <Content Include="Views\Reporte\Index.cshtml" />
     <Content Include="Views\EnvioEmail\Index.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
-    <Content Include="Views\Modalidad\Index.cshtml" />
-    <Content Include="Views\Expositor\Index.cshtml" />
     <Content Include="Views\campana\Index.cshtml" />
     <Content Include="Views\Diplomado\Index.cshtml" />
     <None Include="Properties\PublishProfiles\Web.pubxml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Acceso\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -521,6 +524,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Hubs\" />
+    <Folder Include="Views\Parametros\" />
+    <Folder Include="Views\TipoDocumento\" />
+    <Folder Include="Views\TipoOpciones\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base.ActiveDirectory\Base.ActiveDirectory.csproj">
@@ -555,16 +561,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>52562</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:52562/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

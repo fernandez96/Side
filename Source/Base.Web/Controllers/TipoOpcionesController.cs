@@ -6,9 +6,9 @@ using System.Web.Mvc;
 
 namespace Base.Web.Controllers
 {
-    public class EnvioEmailController : Controller
+    public class TipoOpcionesController : Controller
     {
-        // GET: EnvioEmail
+        // GET: TipoOpciones
         public ActionResult Index()
         {
             return View();
