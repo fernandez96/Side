@@ -21,6 +21,7 @@ namespace Base.DTO.AutoMapper
             Mapper.CreateMap<Rol, RolDTO>();
             Mapper.CreateMap<Cargo, CargoDTO>();
             Mapper.CreateMap<Reporte, ReporteDTO>();
+            Mapper.CreateMap<TipoDocumento, TipoDocumentoDTO>();
         }
     }
 }

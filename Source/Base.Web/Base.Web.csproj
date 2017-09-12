@@ -363,6 +363,7 @@
     <Content Include="Content\js\viewsJs\Expositor.js" />
     <Content Include="Content\js\viewsJs\Modalidad.js" />
     <Content Include="Content\js\viewsJs\reporte.js" />
+    <Content Include="Content\js\viewsJs\TipoDocumento.js" />
     <Content Include="Content\js\viewsJs\tipoProducto.js" />
     <Content Include="Content\js\viewsJs\usuario.js" />
     <Content Include="Content\js\viewsJs\vale.js" />
@@ -404,6 +405,7 @@
     <Compile Include="Models\ReporteFilterModel.cs" />
     <Compile Include="Models\ReportePaginationModel.cs" />
     <Compile Include="Models\RolFilterModel.cs" />
+    <Compile Include="Models\TipoDocumentoFilterModel.cs" />
     <Compile Include="Models\UsuarioFilterModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
     <Compile Include="Models\UsuarioPaginationModel.cs" />
@@ -515,6 +517,7 @@
     <None Include="Properties\PublishProfiles\Web.pubxml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Acceso\Index.cshtml" />
+    <Content Include="Views\TipoDocumento\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -525,7 +528,6 @@
   <ItemGroup>
     <Folder Include="Core\Hubs\" />
     <Folder Include="Views\Parametros\" />
-    <Folder Include="Views\TipoDocumento\" />
     <Folder Include="Views\TipoOpciones\" />
   </ItemGroup>
   <ItemGroup>
