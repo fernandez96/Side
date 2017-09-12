@@ -167,15 +167,15 @@ function VisualizarDataTableUsuario() {
         },
         "bAutoWidth": false,
         "columns": [
-            {
-                "data": function (obj) {
+            //{
+            //    "data": function (obj) {
 
-                    return '<div class="action-buttons">\
-                    <a class="green editarUsuario" href="javascript:void(0)"><i class="ace-icon fa fa-pencil bigger-130"></i></a>\
-                    <a class="red eliminarUsuario" href="javascript:void(0)"><i class="ace-icon fa fa-trash-o bigger-130"></i></a>\
-                    </div>';
-                }
-            },
+            //        return '<div class="action-buttons">\
+            //        <a class="green editarUsuario" href="javascript:void(0)"><i class="ace-icon fa fa-pencil bigger-130"></i></a>\
+            //        <a class="red eliminarUsuario" href="javascript:void(0)"><i class="ace-icon fa fa-trash-o bigger-130"></i></a>\
+            //        </div>';
+            //    }
+            //},
             { "data": "Id" },
             { "data": "tdocc_vabreviatura_tipo_doc" },
             { "data": "tdocc_vdescripcion" },
@@ -189,13 +189,13 @@ function VisualizarDataTableUsuario() {
             }
         ],
         "aoColumnDefs": [
-            { "bSortable": false, "sClass": "center", "aTargets": [0], "width": "10%" },
-            { "bVisible": false, "aTargets": [1] },
-            { "aTargets": [2], "width": "10%" },
-            { "className": "hidden-1200", "aTargets": [3], "width": "18%" },
+            //{ "bSortable": false, "sClass": "center", "aTargets": [0], "width": "10%" },
+            { "bVisible": false, "aTargets": [0] },
+            { "aTargets": [1], "width": "10%" },
+            { "className": "hidden-1200", "aTargets": [2], "width": "18%" },
             { "className": "hidden-1200", "aTargets": [0], "width": "4%" },
     
-            { "bSortable": false, "className": "hidden-480", "aTargets": [4], "width": "10%" }
+            { "bSortable": false, "className": "hidden-480", "aTargets": [1], "width": "10%" }
 
         ],
         "order": [[1, "desc"]],
