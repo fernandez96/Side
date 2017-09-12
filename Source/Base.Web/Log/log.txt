@@ -746,3 +746,87 @@ Base.BusinessEntity.TipoDocumento Trace:    en AutoMapper.MappingEngine.AutoMapp
    en Base.DataAccess.TipoDocumentoRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\TipoDocumentoRepository.cs:línea 34
    en Base.BusinessLogic.TipoDocumentoBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\TipoDocumentoBL.cs:línea 18
    en Base.Web.Controllers.TipoDocumentoController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\TipoDocumentoController.cs:línea 29
+2017-09-12 16:36:40,026 ERROR  - Mensaje: Invalid column name 'BOL'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.TipoDocumentoRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.DataAccess\TipoDocumentoRepository.cs:línea 30
+   en Base.BusinessLogic.TipoDocumentoBL.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.BusinessLogic\TipoDocumentoBL.cs:línea 18
+   en Base.Web.Controllers.TipoDocumentoController.Listar(DataTableModel`2 dataTableModel) en D:\ejemplo_01\Side\Source\Base.Web\Controllers\TipoDocumentoController.cs:línea 29
+2017-09-12 16:38:10,450 ERROR  - Mensaje: Invalid column name 'BOL'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.TipoDocumentoRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.DataAccess\TipoDocumentoRepository.cs:línea 30
+   en Base.BusinessLogic.TipoDocumentoBL.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.BusinessLogic\TipoDocumentoBL.cs:línea 18
+   en Base.Web.Controllers.TipoDocumentoController.Listar(DataTableModel`2 dataTableModel)
+2017-09-12 16:38:28,293 ERROR  - Mensaje: Invalid column name 'BOL'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.TipoDocumentoRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.DataAccess\TipoDocumentoRepository.cs:línea 30
+   en Base.BusinessLogic.TipoDocumentoBL.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.BusinessLogic\TipoDocumentoBL.cs:línea 18
+   en Base.Web.Controllers.TipoDocumentoController.Listar(DataTableModel`2 dataTableModel)
+2017-09-12 16:39:45,056 ERROR  - Mensaje: Invalid column name 'BOL'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.TipoDocumentoRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.DataAccess\TipoDocumentoRepository.cs:línea 30
+   en Base.BusinessLogic.TipoDocumentoBL.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.BusinessLogic\TipoDocumentoBL.cs:línea 18
+   en Base.Web.Controllers.TipoDocumentoController.Listar(DataTableModel`2 dataTableModel)
+2017-09-12 16:40:03,734 ERROR  - Mensaje: Invalid column name 'BOL'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.TipoDocumentoRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.DataAccess\TipoDocumentoRepository.cs:línea 30
+   en Base.BusinessLogic.TipoDocumentoBL.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.BusinessLogic\TipoDocumentoBL.cs:línea 18
+   en Base.Web.Controllers.TipoDocumentoController.Listar(DataTableModel`2 dataTableModel)
+2017-09-12 16:40:14,011 ERROR  - Mensaje: Invalid column name 'BOL'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.TipoDocumentoRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.DataAccess\TipoDocumentoRepository.cs:línea 30
+   en Base.BusinessLogic.TipoDocumentoBL.GetAllPaging(PaginationParameter`1 paginationParameters) en D:\ejemplo_01\Side\Source\Base.BusinessLogic\TipoDocumentoBL.cs:línea 18
+   en Base.Web.Controllers.TipoDocumentoController.Listar(DataTableModel`2 dataTableModel)

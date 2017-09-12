@@ -62,14 +62,18 @@ namespace Base.Web.Controllers
                 var column = dataTableModel.columns[columnIndex].data;
                 dataTableModel.orderBy = (" [" + column + "] " + columnDir + " ");
             }
+            string WhereModel = "WHERE tdocc_flag_estado=1";
+            
 
-            dataTableModel.whereFilter = "WHERE tdocc_flag_estado=1";
-
-            if (dataTableModel.filter.codigoSearch !=null )
-                dataTableModel.whereFilter += (" AND tdocc_vabreviatura_tipo_doc = " + dataTableModel.filter.codigoSearch);
-
-            if (dataTableModel.filter.descripcionSearch!=null)
-                dataTableModel.whereFilter += (" AND tdocc_vdescripcion LIKE '%" + dataTableModel.filter.descripcionSearch + "%'");
+            if (dataTableModel.filter.codigoSearch != null)
+            {
+                WhereModel += "  AND tdocc_vabreviatura_tipo_doc = '" + dataTableModel.filter.codigoSearch + "' ";
+            }
+            if (dataTableModel.filter.descripcionSearch != null)
+            {
+                WhereModel += "  AND tdocc_vdescripcion LIKE '%" + dataTableModel.filter.descripcionSearch + "%'";
+            }
+            dataTableModel.whereFilter = WhereModel;
         }
 
         #endregion

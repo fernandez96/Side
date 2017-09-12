@@ -20,8 +20,8 @@ $(document).ready(function () {
         VisualizarDataTableUsuario();
     });
 
-    $('body').on('click', 'button.btnAgregarUsuario', function () {
-        LimpiarFormulario();
+    $('#btnAgregarTipodocumento').on('click', function () {
+        //LimpiarFormulario();
 
         $("#UsuarioId").val(0);
         $("#accionTitle").text('Nuevo');
@@ -36,8 +36,8 @@ $(document).ready(function () {
     });
 
     $('body').on('click', 'a.eliminarUsuario', function () {
-        var aPos = dataTableUsuario.fnGetPosition(this.parentNode.parentNode);
-        var aData = dataTableUsuario.fnGetData(aPos[0]);
+        var aPos = dataTableTipoDocumento.fnGetPosition(this.parentNode.parentNode);
+        var aData = dataTableTipoDocumento.fnGetData(aPos[0]);
         var rowID = aData.Id;
 
         delRowPos = aPos[0];
@@ -55,11 +55,13 @@ $(document).ready(function () {
         $("#searchFilterUsuario").modal("show");
     });
 
-    $("#btnSearchUsuario").on("click", function (e) {
-        if ($('#UsuarioSearchForm').valid()) {
+    $("#btnSearchTipoDocumento").on("click", function (e) {
+        if ($('#TipoDocumentoSearchForm').valid()) {
             checkSession(function () {
-                dataTableUsuario.fnReloadAjax();
-                $("#searchFilterUsuario").modal("hide");
+                var aData = $("#TipoDocumentoDataTable  >tbody >tr").length;
+                dataTableTipoDocumento.fnReloadAjax();
+                
+                 $("#idresult").text(aData);
             });
         }
         e.preventDefault();
@@ -149,8 +151,8 @@ function VisualizarDataTableUsuario() {
                 request.filter = new Object();
 
                 request.filter = {
-                    codigoSearch: '',
-                    descripcionSearch: ''
+                    codigoSearch: $("#Codigosearch").val(),
+                    descripcionSearch: $("#Descripcionsearch").val()
                 }
             },
             dataFilter: function (data) {
@@ -189,9 +191,10 @@ function VisualizarDataTableUsuario() {
         "aoColumnDefs": [
             { "bSortable": false, "sClass": "center", "aTargets": [0], "width": "10%" },
             { "bVisible": false, "aTargets": [1] },
-            { "aTargets": [2], "width": "4%" },
+            { "aTargets": [2], "width": "10%" },
             { "className": "hidden-1200", "aTargets": [3], "width": "18%" },
- 
+            { "className": "hidden-1200", "aTargets": [0], "width": "4%" },
+    
             { "bSortable": false, "className": "hidden-480", "aTargets": [4], "width": "10%" }
 
         ],
