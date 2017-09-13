@@ -9,6 +9,7 @@ namespace Base.BusinessLogic.Interfaces
 {
   public  interface ITipoDocumentoBL <T,Q> where T: class 
     {
+        Q Add(T entity);
         IList<T> GetAllPaging(PaginationParameter<Q> paginationParameters);
     }
 }

@@ -1,5 +1,5 @@
 ﻿var dataTableTipoDocumento = null;
-var formularioMantenimiento = "UsuarioForm";
+var formularioMantenimiento = "tipodocumentoForm";
 var delRowPos = null;
 var delRowID = 0;
 var urlListar = baseUrl + 'TipoDocumento/Listar';
@@ -21,33 +21,50 @@ $(document).ready(function () {
     });
 
     $('#btnAgregarTipodocumento').on('click', function () {
-        //LimpiarFormulario();
-
+        LimpiarFormulario();
         $("#UsuarioId").val(0);
         $("#accionTitle").text('Nuevo');
-        $("#NuevoUsuario").modal("show");
+        $("#codigo").prop("disabled", false);
+        $("#NuevoTipoDocumento").modal("show");
     });
-
-    $('body').on('click', 'a.editarUsuario', function () {
-        rowUsuario = this;
+    $('#btnacceso').on('click', function () {
+        LimpiarFormulario();
+        $("#UsuarioId").val(0);
+        $("#accionTitleacceso").text('Nuevos');
+        $("#Nuevoacceso").modal("show");
+    
+    });
+    $('#TipoDocumentoDataTable tbody').on('click', 'tr', function () {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        }
+        else {
+            dataTableTipoDocumento.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+            rowUsuario = this;
+        }
+    });
+    $('#btnEditar').on('click', function () {
+    
         checkSession(function () {
-            GetUsuarioById();
+         
+            GetTipoDocumentoById();
         });
     });
 
-    $('body').on('click', 'a.eliminarUsuario', function () {
-        var aPos = dataTableTipoDocumento.fnGetPosition(this.parentNode.parentNode);
-        var aData = dataTableTipoDocumento.fnGetData(aPos[0]);
-        var rowID = aData.Id;
-
-        delRowPos = aPos[0];
-        delRowID = rowID;
-
-        webApp.showDeleteConfirmDialog(function () {
-            checkSession(function () {
-                EliminarUsuario();
-            });
-        }, 'Se eliminará el registro. ¿Está seguro que desea continuar?');
+    $('#btnEliminar').on('click', function () {
+        rowUsuario = dataTableTipoDocumento.row('.selected').data();
+        if (typeof rowUsuario === "undefined") {
+            webApp.showMessageDialog("Por favor seleccione un registro.");
+        }
+        else {
+            webApp.showDeleteConfirmDialog(function () {
+                checkSession(function () {
+                    EliminarUsuario(rowUsuario.Id);
+                });
+            }, 'Se eliminará el registro. ¿Está seguro que desea continuar?');
+        }
+    
     });
 
     $('body').on('click', 'a.btnBuscarUsuario', function () {
@@ -59,7 +76,7 @@ $(document).ready(function () {
         if ($('#TipoDocumentoSearchForm').valid()) {
             checkSession(function () {
                 var aData = $("#TipoDocumentoDataTable  >tbody >tr").length;
-                dataTableTipoDocumento.fnReloadAjax();
+                dataTableTipoDocumento.ajax.reload();
                 
                  $("#idresult").text(aData);
             });
@@ -67,7 +84,7 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    $("#btnGuardarUsuario").on("click", function (e) {
+    $("#btnGuardarTipodocumento").on("click", function (e) {
 
         if ($('#' + formularioMantenimiento).valid()) {
 
@@ -81,65 +98,36 @@ $(document).ready(function () {
         e.preventDefault();
     });
 
-    webApp.validarLetrasEspacio(['Username', 'Nombre', 'Apellido']);
-    $('#Correo').validCampoFranz('@abcdefghijklmnÃ±opqrstuvwxyz_1234567890.');
-
+    webApp.validarLetrasEspacio(['codigo', 'descripcion']);
     webApp.InicializarValidacion(formularioMantenimiento,
         {
-            Username: {
+            codigo: {
                 required: true,
                 noPasteAllowLetterAndSpace: true,
                 firstCharacterBeLetter: true
             },
-            Nombre: {
+            descripcion: {
                 required: true,
                 noPasteAllowLetterAndSpace: true,
                 firstCharacterBeLetter: true
-            },
-            Apellido: {
-                required: true,
-                noPasteAllowLetterAndSpace: true,
-                firstCharacterBeLetter: true
-            },
-            Correo: {
-                required: true,
-                correoElectronico: true,
-                firstCharacterBeLetter: true
-            },
-            CargoId: {
-                required: true
-            },
-            RolId: {
-                required: true
             }
+           
         },
         {
-            Username: {
-                required: "Por favor ingrese Usuario",
+            codigo: {
+                required: "Por favor ingrese Codigo.",
 
             },
-            Nombre: {
-                required: "Por favor ingrese Nombre"
-            },
-            Apellido: {
-                required: "Por favor ingrese Apellido"
-            },
-            Correo: {
-                required: "Por favor ingrese Correo",
-                correoElectronico: "Por favor ingrese Correo valido"
-            },
-            CargoId: {
-                required: "Por favor seleccione Cargo"
-            },
-            RolId: {
-                required: "Por favor seleccione Rol"
+            descripcion: {
+                required: "Por favor ingrese Descripción."
             }
         });
 
 });
 
+
 function VisualizarDataTableUsuario() {
-    dataTableTipoDocumento = $('#TipoDocumentoDataTable').dataTable({
+    dataTableTipoDocumento = $('#TipoDocumentoDataTable').DataTable({
         "bFilter": false,
         "bProcessing": true,
         "serverSide": true,
@@ -167,15 +155,6 @@ function VisualizarDataTableUsuario() {
         },
         "bAutoWidth": false,
         "columns": [
-            //{
-            //    "data": function (obj) {
-
-            //        return '<div class="action-buttons">\
-            //        <a class="green editarUsuario" href="javascript:void(0)"><i class="ace-icon fa fa-pencil bigger-130"></i></a>\
-            //        <a class="red eliminarUsuario" href="javascript:void(0)"><i class="ace-icon fa fa-trash-o bigger-130"></i></a>\
-            //        </div>';
-            //    }
-            //},
             { "data": "Id" },
             { "data": "tdocc_vabreviatura_tipo_doc" },
             { "data": "tdocc_vdescripcion" },
@@ -191,11 +170,11 @@ function VisualizarDataTableUsuario() {
         "aoColumnDefs": [
             //{ "bSortable": false, "sClass": "center", "aTargets": [0], "width": "10%" },
             { "bVisible": false, "aTargets": [0] },
-            { "aTargets": [1], "width": "10%" },
-            { "className": "hidden-1200", "aTargets": [2], "width": "18%" },
-            { "className": "hidden-1200", "aTargets": [0], "width": "4%" },
-    
-            { "bSortable": false, "className": "hidden-480", "aTargets": [1], "width": "10%" }
+            {"className": "hidden-120", "aTargets": [1], "width": "6%" },
+            { "className": "hidden-120", "aTargets": [2], "width": "18%" },
+            { "className": "hidden-1200", "aTargets": [3], "width": "4%" },
+           { "bSortable": false, "className": "hidden-1200", "aTargets": [3], "width": "4%" }
+          
 
         ],
         "order": [[1, "desc"]],
@@ -206,4 +185,174 @@ function VisualizarDataTableUsuario() {
 
         }
     });
+}
+
+function GetTipoDocumentoById() {
+    rowUsuario = dataTableTipoDocumento.row('.selected').data();
+    if (typeof rowUsuario === "undefined") {
+        webApp.showMessageDialog("Por favor seleccione un registro.");
+    }
+    else {
+        var modelView = {
+            Id: rowUsuario.Id
+        };
+        webApp.Ajax({
+            url: urlMantenimiento + 'GetById',
+            parametros: modelView
+        }, function (response) {
+            if (response.Success) {
+                if (response.Warning) {
+                    $.gritter.add({
+                        title: 'Alerta',
+                        text: response.Message,
+                        class_name: 'gritter-warning gritter'
+                    });
+                } else {
+                    LimpiarFormulario();
+                    var tipodocumento = response.Data;
+                    $("#codigo").val(tipodocumento.tdocc_vabreviatura_tipo_doc);
+                    $("#descripcion").val(tipodocumento.tdocc_vdescripcion);
+                    $("#UsuarioId").val(tipodocumento.Id);
+                    $("#codigo").prop("disabled", true);
+                    $("#accionTitle").text('Editar');
+                    $("#NuevoTipoDocumento").modal("show");
+                }
+
+            } else {
+                $.gritter.add({
+                    title: 'Error',
+                    text: response.Message,
+                    class_name: 'gritter-error gritter'
+                });
+            }
+        }, function (response) {
+            $.gritter.add({
+                title: 'Error',
+                text: response,
+                class_name: 'gritter-error gritter'
+            });
+        }, function (XMLHttpRequest, textStatus, errorThrown) {
+            $.gritter.add({
+                title: 'Error',
+                text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
+                class_name: 'gritter-error gritter'
+            });
+        });
+    }
+
+
+}
+
+function GuardarUsuario() {
+
+    var modelView = {
+        Id: $("#UsuarioId").val(),
+        tdocc_vabreviatura_tipo_doc: $("#codigo").val(),
+        tdocc_vdescripcion: $("#descripcion").val(),
+        UsuarioRegistro: $("#usernameLogOn strong").text()
+    };
+
+    if (modelView.Id == 0)
+        action = 'Add';
+    else
+        action = 'Update';
+
+    webApp.Ajax({
+        url: urlMantenimiento + action,
+        parametros: modelView
+    }, function (response) {
+        if (response.Success) {
+            if (response.Warning) {
+                $.gritter.add({
+                    title: response.Title,
+                    text: response.Message,
+                    class_name: 'gritter-warning gritter'
+                });
+            } else {
+                $("#NuevoTipoDocumento").modal("hide");
+                dataTableTipoDocumento.ajax.reload();
+                $.gritter.add({
+                    title: response.Title,
+                    text: response.Message,
+                    class_name: 'gritter-success gritter'
+                });
+            }
+        } else {
+            $.gritter.add({
+                title: 'Error',
+                text: response.Message,
+                class_name: 'gritter-error gritter'
+            });
+        }
+    }, function (response) {
+        $.gritter.add({
+            title: 'Error',
+            text: response,
+            class_name: 'gritter-error gritter'
+        });
+    }, function (XMLHttpRequest, textStatus, errorThrown) {
+        $.gritter.add({
+            title: 'Error',
+            text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
+            class_name: 'gritter-error gritter'
+        });
+    });
+}
+
+
+function EliminarUsuario(id) {
+        var modelView = {
+            Id: id,
+            UsuarioRegistro: $("#usernameLogOn strong").text()
+        };
+
+        webApp.Ajax({
+            url: urlMantenimiento + 'Delete',
+            async: false,
+            parametros: modelView
+        }, function (response) {
+            if (response.Success) {
+                if (response.Warning) {
+                    $.gritter.add({
+                        title: 'Alerta',
+                        text: response.Message,
+                        class_name: 'gritter-warning gritter'
+                    });
+                } else {
+                    $("#NuevoTipoDocumento").modal("hide");
+                    dataTableTipoDocumento.row('.selected').remove().draw();
+
+                    $.gritter.add({
+                        title: response.Title,
+                        text: response.Message,
+                        class_name: 'gritter-success gritter'
+                    });
+                }
+            } else {
+                $.gritter.add({
+                    title: 'Error',
+                    text: response.Message,
+                    class_name: 'gritter-error gritter'
+                });
+            }
+        }, function (response) {
+            $.gritter.add({
+                title: 'Error',
+                text: response,
+                class_name: 'gritter-error gritter'
+            });
+        }, function (XMLHttpRequest, textStatus, errorThrown) {
+            $.gritter.add({
+                title: 'Error',
+                text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
+                class_name: 'gritter-error gritter'
+            });
+        });
+    
+
+    delRowPos = null;
+    delRowID = 0;
+}
+function LimpiarFormulario() {
+    webApp.clearForm(formularioMantenimiento);
 }
