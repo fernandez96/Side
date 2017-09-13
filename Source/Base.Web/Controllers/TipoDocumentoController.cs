@@ -21,6 +21,7 @@ namespace Base.Web.Controllers
         {
             return View();
         }
+        [HttpPost]
         public JsonResult Listar(DataTableModel<TipoDocumentoFilterModel, int> dataTableModel)
         {
             try
@@ -39,6 +40,33 @@ namespace Base.Web.Controllers
                 if (tipodocumentoDTOList.Count() > 0)
                 {
                     dataTableModel.recordsTotal = tipodocumentoList[0].Cantidad;
+                    dataTableModel.recordsFiltered = dataTableModel.recordsTotal;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+
+                ViewBag.MessageError = ex.Message;
+                dataTableModel.data = new List<UsuarioPaginationModel>();
+            }
+            return Json(dataTableModel);
+        }
+
+        [HttpPost]
+        public JsonResult ListarModulo(DataTableModel<ModuloFilterModel, int> dataTableModel)
+        {
+            try
+            {
+                //FormatDataTable(dataTableModel);
+                var jsonResponse = new JsonResponse { Success = false };
+                var modelo = ModeloBL.Instancia.GetAllActives();
+
+                var moduloDTOList = MapperHelper.Map<IEnumerable<Modulo>, IEnumerable<ModuloDTO>>(modelo);
+                dataTableModel.data = moduloDTOList;
+                if (moduloDTOList.Count() > 0)
+                {
+                    dataTableModel.recordsTotal = moduloDTOList.Count();
                     dataTableModel.recordsFiltered = dataTableModel.recordsTotal;
                 }
             }
@@ -248,6 +276,66 @@ namespace Base.Web.Controllers
                 LogError(ex);
                 jsonResponse.Success = false;
                 jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return Json(jsonResponse);
+        }
+
+        [HttpPost]
+        public JsonResult AddModulo(IList<TipoDocumentoDTO> tipodocumentoDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+            try
+            {
+                int resultado = 0;
+                var tipodocumento = MapperHelper.Map<IEnumerable<TipoDocumentoDTO>, IEnumerable<TipoDocumento>>(tipodocumentoDTO);
+                foreach (var item in tipodocumento)
+                {
+                    resultado = TipoDocumentoBL.Instancia.AddModulo(item);
+                    jsonResponse.Message = Mensajes.RegistroSatisfactorio;
+                    LogBL.Instancia.Add(new Log
+                        {
+                            Accion = Mensajes.Add,
+                            Controlador = Mensajes.UsuarioController,
+                            Identificador = resultado,
+                            Mensaje = jsonResponse.Message,
+                            Usuario = item.UsuarioModificacion,
+                            Objeto = JsonConvert.SerializeObject(tipodocumentoDTO)
+                        });
+                }
+                if (resultado > 0)
+                {
+                    jsonResponse.Title = Title.TitleRegistro;
+                    jsonResponse.Message = Mensajes.RegistroSatisfactorio;
+                }
+                else
+                {
+                    jsonResponse.Title = Title.TitleAlerta;
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.RegistroFallido;
+                }
+
+              
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Title = Title.TitleAlerta;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+                foreach (var item in tipodocumentoDTO)
+                {
+                    LogBL.Instancia.Add(new Log
+                    {
+                        Accion = Mensajes.Add,
+                        Controlador = Mensajes.UsuarioController,
+                        Identificador = 0,
+                        Mensaje = ex.Message,
+                        Usuario = item.UsuarioRegistro,
+                        Objeto = JsonConvert.SerializeObject(tipodocumentoDTO)
+                    });
+                }
+              
             }
 
             return Json(jsonResponse);

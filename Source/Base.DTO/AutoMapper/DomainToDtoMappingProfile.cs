@@ -22,6 +22,7 @@ namespace Base.DTO.AutoMapper
             Mapper.CreateMap<Cargo, CargoDTO>();
             Mapper.CreateMap<Reporte, ReporteDTO>();
             Mapper.CreateMap<TipoDocumento, TipoDocumentoDTO>();
+            Mapper.CreateMap<Modulo, ModuloDTO>();
         }
     }
 }

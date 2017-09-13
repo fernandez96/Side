@@ -1,13 +1,17 @@
 ﻿var dataTableTipoDocumento = null;
+var dataTableModulo = null;
 var formularioMantenimiento = "tipodocumentoForm";
 var delRowPos = null;
 var delRowID = 0;
 var urlListar = baseUrl + 'TipoDocumento/Listar';
+var urlListarModulo = baseUrl + 'TipoDocumento/ListarModulo';
 var urlMantenimiento = baseUrl + 'TipoDocumento/';
 var urlListaCargo = baseUrl + 'TipoDocumento/';
 var rowUsuario = null;
-
+var rowModulo = null;
+var selected = [];
 $(document).ready(function () {
+
     $.extend($.fn.dataTable.defaults, {
         language: { url: baseUrl + 'Content/js/dataTables/Internationalisation/es.txt' },
         responsive: true,
@@ -18,7 +22,13 @@ $(document).ready(function () {
 
     checkSession(function () {
         VisualizarDataTableUsuario();
+        VisualizarDataTableModulo();
     });
+
+    $('#AccesoDataTable tbody').on('click', 'tr', function () {
+        //$("#AccesoDataTable").fint("tr").addClass('selected');
+        $(this).addClass('selected');
+        });
 
     $('#btnAgregarTipodocumento').on('click', function () {
         LimpiarFormulario();
@@ -28,13 +38,19 @@ $(document).ready(function () {
         $("#NuevoTipoDocumento").modal("show");
     });
     $('#btnacceso').on('click', function () {
-        LimpiarFormulario();
-        $("#UsuarioId").val(0);
-        $("#accionTitleacceso").text('Nuevos');
-        $("#Nuevoacceso").modal("show");
-    
+        rowUsuario = dataTableTipoDocumento.row('.selected').data();
+        if (typeof rowUsuario === "undefined") {
+            webApp.showMessageDialog("Por favor seleccione un registro.");
+        }
+        else {
+
+            $("#UsuarioId").val(0);
+            $("#accionTitleacceso").text('Nuevos');
+            $("#Nuevoacceso").modal("show");
+            $("#iddescripcion").text(rowUsuario.tdocc_vdescripcion);
+        }    
     });
-    $('#TipoDocumentoDataTable tbody').on('click', 'tr', function () {
+    $('#TipoDocumentoDataTable  tbody').on('click', 'tr', function () {
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
         }
@@ -97,6 +113,25 @@ $(document).ready(function () {
 
         e.preventDefault();
     });
+    $("#btnGuardarAccesoModulo").on("click", function (e) {
+        dataTableModulo.rows('.selected').data().each(function (value, index) {
+            selected.push(value.Id);
+        });
+        console.log(selected.length);
+        if (selected.length < 0) {
+            webApp.showMessageDialog("Por favor seleccione un registro.");
+        }
+        else {
+            webApp.showReConfirmDialog(function () {
+                checkSession(function () {
+                    GuardarAccesoModulo(rowUsuario.Id);
+                });
+            });
+            e.preventDefault();
+        }
+      
+    });
+    
 
     webApp.validarLetrasEspacio(['codigo', 'descripcion']);
     webApp.InicializarValidacion(formularioMantenimiento,
@@ -185,6 +220,78 @@ function VisualizarDataTableUsuario() {
 
         }
     });
+}
+
+function VisualizarDataTableModulo() {
+   
+    dataTableModulo = $('#AccesoDataTable').DataTable({
+        "bFilter":false,
+        "ordering": false,
+        "info":     false,
+        "bProcessing": true,
+        "serverSide": true,
+        //"scrollY": "350px",
+        
+        "ajax": {
+            "url": urlListarModulo,
+            "type": "POST",
+            "data": function (request) {
+                request.filter = new Object();
+
+                request.filter = {
+                    NombreSearch: '',
+                }
+            },
+            dataFilter: function (data) {
+                if (data.substring(0, 9) == "<!DOCTYPE") {
+                    redireccionarLogin("Sesión Terminada", "Se terminó la sesión");
+                } else {
+                    return data;
+                    //var json = jQuery.parseJSON(data);
+                    //return JSON.stringify(json); // return JSON string
+                }
+            }
+        },
+        "rowCallback": function( row, data ) {
+            if ( $.inArray(data.Id, selected) !== -1 ) {
+                $(row).addClass('selected');
+            }
+        },
+        "bAutoWidth": false,
+        "columns": [
+            { "data": "Id" },
+            { "data": "tablc_vdescripcion" },
+            {
+                "data": function (obj) {
+                    if (obj.Id) {
+                        return '<div class="action-buttons">\
+                        <input id="idcheckok" type="checkbox">\
+                        </div>';
+                    }                  
+                }
+            }
+        ],
+        "aoColumnDefs": [
+             { "bSortable": false, "sClass": "center", "aTargets": [2], "width": "10%" },
+            { "bVisible": false, "aTargets": [0] },
+            { "className": "hidden-120", "aTargets": [1], "width": "6%" },
+            { "bSortable": false, "className": "hidden-120 select-checkbox", "aTargets": [2], "width": "4%" },
+        
+        ],
+        
+        select: {
+            style: 'os',
+            selector: 'td:first-child'
+        },
+        "order": [[1, "desc"]],
+        "initComplete": function (settings, json) {
+            //AddSearchFilter();
+        },
+        "fnDrawCallback": function (oSettings) {
+
+        }
+    });
+
 }
 
 function GetTipoDocumentoById() {
@@ -298,6 +405,76 @@ function GuardarUsuario() {
         });
     });
 }
+
+function GuardarAccesoModulo(idTipoDocumento) {
+    var idModulo = new Object();
+    var modelView ;
+    var tipodocumentoDTO = [];
+    idModulo = {
+        tablc_icod_modulo: 1,
+       
+    };
+    dataTableModulo.column(2).data().each(function (value, index) {
+        console.log(value);
+    });
+
+    dataTableModulo.rows('.selected').data().each(function (value, index) {
+            tipodocumentoDTO.push({ tablc_icod_modulo:value.Id, Id: idTipoDocumento, UsuarioRegistro: $("#usernameLogOn strong").text() });
+            modelView = {
+                tipodocumentoDTO: tipodocumentoDTO
+            };       
+    });
+   
+        var idmodel = {
+            IdModulo: $("#ModuloId").val(),
+        }
+
+        if (idmodel.IdModulo == 0)
+            action = 'AddModulo';
+        else
+            action = 'Update';
+    
+        webApp.Ajax({
+            url: urlMantenimiento + action,
+            parametros: modelView
+        }, function (response) {
+            if (response.Success) {
+                if (response.Warning) {
+                    $.gritter.add({
+                        title: response.Title,
+                        text: response.Message,
+                        class_name: 'gritter-warning gritter'
+                    });
+                } else {
+                    $("#Nuevoacceso").modal("hide");
+                    dataTableModulo.ajax.reload();
+                    $.gritter.add({
+                        title: response.Title,
+                        text: response.Message,
+                        class_name: 'gritter-success gritter'
+                    });
+                }
+            } else {
+                $.gritter.add({
+                    title: 'Error',
+                    text: response.Message,
+                    class_name: 'gritter-error gritter'
+                });
+            }
+        }, function (response) {
+            $.gritter.add({
+                title: 'Error',
+                text: response,
+                class_name: 'gritter-error gritter'
+            });
+        }, function (XMLHttpRequest, textStatus, errorThrown) {
+            $.gritter.add({
+                title: 'Error',
+                text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
+                class_name: 'gritter-error gritter'
+            });
+        });
+    }
 
 
 function EliminarUsuario(id) {

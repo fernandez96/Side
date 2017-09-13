@@ -195,6 +195,7 @@
     <Content Include="Content\css\ace.css" />
     <Content Include="Content\css\bootstrap-tagsinput.css" />
     <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\Bootstrap3.css" />
     <Content Include="Content\css\chosen.css" />
     <Content Include="Content\css\custom.css" />
     <Content Include="Content\css\datatableBooststrap3.css" />
@@ -303,6 +304,8 @@
     <Content Include="Content\js\chosen.jquery.js" />
     <Content Include="Content\js\chosen.order.jquery.js" />
     <Content Include="Content\js\chosen.order.proto.js" />
+    <Content Include="Content\js\datatable3.js" />
+    <Content Include="Content\js\dataTablebootstrap.js" />
     <Content Include="Content\js\dataTables.select.min.js" />
     <Content Include="Content\js\dataTables\dataTables.select.min.js" />
     <Content Include="Content\js\dataTables\extensions\ColVis\js\dataTables.colVis.js" />
@@ -404,6 +407,7 @@
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\FormularioModel.cs" />
+    <Compile Include="Models\ModuloFilterModel.cs" />
     <Compile Include="Models\ReporteFilterModel.cs" />
     <Compile Include="Models\ReportePaginationModel.cs" />
     <Compile Include="Models\RolFilterModel.cs" />
