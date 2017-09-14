@@ -34,5 +34,9 @@ namespace Base.BusinessLogic
         {
             return TipoDocumentoRepository.Instancia.AddModulo(entity);
         }
+        public IList<TipoDocumento> GetIdModulo(TipoDocumento entity)
+        {
+            return TipoDocumentoRepository.Instancia.GetIdModulo(entity);
+        }
     }
 }

@@ -10,8 +10,14 @@ var urlListaCargo = baseUrl + 'TipoDocumento/';
 var rowUsuario = null;
 var rowModulo = null;
 var selected = [];
+var IdModulocheck = [];
+Array.prototype.unique = function (a) {
+    return function () { return this.filter(a) }
+}(function (a, b, c) {
+    return c.indexOf(a, b + 1) < 0
+});
 $(document).ready(function () {
-
+ 
     $.extend($.fn.dataTable.defaults, {
         language: { url: baseUrl + 'Content/js/dataTables/Internationalisation/es.txt' },
         responsive: true,
@@ -23,12 +29,15 @@ $(document).ready(function () {
     checkSession(function () {
         VisualizarDataTableUsuario();
         VisualizarDataTableModulo();
+        CargarModulo();
     });
 
-    $('#AccesoDataTable tbody').on('click', 'tr', function () {
-        //$("#AccesoDataTable").fint("tr").addClass('selected');
-        $(this).addClass('selected');
-        });
+    $('input[name=checkbox]').on('click', function () {
+        IdModulocheck.push($(this).attr("data-permiso"));
+    
+    });
+    
+
 
     $('#btnAgregarTipodocumento').on('click', function () {
         LimpiarFormulario();
@@ -45,9 +54,11 @@ $(document).ready(function () {
         else {
 
             $("#UsuarioId").val(0);
-            $("#accionTitleacceso").text('Nuevos');
+            $("#accionTitleacceso").text('');
             $("#Nuevoacceso").modal("show");
             $("#iddescripcion").text(rowUsuario.tdocc_vdescripcion);
+         
+            CargarselecinadoModulos(rowUsuario.Id);
         }    
     });
     $('#TipoDocumentoDataTable  tbody').on('click', 'tr', function () {
@@ -113,13 +124,11 @@ $(document).ready(function () {
 
         e.preventDefault();
     });
+  
     $("#btnGuardarAccesoModulo").on("click", function (e) {
-        dataTableModulo.rows('.selected').data().each(function (value, index) {
-            selected.push(value.Id);
-        });
-        console.log(selected.length);
-        if (selected.length < 0) {
-            webApp.showMessageDialog("Por favor seleccione un registro.");
+        
+        if (IdModulocheck.unique().length <= 0) {
+            webApp.showMessageDialog("Por favor seleccione un modulo.");
         }
         else {
             webApp.showReConfirmDialog(function () {
@@ -129,7 +138,6 @@ $(document).ready(function () {
             });
             e.preventDefault();
         }
-      
     });
     
 
@@ -205,7 +213,7 @@ function VisualizarDataTableUsuario() {
         "aoColumnDefs": [
             //{ "bSortable": false, "sClass": "center", "aTargets": [0], "width": "10%" },
             { "bVisible": false, "aTargets": [0] },
-            {"className": "hidden-120", "aTargets": [1], "width": "6%" },
+            { "className": "hidden-120 center", "aTargets": [1], "width": "6%" },
             { "className": "hidden-120", "aTargets": [2], "width": "18%" },
             { "className": "hidden-1200", "aTargets": [3], "width": "4%" },
            { "bSortable": false, "className": "hidden-1200", "aTargets": [3], "width": "4%" }
@@ -410,21 +418,12 @@ function GuardarAccesoModulo(idTipoDocumento) {
     var idModulo = new Object();
     var modelView ;
     var tipodocumentoDTO = [];
-    idModulo = {
-        tablc_icod_modulo: 1,
-       
-    };
-    dataTableModulo.column(2).data().each(function (value, index) {
-        console.log(value);
+    $.each(IdModulocheck.unique(), function (item,elem) {
+        tipodocumentoDTO.push({ tablc_icod_modulo: elem, Id: idTipoDocumento, UsuarioRegistro: $("#usernameLogOn strong").text() });
+        modelView = {
+            tipodocumentoDTO: tipodocumentoDTO
+        };
     });
-
-    dataTableModulo.rows('.selected').data().each(function (value, index) {
-            tipodocumentoDTO.push({ tablc_icod_modulo:value.Id, Id: idTipoDocumento, UsuarioRegistro: $("#usernameLogOn strong").text() });
-            modelView = {
-                tipodocumentoDTO: tipodocumentoDTO
-            };       
-    });
-   
         var idmodel = {
             IdModulo: $("#ModuloId").val(),
         }
@@ -532,4 +531,94 @@ function EliminarUsuario(id) {
 }
 function LimpiarFormulario() {
     webApp.clearForm(formularioMantenimiento);
+}
+function CargarModulo() {
+    webApp.Ajax({
+        url: urlMantenimiento + 'GetAllModulos',
+        async: false,
+       
+    }, function (response) {
+        if (response.Success) {
+
+            if (response.Warning) {
+                $.gritter.add({
+                    title: 'Alerta',
+                    text: response.Message,
+                    class_name: 'gritter-warning gritter'
+                });
+            } else {
+                $.each(response.Data, function (index, item) {
+                    var contect = '<div class="ckbox ckbox-success col-sm-4">'
+                                + ' <input name="checkbox" type="checkbox" id="TipoPermiso' + item.Id + ' " class="ace ace-checkbox-2" data-permiso="' + item.Id + '">'
+                                + ' <span class="lbl"> ' + item.tablc_vdescripcion + '</span>'
+                                + '</div>';
+                    $("#idContentModulos").append(contect);
+                });
+              
+            }
+        } else {
+            $.gritter.add({
+                title: 'Error',
+                text: response.Message,
+                class_name: 'gritter-error gritter'
+            });
+        }
+    }, function (response) {
+        $.gritter.add({
+            title: 'Error',
+            text: response,
+            class_name: 'gritter-error gritter'
+        });
+    }, function (XMLHttpRequest, textStatus, errorThrown) {
+        $.gritter.add({
+            title: 'Error',
+            text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
+            class_name: 'gritter-error gritter'
+        });
+    });
+}
+function CargarselecinadoModulos(id) {
+    var modelView = {
+        Id: id
+    };
+    // end
+   
+ 
+    webApp.Ajax({
+        url: urlMantenimiento + 'GetIdModulo',
+        async: false,
+        parametros: modelView
+    }, function (response) {
+        if (response.Success) {
+            if (response.Warning) {
+                $.gritter.add({
+                    title: 'Alerta',
+                    text: response.Message,
+                    class_name: 'gritter-warning gritter'
+                });
+            } else {
+                var checks = '';
+                $('input[name=checkbox]').each(function () {
+                    checks = $(this).attr('data-permiso');
+                 
+                    $(this).prop('checked', true);
+                    $.each(response.Data, function (index, value) {
+                        if (checks==value) {
+                           
+                        }
+                    });
+                });
+             
+            }
+        } else {
+            $.gritter.add({
+                title: 'Error',
+                text: response.Message,
+                class_name: 'gritter-error gritter'
+            });
+        }
+    }, function (response) {
+    }, function (XMLHttpRequest, textStatus, errorThrown) {
+    });
+    //end
 }

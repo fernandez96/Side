@@ -341,6 +341,58 @@ namespace Base.Web.Controllers
             return Json(jsonResponse);
         }
 
+        [HttpPost]
+        public JsonResult GetAllModulos()
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var moduloList = ModeloBL.Instancia.GetAllActives();
+                var moduloDTOList = MapperHelper.Map<IEnumerable<Modulo>, IEnumerable<ModuloDTO>>(moduloList);
+                jsonResponse.Data = moduloDTOList;
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return Json(jsonResponse);
+        }
+
+        [HttpPost]
+        public JsonResult GetIdModulo(TipoDocumentoDTO tipodocumentoDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+          
+            try
+            {
+                var tipodocumento = MapperHelper.Map<TipoDocumentoDTO, TipoDocumento>(tipodocumentoDTO);
+                var moduloList = TipoDocumentoBL.Instancia.GetIdModulo(tipodocumento);
+                if (moduloList.Count >0)
+                {
+                    var moduloDTOList = MapperHelper.Map<IEnumerable<TipoDocumento>, IEnumerable<TipoDocumentoDTO>>(moduloList);
+                    jsonResponse.Data = moduloDTOList;
+                }
+                else
+                {
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.UsuarioNoExiste;
+                }
+             
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return Json(jsonResponse);
+        }
+
         #region Métodos Privados
 
         public void FormatDataTable(DataTableModel<TipoDocumentoFilterModel, int> dataTableModel)

@@ -15,5 +15,6 @@ namespace Base.BusinessLogic.Interfaces
         Q Delete(T entity);
         T GetById(T entity);
         IList<T> GetAllPaging(PaginationParameter<Q> paginationParameters);
+        IList<T> GetIdModulo(T entity);
     }
 }

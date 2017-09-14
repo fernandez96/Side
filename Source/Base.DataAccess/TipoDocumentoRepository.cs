@@ -139,7 +139,30 @@ namespace Base.DataAccess
             }
             return idresult;
         }
+        public IList<TipoDocumento> GetIdModulo(TipoDocumento entity)
+        {
+            List<TipoDocumento> tipodocumento_de = new List<TipoDocumento>();
+            using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "SGE_TIPO_DOCUMENTO_DET_GetById")))
+            {
+                
+                _database.AddInParameter(comando, "@Id", DbType.Int32, entity.Id);
 
+                using (var lector = _database.ExecuteReader(comando))
+                {
+                    while (lector.Read())
+                    {
+                        tipodocumento_de.Add(new TipoDocumento
+                        {
+                            Id = lector.IsDBNull(lector.GetOrdinal("tdocc_icod_tipo_doc")) ? default(int) : lector.GetInt32(lector.GetOrdinal("tdocc_icod_tipo_doc")),
+                            Estado = lector.IsDBNull(lector.GetOrdinal("tdocd_flag_estado")) ? default(int) : lector.GetInt32(lector.GetOrdinal("tdocd_flag_estado")),
+                            tablc_icod_modulo = lector.IsDBNull(lector.GetOrdinal("tablc_icod_modulo")) ? default(int) : lector.GetInt32(lector.GetOrdinal("tablc_icod_modulo"))
+                        });
+                    }
+                }
+            }
+
+            return tipodocumento_de;
+        }
 
 
         #endregion
