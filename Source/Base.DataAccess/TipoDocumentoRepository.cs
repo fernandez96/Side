@@ -122,6 +122,26 @@ namespace Base.DataAccess
 
             return tipodocumento;
         }
+
+        public int AddModulo(TipoDocumento entity)
+        {
+            int idresult;
+            using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "SGE_TIPO_DOCUMENTO_DET_INSERT")))
+            {
+                _database.AddInParameter(comando, "@tdocc_icod_tipo_doc", DbType.Int32, entity.Id);
+                _database.AddInParameter(comando, "@tablc_icod_modulo", DbType.Int32, entity.tablc_icod_modulo);
+                _database.AddInParameter(comando, "@tdocd_flag_estado", DbType.Int32, 1);
+                _database.AddInParameter(comando, "@tdocd_iusuario_crea", DbType.String, entity.UsuarioModificacion);
+                _database.AddInParameter(comando, "@tdocd_pc_creacion", DbType.String, WindowsIdentity.GetCurrent().Name);
+                _database.AddOutParameter(comando, "@Response", DbType.Int32, 11);
+                _database.ExecuteNonQuery(comando);
+                idresult = Convert.ToInt32(_database.GetParameterValue(comando, "@Response"));
+            }
+            return idresult;
+        }
+
+
+
         #endregion
     }
 }

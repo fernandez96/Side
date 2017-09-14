@@ -357,3 +357,13 @@ table.dataTable, table.dataTable th, table.dataTable td {
 .navbar{
     background-color:#F5F5F5;
 }
+label input[type=checkbox].ace, label input[type=radio].ace {
+    z-index: -100!important;
+    width: 1px!important;
+    height: 1px!important;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute;
+}
+input[type=checkbox].ace:checked, input[type=checkbox].ace:focus, input[type=radio].ace:checked, input[type=radio].ace:focus {
+    outline: 0!important;
+}

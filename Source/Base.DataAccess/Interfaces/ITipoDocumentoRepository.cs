@@ -5,6 +5,7 @@ namespace Base.DataAccess.Interfaces
 {
     public interface ITipoDocumentoRepository<T,Q> where T: class
     {
+        Q AddModulo(T entity);
         Q Add(T entity);
         Q Update(T entity);
         Q Delete(T entity);
