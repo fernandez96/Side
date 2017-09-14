@@ -207,19 +207,10 @@ namespace Base.Web.Controllers
 
                 new FormularioModel { Id = 5,  Direccion = "//Home/Index", Orden = 1, RolId = 3, Nombre = "Home"  },
 
-                new FormularioModel { Id = 6,  Direccion = "//Curso/Index", Orden = 4, RolId = 1, Nombre = "Curso"  },
-                new FormularioModel { Id = 7,  Direccion = "//Expositor/Index", Orden = 7, RolId = 1, Nombre = "Expositor"  },
-                new FormularioModel { Id = 8,  Direccion = "//Modalidad/Index", Orden = 7, RolId = 1, Nombre = "Modalidad"  },
-                new FormularioModel { Id = 9,  Direccion = "//Diplomado/Index", Orden = 7, RolId = 1, Nombre = "Diplomado "  },
-                new FormularioModel { Id = 10, Direccion = "//Carga/Index", Orden = 7, RolId = 1, Nombre = "Carga"  },
-                new FormularioModel { Id = 11, Direccion = "//Envio/Index", Orden = 7, RolId = 1, Nombre = "Envio"  },
-                new FormularioModel { Id = 12, Direccion = "//Vale/Index", Orden = 7, RolId = 1, Nombre = "Carga"  },
-                new FormularioModel { Id = 13, Direccion = "//Alerta/Index", Orden = 7, RolId = 1, Nombre = "Alerta"  },
-                new FormularioModel { Id = 14, Direccion = "//Reporte/GetCuponesEnviados", Orden = 7, RolId = 1, Nombre = "ReporteCupones"  },
-
-
-                new FormularioModel { Id = 15, Direccion = "//Canje/Index", Orden = 7, RolId = 3, Nombre = "Canje"  },
-                new FormularioModel { Id = 16, Direccion = "//Envio/Index", Orden = 7, RolId = 3, Nombre = "Envio"  },
+                new FormularioModel { Id = 6,  Direccion = "//TipoDocumento/Index", Orden = 4, RolId = 1, Nombre = "Tipo documento"  },
+                new FormularioModel { Id = 7,  Direccion = "//TipoOpcione/Index", Orden = 7, RolId = 1, Nombre = "Tablas de opciones"  },
+                new FormularioModel { Id = 8,  Direccion = "//Acceso/Index", Orden = 7, RolId = 1, Nombre = "Acceso"  },
+                new FormularioModel { Id = 9,  Direccion = "//Parametro/Index", Orden = 7, RolId = 1, Nombre = "Parametro"  },
 
             };
         }

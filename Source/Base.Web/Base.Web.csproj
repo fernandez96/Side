@@ -368,6 +368,7 @@
     <Content Include="Content\js\viewsJs\Expositor.js" />
     <Content Include="Content\js\viewsJs\Modalidad.js" />
     <Content Include="Content\js\viewsJs\reporte.js" />
+    <Content Include="Content\js\viewsJs\TablaRegistro.js" />
     <Content Include="Content\js\viewsJs\TipoDocumento.js" />
     <Content Include="Content\js\viewsJs\tipoProducto.js" />
     <Content Include="Content\js\viewsJs\usuario.js" />
@@ -392,10 +393,10 @@
     <Compile Include="Controllers\DiplomadoController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ParametrosController.cs" />
+    <Compile Include="Controllers\ParametroController.cs" />
     <Compile Include="Controllers\ReporteController.cs" />
     <Compile Include="Controllers\TipoDocumentoController.cs" />
-    <Compile Include="Controllers\TipoOpcionesController.cs" />
+    <Compile Include="Controllers\TipoOpcioneController.cs" />
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Core\BaseController.cs" />
     <Compile Include="Core\Mensajes.cs" />
@@ -411,6 +412,7 @@
     <Compile Include="Models\ReporteFilterModel.cs" />
     <Compile Include="Models\ReportePaginationModel.cs" />
     <Compile Include="Models\RolFilterModel.cs" />
+    <Compile Include="Models\TablaRegistroFilterModel.cs" />
     <Compile Include="Models\TipoDocumentoFilterModel.cs" />
     <Compile Include="Models\UsuarioFilterModel.cs" />
     <Compile Include="Models\UsuarioModel.cs" />
@@ -524,6 +526,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Acceso\Index.cshtml" />
     <Content Include="Views\TipoDocumento\Index.cshtml" />
+    <Content Include="Views\TipoOpcione\Index.cshtml" />
+    <Content Include="Views\Parametro\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -533,8 +537,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Hubs\" />
-    <Folder Include="Views\Parametros\" />
-    <Folder Include="Views\TipoOpciones\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Base.ActiveDirectory\Base.ActiveDirectory.csproj">

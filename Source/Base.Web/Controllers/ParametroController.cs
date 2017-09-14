@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Base.Web.Controllers
 {
-    public class ParametrosController : Controller
+    public class ParametroController : Controller
     {
         // GET: Parametros
         public ActionResult Index()
