@@ -385,6 +385,57 @@ namespace Base.Web.Controllers
             return Json(jsonResponse);
         }
 
+        [HttpPost]
+        public JsonResult DeleteDetalle(TablaRegistroDTO tablaRegistroDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+            try
+            {
+                var tablaregistrodetalle = MapperHelper.Map<TablaRegistroDTO, TablaRegistro>(tablaRegistroDTO);
+                int resultado = TablaRegistroBL.Instancia.DeleteDetalle(tablaregistrodetalle);
+
+                if (resultado > 0)
+                {
+                    jsonResponse.Title = Title.TitleEliminar;
+                    jsonResponse.Message = Mensajes.EliminacionSatisfactoria;
+                }
+                else
+                {
+                    jsonResponse.Title = Title.TitleAlerta;
+                    jsonResponse.Warning = true;
+                    jsonResponse.Message = Mensajes.EliminacionFallida;
+                }
+
+                LogBL.Instancia.Add(new Log
+                {
+                    Accion = Mensajes.Delete,
+                    Controlador = Mensajes.UsuarioController,
+                    Identificador = resultado,
+                    Mensaje = jsonResponse.Message,
+                    Usuario = tablaRegistroDTO.UsuarioRegistro,
+                    Objeto = JsonConvert.SerializeObject(tablaRegistroDTO)
+                });
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Title = Title.TitleAlerta;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+
+                LogBL.Instancia.Add(new Log
+                {
+                    Accion = Mensajes.Delete,
+                    Controlador = Mensajes.UsuarioController,
+                    Identificador = 0,
+                    Mensaje = ex.Message,
+                    Usuario = tablaRegistroDTO.UsuarioRegistro,
+                    Objeto = JsonConvert.SerializeObject(tablaRegistroDTO)
+                });
+            }
+
+            return Json(jsonResponse);
+        }
 
 
 

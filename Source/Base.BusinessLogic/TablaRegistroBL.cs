@@ -48,5 +48,10 @@ namespace Base.BusinessLogic
         {
             return TablaRegistroRepository.Instancia.UpdateDetalle(entity);
         }
+        public int DeleteDetalle(TablaRegistro entity)
+        {
+            return TablaRegistroRepository.Instancia.DeleteDetalle(entity);
+        }
+
     }
 }

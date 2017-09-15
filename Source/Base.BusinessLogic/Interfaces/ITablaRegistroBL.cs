@@ -14,6 +14,8 @@ namespace Base.BusinessLogic.Interfaces
         Q UpdateDetalle(T entity);
         IList<T> GetAllPagingDetalle(PaginationParameter<Q> paginationParameters);
         T GetByIdDetalle(T entity);
+        Q DeleteDetalle(T entity);
+
 
     }
 }

@@ -1111,10 +1111,7 @@ var webApp = function () {
                 type: opciones.type,
                 url: opciones.url,
                 cache: opciones.cache,
-                //contentType: opciones.contentType,
-                //dataType: opciones.datatype,
                 async: opciones.async,
-                //data: opciones.datatype == "json" ? JSON.stringify(opciones.parametros) : opciones.parametros,
                 data: opciones.parametros,
                 success: function (response) {
                     if (successCallback != null && typeof (successCallback) == "function")

@@ -123,15 +123,15 @@ $(document).ready(function () {
         });
     });
 
-    $('#btnEliminarTabla').on('click', function () {
-        rowTabla = dataTableTipoDocumento.row('.selected').data();
-        if (typeof rowTabla === "undefined") {
+    $('#btnEliminarTablaDetalle').on('click', function () {
+        rowTablaDetalle = dataTableTablaDetalle.row('.selected').data();
+        if (typeof rowTablaDetalle === "undefined") {
             webApp.showMessageDialog("Por favor seleccione un registro.");
         }
         else {
             webApp.showDeleteConfirmDialog(function () {
                 checkSession(function () {
-                    EliminarUsuario(rowTabla.Id);
+                    Eliminartabladetalle(rowTablaDetalle.Id);
                 });
             }, 'Se eliminará el registro. ¿Está seguro que desea continuar?');
         }
@@ -514,7 +514,7 @@ function GuardarTablaDetalle() {
 
     var modelView = {
         IdTable: $("#TablaDetalleId").val(),
-        Id:rowTabla.Id,
+        Id: rowTablaDetalle.Id,
         tbpd_vcod_tabla_opciones_det: $("#codigoDetalle").val(),
         tbpd_vdescripcion_detalle: $("#descripcionDetalle").val(),
         UsuarioRegistro: $("#usernameLogOn strong").text()
@@ -628,14 +628,14 @@ function GuardarAccesoModulo(idTipoDocumento) {
     });
 }
 
-function EliminarUsuario(id) {
+function Eliminartabladetalle(id) {
     var modelView = {
         Id: id,
         UsuarioRegistro: $("#usernameLogOn strong").text()
     };
 
     webApp.Ajax({
-        url: urlMantenimiento + 'Delete',
+        url: urlMantenimiento + 'DeleteDetalle',
         async: false,
         parametros: modelView
     }, function (response) {
@@ -647,9 +647,7 @@ function EliminarUsuario(id) {
                     class_name: 'gritter-warning gritter'
                 });
             } else {
-                $("#NuevoTabla").modal("hide");
-                dataTableTipoDocumento.row('.selected').remove().draw();
-
+                dataTableTablaDetalle.ajax.reload();
                 $.gritter.add({
                     title: response.Title,
                     text: response.Message,

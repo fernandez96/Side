@@ -24,6 +24,7 @@ namespace Base.DTO.AutoMapper
             Mapper.CreateMap<TipoDocumento, TipoDocumentoDTO>();
             Mapper.CreateMap<Modulo, ModuloDTO>();
             Mapper.CreateMap<TablaRegistro, TablaRegistroDTO>();
+            Mapper.CreateMap<Parametro, ParametroDTO>();
         }
     }
 }

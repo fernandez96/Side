@@ -191,7 +191,7 @@ namespace Base.DataAccess
 
             using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "SGE_TABLA_OPCIONES_DET_UPDATE")))
             {
-                _database.AddInParameter(comando, "@tbpd_vdescripcion_detalle", DbType.String, entity.tbpd_vcod_tabla_opciones_det);
+                _database.AddInParameter(comando, "@tbpd_vdescripcion_detalle", DbType.String, entity.tbpd_vdescripcion_detalle);
                 _database.AddInParameter(comando, "@tbpd_iusuario_modifica", DbType.String, entity.UsuarioModificacion);
                 _database.AddInParameter(comando, "@tbpd_pc_modifica", DbType.String, WindowsIdentity.GetCurrent().Name);
                 _database.AddInParameter(comando, "@id", DbType.Int32, entity.Id);
@@ -204,6 +204,22 @@ namespace Base.DataAccess
             return id;
         }
 
+        public int DeleteDetalle(TablaRegistro entity)
+        {
+            int idResult;
+
+            using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "SGE_TABLA_OPCIONES_DET_DELETE")))
+            {
+                _database.AddInParameter(comando, "@Id", DbType.Int32, entity.Id);
+                _database.AddInParameter(comando, "@tbpd_pc_elimina", DbType.String, WindowsIdentity.GetCurrent().Name);
+                _database.AddInParameter(comando, "@tbpd_iusuario_eliminacion", DbType.String, entity.UsuarioModificacion);
+                _database.AddOutParameter(comando, "@Response", DbType.Int32, 11);
+                _database.ExecuteNonQuery(comando);
+                idResult = Convert.ToInt32(_database.GetParameterValue(comando, "@Response"));
+            }
+
+            return idResult;
+        }
 
 
         #endregion

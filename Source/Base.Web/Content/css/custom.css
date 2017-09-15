@@ -338,10 +338,16 @@ table.dataTable, table.dataTable th, table.dataTable td {
 .searchEnvio{
     margin-left:0px;
 }
-#CantidadRojo-error{
+#Empresa-error{
     margin-left:330px;
 }
-#CantidadAmarillo-error{
+#Direccion-error{
+    margin-left:330px;
+}
+#igv-error{
+    margin-left:330px;
+}
+#ruc-error{
     margin-left:330px;
 }
 

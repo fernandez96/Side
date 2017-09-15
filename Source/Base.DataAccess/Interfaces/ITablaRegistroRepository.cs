@@ -1,13 +1,9 @@
 ﻿using Base.Common;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Base.DataAccess.Interfaces
 {
-   public interface ITablaRegistroRepository<T,Q> where T:class
+    public interface ITablaRegistroRepository<T,Q> where T:class
     {
         Q Add(T entity);
         Q Update(T entity);
@@ -18,6 +14,7 @@ namespace Base.DataAccess.Interfaces
         Q UpdateDetalle(T entity);
         IList<T> GetAllPagingDetalle(PaginationParameter<Q> paginationParameters);
         T GetByIdDetalle(T entity);
+        Q DeleteDetalle(T entity);
 
 
     }
