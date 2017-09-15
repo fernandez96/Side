@@ -1,4 +1,5 @@
-﻿using Base.Web.Models;
+﻿using Base.BusinessEntity;
+using Base.Web.Models;
 using Base.Web.Utilities;
 using System;
 using System.Collections.Generic;
@@ -15,15 +16,21 @@ namespace Base.Web.Core
             set { HttpContext.Current.Session.Add(ConstantesWeb.UsuarioSesion, value); }
         }
 
-        public static IEnumerable<FormularioModel> Formularios
+        public static IEnumerable<Formulario> Formularios
         {
-            get { return HttpContext.Current.Session[ConstantesWeb.FormulariosSesion] as IEnumerable<FormularioModel>; }
+            get { return HttpContext.Current.Session[ConstantesWeb.FormulariosSesion] as IEnumerable<Formulario>; }
             set { HttpContext.Current.Session.Add(ConstantesWeb.FormulariosSesion, value); }
         }
 
-        public static FormularioModel FormularioActual
+        public static IEnumerable<Formulario> Roles
         {
-            get { return HttpContext.Current.Session[ConstantesWeb.FormularioActualSesion] as FormularioModel; }
+            get { return HttpContext.Current.Session[ConstantesWeb.FormulariosSesion] as IEnumerable<Formulario>; }
+            set { HttpContext.Current.Session.Add(ConstantesWeb.FormulariosSesion, value); }
+        }
+
+        public static Formulario FormularioActual
+        {
+            get { return HttpContext.Current.Session[ConstantesWeb.FormularioActualSesion] as Formulario; }
             set { HttpContext.Current.Session.Add(ConstantesWeb.FormularioActualSesion, value); }
         }
     }

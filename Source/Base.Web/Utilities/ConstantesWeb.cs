@@ -65,7 +65,11 @@ namespace Base.Web.Utilities
         #region Roles
 
         public const int RolAdministrador = 1;
+        public const int Rolcontabilidad = 2;
+        public const int RolAlmacen = 2;
         public const int RolOperador = 3;
+        
+
         #endregion
     }
 }

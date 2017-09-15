@@ -48,7 +48,29 @@ namespace Base.Web.Controllers
             return Json(dataTableModel);
         }
 
+        [HttpPost]
+        public JsonResult GetAllModulos()
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var moduloList = ModeloBL.Instancia.GetAllActives();
+                var moduloDTOList = MapperHelper.Map<IEnumerable<Modulo>, IEnumerable<ModuloDTO>>(moduloList);
+                jsonResponse.Data = moduloDTOList;
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return Json(jsonResponse);
+        }
+
         #region Métodos Privados
+
 
         public void FormatDataTable(DataTableModel<RolFilterModel, int> dataTableModel)
         {

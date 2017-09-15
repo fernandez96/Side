@@ -5,6 +5,8 @@
 
 @section styles{
     <link rel="stylesheet" href="@Url.Content("~/Content/css/jquery.dataTables.css")" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/themes/default/style.min.css" />
+    
 }
 
 <!-- /section:basics/sidebar -->
@@ -53,7 +55,18 @@
 
                                         <div class="widget-body">
                                             <div class="widget-main padding-8">
-                                                <ul id="tree1" class="tree tree-unselectable" role="tree"><li class="tree-branch hide" data-template="treebranch" role="treeitem" aria-expanded="false">								<div class="tree-branch-header">					<span class="tree-branch-name">						<i class="icon-folder ace-icon tree-plus"></i>						<span class="tree-label"></span>					</span>				</div>				<ul class="tree-branch-children" role="group"></ul>				<div class="tree-loader hidden" role="alert"><div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div></div>			</li>			<li class="tree-item hide" data-template="treeitem" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label"></span>				</span>			</li><li class="tree-branch" role="treeitem" aria-expanded="false">								<div class="tree-branch-header">					<span class="tree-branch-name">						<i class="icon-folder ace-icon tree-plus"></i>						<span class="tree-label">For Sale</span>					</span>				</div>				<ul class="tree-branch-children hidden" role="group"><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Appliances</span>				</span>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Arts &amp; Crafts</span>				</span>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Clothing</span>				</span>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Computers</span>				</span>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Jewelry</span>				</span>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Office &amp; Business</span>				</span>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Sports &amp; Fitness</span>				</span>			</li></ul>				<div class="tree-loader hidden" role="alert"><div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div></div>			</li><li class="tree-branch" role="treeitem" aria-expanded="false">								<div class="tree-branch-header">					<span class="tree-branch-name">						<i class="icon-folder ace-icon tree-plus"></i>						<span class="tree-label">Vehicles</span>					</span>				</div>				<ul class="tree-branch-children" role="group"></ul>				<div class="tree-loader hidden" role="alert"><div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div></div>			</li><li class="tree-branch" role="treeitem" aria-expanded="false">								<div class="tree-branch-header">					<span class="tree-branch-name">						<i class="icon-folder ace-icon tree-plus"></i>						<span class="tree-label">Rentals</span>					</span>				</div>				<ul class="tree-branch-children" role="group"></ul>				<div class="tree-loader hidden" role="alert"><div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div></div>			</li><li class="tree-branch" role="treeitem" aria-expanded="false">								<div class="tree-branch-header">					<span class="tree-branch-name">						<i class="icon-folder ace-icon tree-plus"></i>						<span class="tree-label">Real Estate</span>					</span>				</div>				<ul class="tree-branch-children" role="group"></ul>				<div class="tree-loader hidden" role="alert"><div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div></div>			</li><li class="tree-branch" role="treeitem" aria-expanded="false">								<div class="tree-branch-header">					<span class="tree-branch-name">						<i class="icon-folder ace-icon tree-plus"></i>						<span class="tree-label">Pets</span>					</span>				</div>				<ul class="tree-branch-children" role="group"></ul>				<div class="tree-loader hidden" role="alert"><div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div></div>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Tickets</span>				</span>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Services</span>				</span>			</li><li class="tree-item" role="treeitem">				<span class="tree-item-name">				  <i class="icon-item ace-icon fa fa-times"></i>				  <span class="tree-label">Personals</span>				</span>			</li></ul>
+                                            <div id="tree1">
+                                                @*<ul>
+                                                    <li>
+                                                        Root node 1
+                                                        <ul>
+                                                            <li id="child_node_1">Child node 1</li>
+                                                            <li>Child node 2</li>
+                                                        </ul>
+                                                    </li>
+                                                    <li>Root node 2</li>
+                                                </ul>*@
+                                            </div>
                                             </div>
                                         </div>
                                     </div>
@@ -121,7 +134,8 @@
                             </div><!-- end panel -->
                         </div>
                     </div>
-
+            
+                    
                     <!-- PAGE CONTENT ENDS -->
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -141,6 +155,8 @@
     <script src="@Url.Content("~/Content/js/additional-methods.js")"></script>
     <script src="@Url.Content("~/Content/js/jquery.gritter.js")"></script>
     <script src="@Url.Content("~/Content/js/jquery.blockUI.js")"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+    @*<script src="@Url.Content("~/Content/js/tree/tree_component.js")"></script>*@
 
     <!-- inline scripts related to this page -->
     <script src="@Url.Content("~/Content/js/viewsJs/Acceso.js")"></script>

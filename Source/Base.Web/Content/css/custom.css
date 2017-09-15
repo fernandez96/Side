@@ -337,18 +337,26 @@ table.dataTable, table.dataTable th, table.dataTable td {
 }
 .searchEnvio{
     margin-left:0px;
+
 }
 #Empresa-error{
     margin-left:330px;
+    color:red;
 }
 #Direccion-error{
     margin-left:330px;
+    color:red;
+
 }
 #igv-error{
     margin-left:330px;
+    color:red;
+
 }
 #ruc-error{
     margin-left:330px;
+    color:red;
+
 }
 
 .visualizadorPieza{

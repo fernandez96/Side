@@ -1,9 +1,10 @@
-﻿var urlMantenimiento = baseUrl + 'Usuario/';
+﻿var urlMantenimiento = baseUrl + 'Acceso/';
 var dataTableRol = null;
 var delRowID = 0;
 var delRowPos = null;
 var urlListar = baseUrl + 'Acceso/Listar';
 var nombreRol = null;
+var urlListarModulo = baseUrl + 'Acceso/GetAllModulos';
 $(document).ready(function () {
     $.extend($.fn.dataTable.defaults, {
         language: { url: baseUrl + 'Content/js/dataTables/Internationalisation/es.txt' },
@@ -17,6 +18,74 @@ $(document).ready(function () {
     });
     checkSession(function () {
         VisualizarDataTableRol();
+    });
+
+    //$('#tree1').jstree();
+  
+    //$('#tree1').jstree({
+    //    'core': {
+    //        'data': {
+    //            url: urlListarModulo,
+    //            type: 'POST',
+    //            dataType: 'json',
+    //            dataFilter: function (data) {
+    //                if (data.substring(0, 9) == "<!DOCTYPE") {
+    //                    redireccionarLogin("Sesión Terminada", "Se terminó la sesión");
+    //                } else {
+    //                    return data;
+    //                    console.log(data);
+    //                    //var json = jQuery.parseJSON(data);
+    //                    //return JSON.stringify(json); // return JSON string
+    //                }                
+    //            }
+    //            //success: function (response) {
+    //            //    if (response.Success) {
+    //            //        $.each(response.Data, function (index, item) {
+                         
+    //            //        });
+    //            //    }
+    //            //    console.log(response);
+    //            //},
+    //            //error: function (e) {
+    //            //    console.log(e);
+    //            //}
+    //        }
+    //    }
+    //});
+
+    $('#tree1').jstree({
+
+        'core': {
+            'data': {
+                "url": urlListarModulo,
+                "type":'POST',
+                "data": function (node) {
+                    return { "id": node.id };
+                },
+                "success": function (response) {
+                    data = [];
+                    var _this = this;
+                    for (opnum in response) {
+                        var op = response[opnum]
+                        console.log(op);
+                        //node = {
+                        //    "data": op.info,
+                        //    "metadata": op,
+                        //    "state": "closed"
+                        //}
+                        //data.push(node);
+                    }
+                    return data;;
+
+                }
+             
+            }
+        }
+    });
+   
+    // 7 bind to events triggered on the tree
+    $('#tree1').on("changed.jstree", function (e, data) {
+        alert(data.selected);
     });
 
     $('body').on('click', 'a.verPermiso', function () {
@@ -90,3 +159,4 @@ function AsignarRol() {
     
     $("#idrol").text(nombreRol);
 }
+

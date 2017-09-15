@@ -184,7 +184,8 @@ namespace Base.Web.Controllers
             AuthenticationHelper.CreateAuthenticationTicket(usuarioModel.Username, usuarioModel.TimeZoneId);
 
             WebSession.Usuario = usuarioModel;
-            WebSession.Formularios = GetFormulario().Where(p => p.RolId == usuarioModel.RolId);
+            WebSession.Formularios = SeguridadBL.Instancia.GetFormulario().Where(p => p.RolId == usuarioModel.RolId); 
+          
         }
 
         private void LimpiarAutenticacion()
@@ -192,25 +193,25 @@ namespace Base.Web.Controllers
             AuthenticationHelper.SignOut();
 
             WebSession.Usuario = null;
-            WebSession.Formularios = new List<FormularioModel>();
+            WebSession.Formularios = new List<Formulario>();
         }
 
-        private IList<FormularioModel> GetFormulario()
+        private IList<Formulario> GetFormulario()
         {
-            return new List<FormularioModel>
+            return new List<Formulario>
             {
-                new FormularioModel { Id = 1,  Direccion = "//Home/Index", Orden = 1, RolId = 1, Nombre = "Home"  },
-                new FormularioModel { Id = 2,  Direccion = "//Usuario/Index", Orden = 2, RolId = 1, Nombre = "Usuario"  },
-                new FormularioModel { Id = 3,  Direccion = "//Configuracion/Index", Orden = 3, RolId = 1, Nombre = "Configuración"  },
-                new FormularioModel { Id = 4,  Direccion = "//Reporte/Index", Orden = 7, RolId = 1, Nombre = "Envíos"  },
+                new Formulario { Id = 1,  Direccion = "//Home/Index", Orden = 1, RolId = 1, Nombre = "Home"  },
+                new Formulario { Id = 2,  Direccion = "//Usuario/Index", Orden = 2, RolId = 1, Nombre = "Usuario"  },
+                new Formulario { Id = 3,  Direccion = "//Configuracion/Index", Orden = 3, RolId = 1, Nombre = "Configuración"  },
+                new Formulario { Id = 4,  Direccion = "//Reporte/Index", Orden = 7, RolId = 1, Nombre = "Envíos"  },
 
 
-                new FormularioModel { Id = 5,  Direccion = "//Home/Index", Orden = 1, RolId = 3, Nombre = "Home"  },
+                new Formulario { Id = 5,  Direccion = "//Home/Index", Orden = 1, RolId = 3, Nombre = "Home"  },
 
-                new FormularioModel { Id = 6,  Direccion = "//TipoDocumento/Index", Orden = 4, RolId = 1, Nombre = "Tipo documento"  },
-                new FormularioModel { Id = 7,  Direccion = "//TipoOpcione/Index", Orden = 7, RolId = 1, Nombre = "Tablas de opciones"  },
-                new FormularioModel { Id = 8,  Direccion = "//Acceso/Index", Orden = 7, RolId = 1, Nombre = "Acceso"  },
-                new FormularioModel { Id = 9,  Direccion = "//Parametro/Index", Orden = 7, RolId = 1, Nombre = "Parametro"  },
+                new Formulario { Id = 6,  Direccion = "//TipoDocumento/Index", Orden = 4, RolId = 1, Nombre = "Tipo documento"  },
+                new Formulario { Id = 7,  Direccion = "//TipoOpcione/Index", Orden = 7, RolId = 1, Nombre = "Tablas de opciones"  },
+                new Formulario { Id = 8,  Direccion = "//Acceso/Index", Orden = 7, RolId = 1, Nombre = "Acceso"  },
+                new Formulario { Id = 9,  Direccion = "//Parametro/Index", Orden = 7, RolId = 1, Nombre = "Parametro"  },
 
             };
         }
