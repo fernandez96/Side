@@ -1,4 +1,5 @@
-﻿using Base.Web.Core;
+﻿using Base.BusinessEntity;
+using Base.Web.Core;
 using Base.Web.Models;
 using Base.Web.Utilities;
 using System;
@@ -44,7 +45,7 @@ namespace Base.Web.Filters
 
                 if (WebSession.Formularios != null)
                 {
-                    FormularioModel formularioActual = null;
+                    Formulario formularioActual = null;
                     var verb = filterContext.HttpContext.Request.HttpMethod;
 
                     var formulariosEncontradosPorControlador =
@@ -53,7 +54,7 @@ namespace Base.Web.Filters
                                                         String.Compare(p.Area, area, StringComparison.Ordinal) == 0 &&
                                                         String.Compare(p.Controlador, controllerName, StringComparison.Ordinal) == 0);
 
-                    var encontradosPorControlador = formulariosEncontradosPorControlador as IList<FormularioModel> ??
+                    var encontradosPorControlador = formulariosEncontradosPorControlador as IList<Formulario> ??
                                                     formulariosEncontradosPorControlador.ToList();
 
                     if (encontradosPorControlador.Any())
@@ -67,7 +68,7 @@ namespace Base.Web.Filters
 
                     WebSession.FormularioActual = formularioActual;
                 }
-                WebSession.FormularioActual = WebSession.FormularioActual ?? new FormularioModel();
+                WebSession.FormularioActual = WebSession.FormularioActual ?? new Formulario();
             }
 
             base.OnActionExecuting(filterContext);

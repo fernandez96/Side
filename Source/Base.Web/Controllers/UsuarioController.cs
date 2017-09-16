@@ -35,7 +35,7 @@ namespace Base.Web.Controllers
                     OrderBy = dataTableModel.orderBy
                 });
                 var usuarioDTOList = MapperHelper.Map<IEnumerable<Usuario>, IEnumerable<UsuarioDTO>>(usuarioList);
-                dataTableModel.data = usuarioList;
+                dataTableModel.data = usuarioDTOList;
                 if (usuarioList.Count > 0)
                 {
                     dataTableModel.recordsTotal = usuarioList[0].Cantidad;

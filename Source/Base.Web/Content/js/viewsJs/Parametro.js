@@ -3,6 +3,9 @@ var urlMantenimiento = baseUrl + 'Parametro/';
 
 
 $(document).ready(function () {
+    checkSession(function () {
+        CargarRol();
+    });
 
     webApp.InicializarValidacion(formularioMantenimiento,
         {
@@ -50,7 +53,7 @@ $(document).ready(function () {
 
         e.preventDefault();
     });
-    CargarRol();
+   
 });
 function GuardarParametro() {
 

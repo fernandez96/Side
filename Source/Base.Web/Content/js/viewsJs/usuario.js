@@ -7,6 +7,7 @@ var urlMantenimiento = baseUrl + 'Usuario/';
 var urlListaCargo = baseUrl + 'Usuario/';
 var rowUsuario = null;
 
+
 $(document).ready(function () { 
     $.extend($.fn.dataTable.defaults, {
         language: { url: baseUrl + 'Content/js/dataTables/Internationalisation/es.txt' },
@@ -18,9 +19,19 @@ $(document).ready(function () {
 
     checkSession(function () {
         VisualizarDataTableUsuario();
-    });     
+    });
 
-    $('body').on('click', 'button.btnAgregarUsuario', function() {
+    $('#UsuarioDataTable  tbody').on('click', 'tr', function () {
+        if ($(this).hasClass('selected')) {
+            $(this).removeClass('selected');
+        }
+        else {
+            dataTableUsuario.$('tr.selected').removeClass('selected');
+            $(this).addClass('selected');
+        }
+    });
+
+    $('#btnAgregarUsuario').on('click', function () {
         LimpiarFormulario();
 
         $("#UsuarioId").val(0);
@@ -28,38 +39,49 @@ $(document).ready(function () {
         $("#NuevoUsuario").modal("show");
     });
 
-    $('body').on('click', 'a.editarUsuario', function () {
-        rowUsuario = this;
-        checkSession(function () {
-            GetUsuarioById();
-        });
+    $('#editarUsuario').on('click', function () {
+        rowUsuario = dataTableUsuario.row('.selected').data();
+        if (typeof rowUsuario === "undefined") {
+            webApp.showMessageDialog("Por favor seleccione un registro.");
+        }
+        else
+        {
+            checkSession(function () {
+                GetUsuarioById();
+            });
+        }
+       
     });      
 
-    $('body').on('click', 'a.eliminarUsuario', function() {        
-        var aPos = dataTableUsuario.fnGetPosition(this.parentNode.parentNode);
-        var aData = dataTableUsuario.fnGetData(aPos[0]);
-        var rowID = aData.Id;
-
-        delRowPos = aPos[0];
-        delRowID = rowID;
-
-        webApp.showDeleteConfirmDialog(function () {
-            checkSession(function () {
-                EliminarUsuario();
-              });
-            },'Se eliminará el registro. ¿Está seguro que desea continuar?');
+    $('#eliminarUsuario').on('click', function () {
+        rowUsuario = dataTableUsuario.row('.selected').data();
+        if (typeof rowUsuario === "undefined") {
+            webApp.showMessageDialog("Por favor seleccione un registro.");
+        }
+        else {
+            webApp.showDeleteConfirmDialog(function () {
+                checkSession(function () {
+                    EliminarUsuario();
+                });
+            }, 'Se eliminará el registro. ¿Está seguro que desea continuar?');
+        }
+    
     });
 
-    $('body').on('click', 'a.btnBuscarUsuario', function () {
-
-        $("#searchFilterUsuario").modal("show");
-    });
+    $("#mostarPass").on('click', function () {
+        var allInputs = $("#Contrasena").get(0).type;
+        if (allInputs === 'text') {
+            $("#Contrasena").prop("type", "password");
+        }
+        if (allInputs === 'password') {
+            $("#Contrasena").prop("type", "text");
+        }
+       });
 
     $("#btnSearchUsuario").on("click", function (e) {
         if ($('#UsuarioSearchForm').valid()) {
             checkSession(function () {
-            dataTableUsuario.fnReloadAjax();
-            $("#searchFilterUsuario").modal("hide");
+            dataTableUsuario.ajax.reload();
             });
         }
         e.preventDefault();
@@ -89,6 +111,9 @@ $(document).ready(function () {
                 noPasteAllowLetterAndSpace: true,
                 firstCharacterBeLetter: true
             },
+            Contrasena: {
+                required: true
+            },
             Nombre: {
                 required: true,
                 noPasteAllowLetterAndSpace: true,
@@ -113,24 +138,28 @@ $(document).ready(function () {
         },
         {
             Username: {
-                required: "Por favor ingrese Usuario",
+                required: "Por favor ingrese Usuario.",
              
             },
+            Contrasena: {
+                required: "Por favor ingrese Contraseña.",
+
+            },
             Nombre: {
-                required: "Por favor ingrese Nombre"
+                required: "Por favor ingrese Nombre."
             },
             Apellido: {
-                required: "Por favor ingrese Apellido"
+                required: "Por favor ingrese Apellido."
             },
             Correo: {
                 required: "Por favor ingrese Correo",
-                correoElectronico: "Por favor ingrese Correo valido"
+                correoElectronico: "Por favor ingrese Correo valido."
             },
             CargoId: {
-                required: "Por favor seleccione Cargo"
+                required: "Por favor seleccione Cargo."
             },
             RolId: {
-                required: "Por favor seleccione Rol"
+                required: "Por favor seleccione Rol."
             }            
         });
     CargarCargo();
@@ -139,7 +168,7 @@ $(document).ready(function () {
 });
 
 function VisualizarDataTableUsuario() {
-    dataTableUsuario = $('#UsuarioDataTable').dataTable({
+    dataTableUsuario = $('#UsuarioDataTable').DataTable({
         "bFilter": false,
         "bProcessing": true,
         "serverSide": true,  
@@ -167,15 +196,6 @@ function VisualizarDataTableUsuario() {
         },
         "bAutoWidth": false,
         "columns": [
-            {
-                "data": function (obj) {
-
-                    return '<div class="action-buttons">\
-                    <a class="green editarUsuario" href="javascript:void(0)"><i class="ace-icon fa fa-pencil bigger-130"></i></a>\
-                    <a class="red eliminarUsuario" href="javascript:void(0)"><i class="ace-icon fa fa-trash-o bigger-130"></i></a>\
-                    </div>';
-                }
-            },
             { "data": "Id" },
             { "data": "Username" },
             { "data": "Nombre" },
@@ -191,19 +211,19 @@ function VisualizarDataTableUsuario() {
             }
         ],
         "aoColumnDefs": [
-            { "bSortable": false, "sClass": "center", "aTargets": [0], "width": "10%"},
-            { "bVisible": false,  "aTargets": [1]},
-            { "aTargets": [2], "width": "10%"},
-            { "className": "hidden-1200", "aTargets": [3], "width": "18%" },
-            { "className": "hidden-992", "aTargets": [4], "width": "18%" },
-            { "className": "hidden-768", "aTargets": [5], "width": "20%"},
-            { "className": "hidden-600", "aTargets": [6], "width": "10%" },
-            { "bSortable": false, "className": "hidden-480", "aTargets": [7], "width": "10%" }
+
+            { "bVisible": false,  "aTargets": [0]},
+            {"className": "hidden-120",  "aTargets": [1], "width": "10%"},
+            { "className": "hidden-120", "aTargets": [2], "width": "18%" },
+            { "className": "hidden-992", "aTargets": [3], "width": "18%" },
+            { "className": "hidden-768", "aTargets": [4], "width": "20%"},
+            { "className": "hidden-600", "aTargets": [5], "width": "10%" },
+            { "bSortable": false, "className": "hidden-480", "aTargets": [6], "width": "10%" }
 
         ],
         "order": [[1, "desc"]],
         "initComplete": function (settings, json) {
-            AddSearchFilter();
+           // AddSearchFilter();
         },
         "fnDrawCallback": function (oSettings) {
             
@@ -212,12 +232,8 @@ function VisualizarDataTableUsuario() {
 }
 
 function GetUsuarioById() {
-        var aPos = dataTableUsuario.fnGetPosition(rowUsuario.parentNode.parentNode);
-        var aData = dataTableUsuario.fnGetData(aPos[0]);
-        var rowID = aData.Id;
-
         var modelView = {
-            Id : aData.Id
+            Id : rowUsuario.Id
         };        
 
         webApp.Ajax({
@@ -242,7 +258,7 @@ function GetUsuarioById() {
                     $("#RolId").val(usuario.RolId);
                     $("#Estado").val(usuario.Estado);
                     $("#UsuarioId").val(usuario.Id);
-
+                    $("#Contrasena").val(usuario.Password);
                     $("#accionTitle").text('Editar');
                     $("#NuevoUsuario").modal("show");
                 }           
@@ -271,7 +287,7 @@ function GetUsuarioById() {
 
 function EliminarUsuario(){
     var modelView = {
-        Id: delRowID,
+        Id: rowUsuario.Id,
         UsuarioRegistro: $("#usernameLogOn strong").text()
     };
 
@@ -289,7 +305,7 @@ function EliminarUsuario(){
                 });                         
             } else {
                 $("#NuevoUsuario").modal("hide");
-                dataTableUsuario.fnDeleteRow(delRowPos);
+                dataTableUsuario.row('.selected').remove().draw();
                 $.gritter.add({
                     title: response.Title,
                     text: response.Message,
@@ -324,7 +340,8 @@ function GuardarUsuario() {
 
     var modelView = {
         Id : $("#UsuarioId").val(),    
-        Username : $("#Username").val(),
+        Username: $("#Username").val(),
+        Password: $("#Contrasena").val(),
         Nombre : $("#Nombre").val(),
         Apellido : $("#Apellido").val(),
         Correo: $("#Correo").val(),
@@ -352,7 +369,7 @@ function GuardarUsuario() {
                 });                         
             } else {
                 $("#NuevoUsuario").modal("hide");
-                dataTableUsuario.fnReloadAjax();
+                dataTableUsuario.ajax.reload();
                 $.gritter.add({
                     title: response.Title,
                     text: response.Message,
@@ -479,4 +496,5 @@ function LimpiarFormulario(){
     $("#RolId").val(1);
     $("#Estado").val(1);
     $("#Username").focus();
+    $("#Contrasena").prop("type", "password");
 }

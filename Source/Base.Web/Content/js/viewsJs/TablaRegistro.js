@@ -2,18 +2,16 @@
 var dataTableTablaDetalle = null;
 var formularioMantenimientoTablaDetalle = "TablaDetalleForm";
 var formularioMantenimientoTabla = "TablaForm";
-var divCheckList = "idContentModulos";
 var delRowPos = null;
 var delRowID = 0;
 var urlListarCabezera = baseUrl + 'TipoOpcione/ListarCabezera';
 var urlListarDetalle = baseUrl + 'TipoOpcione/ListarDetalle';
 var urlMantenimiento = baseUrl + 'TipoOpcione/';
-var urlListaCargo = baseUrl + 'TipoDocumento/';
 var rowTabla = null;
 var rowTablaDetalle = null;
 var selected = [];
-var IdModulocheck = [];
-var checkselect = [];
+
+
 
 Array.prototype.unique = function (a) {
     return function () { return this.filter(a) }
@@ -36,12 +34,6 @@ $(document).ready(function () {
      
     });
 
-    $('input[name=checkbox]').on('click', function () {
-        IdModulocheck.push($(this).attr("data-permiso"));
-     
-    });
-
-
 
     $('#btnAgregarTabla').on('click', function () {
         LimpiarFormularioTabla();
@@ -50,6 +42,7 @@ $(document).ready(function () {
         $("#codigo").prop("disabled", false);
         $("#NuevoTabla").modal("show");
     });
+
     $('#btnaccesoTable').on('click', function () {
         rowTabla = dataTableTabla.row('.selected').data();
         if (typeof rowTabla === "undefined") {
@@ -62,24 +55,27 @@ $(document).ready(function () {
             $("#DetalleTabla").modal("show");
             $("#idtable").text(rowTabla.tbpc_vcod_tabla_opciones + ' - ' + rowTabla.tbpc_vdescripcion);
             $("#nombreTabla").text(rowTabla.tbpc_vdescripcion);
+          
             VisualizarDataTableTablaDetalle();
-            
+            dataTableTablaDetalle.clear();
             dataTableTablaDetalle.ajax.reload();
-            $('#TablaDetalleDataTable  tbody').on('click', 'tr', function () {
-                if ($(this).hasClass('selected')) {
-                    $(this).removeClass('selected');
-                }
-                else {
-
-                    dataTableTablaDetalle.$('tr.selected').removeClass('selected');
-                    $(this).addClass('selected');
-                    rowTabla = this;
-                    rowTablaDetalle = this;
-                }
-            });
-
+           
+               $('#TablaDetalleDataTable  tbody').on('click', 'tr', function () {
+                  if ($(this).hasClass('selected')) {
+                      $(this).removeClass('selected');
+                      
+                  }
+                  if (!$(this).hasClass('selected')) {
+                      dataTableTablaDetalle.$('tr.selected').removeClass('selected');
+                      $(this).addClass('selected');
+                  }
+                
+              });
+        
         }
     });
+
+  
 
     $('#btnAgregarTablaDetalle').on('click', function () {
         LimpiarFormularioTablaDetalle();
@@ -98,8 +94,6 @@ $(document).ready(function () {
             dataTableTabla.$('tr.selected').removeClass('selected');
           
             $(this).addClass('selected');
-            rowTabla = this;
-            rowTablaDetalle = this;
         }
     });
 
@@ -191,8 +185,6 @@ $(document).ready(function () {
         {
             codigo: {
                 required: true,
-                //noPasteAllowLetterAndSpace: true,
-                //firstCharacterBeLetter: true
             },
             descripcion: {
                 required: true,
@@ -214,8 +206,6 @@ $(document).ready(function () {
   
          codigoDetalle: {
              required: true
-             //noPasteAllowLetterAndSpace: true,
-             //firstCharacterBeLetter: true
          },
          descripcionDetalle: {
              required: true,
@@ -272,14 +262,12 @@ function VisualizarDataTableTablaDetalle() {
             { "data": "tbpd_vdescripcion_detalle" }
         ],
         "aoColumnDefs": [
-            //{ "bSortable": false, "sClass": "center", "aTargets": [0], "width": "10%" },
             { "bVisible": false, "aTargets": [0] },
             { "className": "hidden-120 center", "aTargets": [1], "width": "6%" },
             { "className": "hidden-120", "aTargets": [2], "width": "20%" },
         ],
         "order": [[1, "desc"]],
         "initComplete": function (settings, json) {
-            //AddSearchFilter();
         },
         "fnDrawCallback": function (oSettings) {
 
@@ -329,7 +317,6 @@ function VisualizarDataTableTabla() {
             }
         ],
         "aoColumnDefs": [
-            //{ "bSortable": false, "sClass": "center", "aTargets": [0], "width": "10%" },
             { "bVisible": false, "aTargets": [0] },
             { "className": "hidden-120 center", "aTargets": [1], "width": "6%" },
             { "className": "hidden-120", "aTargets": [2], "width": "18%" },
@@ -340,7 +327,6 @@ function VisualizarDataTableTabla() {
         ],
         "order": [[1, "desc"]],
         "initComplete": function (settings, json) {
-            //AddSearchFilter();
         },
         "fnDrawCallback": function (oSettings) {
 
@@ -511,19 +497,25 @@ function GuardarTabla() {
 }
 
 function GuardarTablaDetalle() {
-
+  
     var modelView = {
         IdTable: $("#TablaDetalleId").val(),
-        Id: rowTablaDetalle.Id,
+        Id: rowTabla.Id,
+        tbpc_iid_tabla_opciones: rowTabla.Id,
         tbpd_vcod_tabla_opciones_det: $("#codigoDetalle").val(),
         tbpd_vdescripcion_detalle: $("#descripcionDetalle").val(),
         UsuarioRegistro: $("#usernameLogOn strong").text()
     };
 
-if (modelView.IdTable == 0)
+    if (modelView.IdTable == 0){
         action = 'AddDetalle';
-    else
+    }
+    else {
         action = 'UpdateDetalle';
+        modelView.Id = rowTablaDetalle.Id
+
+    }
+        
 
     webApp.Ajax({
         url: urlMantenimiento + action,
@@ -538,6 +530,7 @@ if (modelView.IdTable == 0)
                 });
             } else {
                 $("#NuevoTablaDetalle").modal("hide");
+                dataTableTablaDetalle.clear();
                 dataTableTablaDetalle.ajax.reload();
                 $.gritter.add({
                     title: response.Title,
@@ -567,66 +560,6 @@ if (modelView.IdTable == 0)
     });
 }
 
-function GuardarAccesoModulo(idTipoDocumento) {
-    var idModulo = new Object();
-    var modelView;
-    var tipodocumentoDTO = [];
-    $.each(IdModulocheck.unique(), function (item, elem) {
-        tipodocumentoDTO.push({ tablc_icod_modulo: elem, Id: idTipoDocumento, UsuarioRegistro: $("#usernameLogOn strong").text() });
-        modelView = {
-            tipodocumentoDTO: tipodocumentoDTO
-        };
-    });
-    var idmodel = {
-        IdModulo: $("#ModuloId").val(),
-    }
-
-    if (idmodel.IdModulo == 0)
-        action = 'AddModulo';
-    else
-        action = 'Update';
-
-    webApp.Ajax({
-        url: urlMantenimiento + action,
-        parametros: modelView
-    }, function (response) {
-        if (response.Success) {
-            if (response.Warning) {
-                $.gritter.add({
-                    title: response.Title,
-                    text: response.Message,
-                    class_name: 'gritter-warning gritter'
-                });
-            } else {
-                $("#Nuevoacceso").modal("hide");
-                dataTableModulo.ajax.reload();
-                $.gritter.add({
-                    title: response.Title,
-                    text: response.Message,
-                    class_name: 'gritter-success gritter'
-                });
-            }
-        } else {
-            $.gritter.add({
-                title: 'Error',
-                text: response.Message,
-                class_name: 'gritter-error gritter'
-            });
-        }
-    }, function (response) {
-        $.gritter.add({
-            title: 'Error',
-            text: response,
-            class_name: 'gritter-error gritter'
-        });
-    }, function (XMLHttpRequest, textStatus, errorThrown) {
-        $.gritter.add({
-            title: 'Error',
-            text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
-            class_name: 'gritter-error gritter'
-        });
-    });
-}
 
 function Eliminartabladetalle(id) {
     var modelView = {

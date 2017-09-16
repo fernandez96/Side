@@ -195,6 +195,7 @@ namespace Base.DataAccess
                 _database.AddInParameter(comando, "@tbpd_iusuario_modifica", DbType.String, entity.UsuarioModificacion);
                 _database.AddInParameter(comando, "@tbpd_pc_modifica", DbType.String, WindowsIdentity.GetCurrent().Name);
                 _database.AddInParameter(comando, "@id", DbType.Int32, entity.Id);
+                _database.AddInParameter(comando, "@idTabla", DbType.Int32, entity.tbpc_iid_tabla_opciones);
                 _database.AddOutParameter(comando, "@Response", DbType.Int32, 11);
 
                 _database.ExecuteNonQuery(comando);

@@ -381,3 +381,29 @@ label input[type=checkbox].ace, label input[type=radio].ace {
 input[type=checkbox].ace:checked, input[type=checkbox].ace:focus, input[type=radio].ace:checked, input[type=radio].ace:focus {
     outline: 0!important;
 }
+span.input-icon_ {
+    display: inline-block;
+}
+.input-icon_ {
+    position: relative;
+}
+.input-icon_.input-icon-right_>input {
+    padding-left: 6px;
+    padding-right: 280px;
+}
+.input-icon_>.ace-icon {
+    padding: 0 3px;
+    z-index: 2;
+    position: absolute;
+    top: 1px;
+    bottom: 1px;
+    left: 3px;
+    line-height: 30px;
+    display: inline-block;
+    color: blue;
+    font-size: 16px;
+}
+.input-icon_.input-icon-right_>.ace-icon {
+    left: auto;
+    right: 3px;
+}

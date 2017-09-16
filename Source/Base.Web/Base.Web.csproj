@@ -373,6 +373,7 @@
     <Content Include="Content\js\jquery1x.js" />
     <None Include="Content\js\JSLINQ-vsdoc.js" />
     <Content Include="Content\js\JSLINQ.js" />
+    <Content Include="Content\js\jstree.min.js" />
     <Content Include="Content\js\realTime.js" />
     <Content Include="Content\js\respond.js" />
     <Content Include="Content\js\tree\tree_component.js" />
@@ -433,6 +434,7 @@
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\FormularioModel.cs" />
+    <Compile Include="Models\JsTreeModel.cs" />
     <Compile Include="Models\ModuloFilterModel.cs" />
     <Compile Include="Models\ReporteFilterModel.cs" />
     <Compile Include="Models\ReportePaginationModel.cs" />
@@ -447,6 +449,8 @@
     <Compile Include="Utilities\ConstantesWeb.cs" />
     <Compile Include="Utilities\CsvExport.cs" />
     <Compile Include="Utilities\ExportHelper.cs" />
+    <Compile Include="Utilities\JsTreeAttribute.cs" />
+    <Compile Include="Utilities\JsTreeNodeData.cs" />
     <Compile Include="Utilities\WebUtils.cs" />
   </ItemGroup>
   <ItemGroup>

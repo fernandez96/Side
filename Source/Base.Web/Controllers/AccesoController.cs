@@ -6,10 +6,10 @@ using Base.DTO;
 using Base.DTO.AutoMapper;
 using Base.Web.Core;
 using Base.Web.Models;
+using Base.Web.Utilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Base.Web.Controllers
@@ -69,6 +69,56 @@ namespace Base.Web.Controllers
             return Json(jsonResponse);
         }
 
+        [HttpPost]
+        public virtual JsonResult GetTreeData()
+        {
+            try
+            {
+                var rootNode = new JsTreeModel
+                {
+                    data = new JsTreeNodeData
+                    {
+                        title = "ejemplo"
+                        //icon = Utils.RelativeWebRoot + "Content/images/folder.ico"
+                    },
+                    attr = new JsTreeAttribute { id = "0", rel = "0" }
+                };
+                LoadModulos(rootNode);
+
+                return Json(rootNode);
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                return MensajeError();
+            }
+        }
+        private void LoadModulos(JsTreeModel node)
+        {
+            try
+            {
+                node.children = new List<JsTreeModel>();
+                List<Modulo> modulos = ModeloBL.Instancia.GetAllActives().ToList();
+                foreach (Modulo modulo in modulos)
+                {
+                        string nuevoNombrePorIdioma = string.Empty;
+                        var moduloNode = new JsTreeModel
+                        {
+                            attr = new JsTreeAttribute{ id = modulo.Id.ToString(), rel = "0" },
+                            data = new JsTreeNodeData
+                                {
+                                    title = modulo.tablc_vdescripcion
+                                    //icon = Utils.RelativeWebRoot + "Content/images/form.ico"
+                                },
+                        };
+                        node.children.Add(moduloNode);
+                    }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+            }
+        }
         #region Métodos Privados
 
 
