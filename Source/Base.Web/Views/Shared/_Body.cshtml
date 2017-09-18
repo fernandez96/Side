@@ -1,11 +1,11 @@
 ﻿<body class="no-skin">
     <!-- #section:basics/navbar.layout -->
-    <div id="navbar" class="navbar navbar-default">
+    <div id="navbar" class="navbar navbar-default          ace-save-state">
         <script type="text/javascript">
-                try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+            try { ace.settings.check('navbar', 'fixed') } catch (e) { }
         </script>
 
-        <div class="navbar-container" id="navbar-container" >
+        <div class="navbar-container" id="navbar-container">
             <!-- #section:basics/sidebar.mobile.toggle -->
             <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
                 <span class="sr-only">Toggle sidebar</span>
@@ -21,7 +21,11 @@
             <div class="navbar-header pull-left">
                 <!-- #section:basics/navbar.layout.brand -->
                 <a href="@Url.Action("Index", "Home")" class="navbar-brand">
-                    <img src="@Url.Content("~/Content/images/Logo.jpg")" alt="" width="40">
+                    <small>
+                        <i class="fa fa-clock-o"></i>
+                        QUOSPORT S.A.C
+                    </small>
+                    @*<img src="@Url.Content("~/Content/images/Logo.jpg")" alt="" width="40">*@
                 </a>
 
                 <!-- /section:basics/navbar.layout.brand -->
@@ -81,8 +85,10 @@
       <div style="clear:both"></div>
     <![endif]-->
 
-
+</body>
     <div class="main-container" id="main-container">
         <script type="text/javascript">
                 try{ace.settings.check('main-container' , 'fixed')}catch(e){}
         </script>
+        </div>
+   
