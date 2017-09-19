@@ -155,11 +155,11 @@ $(document).ready(function () {
 
         if ($('#' + formularioMantenimientoTablaDetalle).valid()) {
 
-            webApp.showReConfirmDialog(function () {
+            //webApp.showReConfirmDialog(function () {
                 checkSession(function () {
                     GuardarTablaDetalle();
                 });
-            });
+            //});
         }
 
         e.preventDefault();
@@ -169,11 +169,11 @@ $(document).ready(function () {
 
         if ($('#' + formularioMantenimientoTabla).valid()) {
 
-            webApp.showReConfirmDialog(function () {
+            //webApp.showReConfirmDialog(function () {
                 checkSession(function () {
                     GuardarTabla();
                 });
-            });
+            //});
         }
 
         e.preventDefault();
@@ -187,9 +187,7 @@ $(document).ready(function () {
                 required: true,
             },
             descripcion: {
-                required: true,
-                noPasteAllowLetterAndSpace: true,
-                firstCharacterBeLetter: true
+                required: true
             }
         },
         {
@@ -208,9 +206,7 @@ $(document).ready(function () {
              required: true
          },
          descripcionDetalle: {
-             required: true,
-             noPasteAllowLetterAndSpace: true,
-             firstCharacterBeLetter: true
+             required: true
          }
 
      },

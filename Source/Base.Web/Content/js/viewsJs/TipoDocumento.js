@@ -122,11 +122,11 @@ $(document).ready(function () {
 
         if ($('#' + formularioMantenimiento).valid()) {
 
-            webApp.showReConfirmDialog(function () {
+            //webApp.showReConfirmDialog(function () {
                 checkSession(function () {
                     GuardarUsuario();
                 });
-            });
+            //});
         }
 
         e.preventDefault();
@@ -157,18 +157,15 @@ $(document).ready(function () {
     });
     
 
-    webApp.validarLetrasEspacio(['codigo', 'descripcion']);
+    webApp.validarLetrasEspacio(['descripcion']);
     webApp.InicializarValidacion(formularioMantenimiento,
         {
             codigo: {
-                required: true,
-                noPasteAllowLetterAndSpace: true,
-                firstCharacterBeLetter: true
+                required: true
             },
             descripcion: {
                 required: true,
-                noPasteAllowLetterAndSpace: true,
-                firstCharacterBeLetter: true
+      
             }
            
         },

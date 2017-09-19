@@ -37,6 +37,7 @@ $(document).ready(function () {
         $("#UsuarioId").val(0);
         $("#accionTitle").text('Nuevo');
         $("#NuevoUsuario").modal("show");
+        $("#Username").prop("disabled", false);
     });
 
     $('#editarUsuario').on('click', function () {
@@ -68,13 +69,15 @@ $(document).ready(function () {
     
     });
 
-    $("#mostarPass").on('click', function () {
+    $("#mostarPass ,#mostarPassConf").on('click', function () {
         var allInputs = $("#Contrasena").get(0).type;
         if (allInputs === 'text') {
             $("#Contrasena").prop("type", "password");
+            $("#ContrasenaConf").prop("type", "password");
         }
         if (allInputs === 'password') {
             $("#Contrasena").prop("type", "text");
+            $("#ContrasenaConf").prop("type", "password");
         }
        });
 
@@ -91,27 +94,29 @@ $(document).ready(function () {
 
         if($('#'+formularioMantenimiento).valid()){
 
-            webApp.showReConfirmDialog(function () {
+            ////webApp.showConfirmDialog(function () {
                 checkSession(function () {
                     GuardarUsuario();
                 });
-            });
+            //});
         }
 
         e.preventDefault();
     });  
 
-    webApp.validarLetrasEspacio(['Username', 'Nombre', 'Apellido']);
+    webApp.validarLetrasEspacio(['Nombre', 'Apellido']);
     $('#Correo').validCampoFranz('@abcdefghijklmnÃ±opqrstuvwxyz_1234567890.');
 
     webApp.InicializarValidacion(formularioMantenimiento, 
         {
             Username: {
-                required: true,
-                noPasteAllowLetterAndSpace: true,
-                firstCharacterBeLetter: true
+                required: true
+      
             },
             Contrasena: {
+                required: true
+            },
+            ContrasenaConf:{
                 required: true
             },
             Nombre: {
@@ -122,11 +127,6 @@ $(document).ready(function () {
             Apellido: {
                 required: true,
                 noPasteAllowLetterAndSpace: true,
-                firstCharacterBeLetter: true
-            },
-            Correo: {
-                required: true,
-                correoElectronico: true,
                 firstCharacterBeLetter: true
             },
             CargoId: {
@@ -145,16 +145,17 @@ $(document).ready(function () {
                 required: "Por favor ingrese Contraseña.",
 
             },
+            ContrasenaConf: {
+                required: "Por favor confirme Contraseña.",
+
+            },
             Nombre: {
                 required: "Por favor ingrese Nombre."
             },
             Apellido: {
                 required: "Por favor ingrese Apellido."
             },
-            Correo: {
-                required: "Por favor ingrese Correo",
-                correoElectronico: "Por favor ingrese Correo valido."
-            },
+            
             CargoId: {
                 required: "Por favor seleccione Cargo."
             },
@@ -264,6 +265,7 @@ function GetUsuarioById() {
                     $("#Contrasena").val(usuario.Password);
                     $("#accionTitle").text('Editar');
                     $("#NuevoUsuario").modal("show");
+                    $("#Username").prop("disabled", true);
                 }           
 
             }else{

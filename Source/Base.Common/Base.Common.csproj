@@ -61,6 +61,7 @@
     <Compile Include="JsonResponse.cs" />
     <Compile Include="PaginationParameter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Seguridad.cs" />
     <Compile Include="TimeZoneUtils.cs" />
   </ItemGroup>
   <ItemGroup>

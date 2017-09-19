@@ -1627,3 +1627,652 @@ Uncommittable transaction is detected at the end of the batch. The transaction i
    en Base.DataAccess.UsuarioRepository.Add(Usuario entity) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 40
    en Base.BusinessLogic.UsuarioBL.Add(Usuario entity) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 15
    en Base.Web.Controllers.UsuarioController.Add(UsuarioDTO usuarioDTO) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 66
+2017-09-18 23:48:13,624 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Username] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:41,765 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Username] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:47,893 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Apellido] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:49,004 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Apellido] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:49,561 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Correo] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:50,376 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Apellido] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:51,121 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Nombre] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:56,705 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Apellido] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:57,486 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Nombre] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:58,388 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Nombre] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:48:59,783 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Nombre] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:49:03,996 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Username] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:49:31,703 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Username] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:49:35,504 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2) AND R.Id = 1) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Username] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:49:36,991 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2) AND R.Id = 1) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Apellido] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:49:39,702 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2) AND R.Id = 1) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Apellido] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:51:13,586 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2) AND R.Id = 1) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Nombre] ASC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:51:16,885 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Username] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-18 23:53:45,202 ERROR  - Mensaje: Unclosed quotation mark after the character string ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WHERE U.Estado IN (1,2)) SELECT *
+	FROM Consulta
+	CROSS JOIN (SELECT Count(*) AS Cantidad FROM Consulta) AS CC
+	ORDER BY  [Username] DESC   OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY'.
+Incorrect syntax near ') as Correo
+		,R.Id RolId
+		,R.Nombre RolNombre
+		,U.Estado
+	FROM Base.Usuario U
+	INNER JOIN Base.Rol R ON U.RolId = R.Id WH'. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.UsuarioRepository.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\UsuarioRepository.cs:línea 94
+   en Base.BusinessLogic.UsuarioBL.GetAllPaging(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\UsuarioBL.cs:línea 35
+   en Base.Web.Controllers.UsuarioController.Listar(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 30
+2017-09-19 00:02:57,430 ERROR  - Mensaje: Incorrect syntax near 'tbpd_vcod_tabla_opciones_det'.
+Invalid usage of the option NEXT in the FETCH statement. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.TablaRegistroRepository.GetAllPagingDetalle(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\TablaRegistroRepository.cs:línea 146
+   en Base.BusinessLogic.TablaRegistroBL.GetAllPagingDetalle(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\TablaRegistroBL.cs:línea 39
+   en Base.Web.Controllers.TipoOpcioneController.ListarDetalle(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\TipoOpcioneController.cs:línea 65
+2017-09-19 00:02:57,948 ERROR  - Mensaje: Incorrect syntax near 'tbpd_vcod_tabla_opciones_det'.
+Invalid usage of the option NEXT in the FETCH statement. Trace:    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   en System.Data.SqlClient.SqlDataReader.get_MetaData()
+   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
+   en Microsoft.Practices.EnterpriseLibrary.Data.Database.ExecuteReader(DbCommand command)
+   en Base.DataAccess.TablaRegistroRepository.GetAllPagingDetalle(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.DataAccess\TablaRegistroRepository.cs:línea 146
+   en Base.BusinessLogic.TablaRegistroBL.GetAllPagingDetalle(PaginationParameter`1 paginationParameters) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.BusinessLogic\TablaRegistroBL.cs:línea 39
+   en Base.Web.Controllers.TipoOpcioneController.ListarDetalle(DataTableModel`2 dataTableModel) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\TipoOpcioneController.cs:línea 65
+2017-09-19 00:45:29,855 ERROR  - Mensaje: El valor no puede ser nulo.
+Nombre del parámetro: name Trace:    en System.Security.Cryptography.CryptoConfig.CreateFromName(String name, Object[] args)
+   en System.Security.Cryptography.HashAlgorithm.Create(String hashName)
+   en Base.Common.Seguridad.GetHashAlgorithm() en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Common\Seguridad.cs:línea 117
+   en Base.Common.Seguridad.encriptar(String textoQueEncriptaremos) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Common\Seguridad.cs:línea 25
+   en Base.Web.Controllers.UsuarioController.Add(UsuarioDTO usuarioDTO) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Web\Controllers\UsuarioController.cs:línea 66
+2017-09-19 00:49:02,943 ERROR  - Mensaje: El valor no puede ser nulo.
+Nombre del parámetro: name Trace:    en System.Security.Cryptography.CryptoConfig.CreateFromName(String name, Object[] args)
+   en System.Security.Cryptography.HashAlgorithm.Create(String hashName)
+   en Base.Common.Seguridad.GetHashAlgorithm() en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Common\Seguridad.cs:línea 117
+   en Base.Common.Seguridad.encriptar(String textoQueEncriptaremos) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Common\Seguridad.cs:línea 25
+   en Base.Web.Controllers.UsuarioController.Add(UsuarioDTO usuarioDTO)
+2017-09-19 00:49:05,576 ERROR  - Mensaje: El valor no puede ser nulo.
+Nombre del parámetro: name Trace:    en System.Security.Cryptography.CryptoConfig.CreateFromName(String name, Object[] args)
+   en System.Security.Cryptography.HashAlgorithm.Create(String hashName)
+   en Base.Common.Seguridad.GetHashAlgorithm() en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Common\Seguridad.cs:línea 117
+   en Base.Common.Seguridad.encriptar(String textoQueEncriptaremos) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Common\Seguridad.cs:línea 25
+   en Base.Web.Controllers.UsuarioController.Add(UsuarioDTO usuarioDTO)
+2017-09-19 00:49:07,565 ERROR  - Mensaje: El valor no puede ser nulo.
+Nombre del parámetro: name Trace:    en System.Security.Cryptography.CryptoConfig.CreateFromName(String name, Object[] args)
+   en System.Security.Cryptography.HashAlgorithm.Create(String hashName)
+   en Base.Common.Seguridad.GetHashAlgorithm() en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Common\Seguridad.cs:línea 117
+   en Base.Common.Seguridad.encriptar(String textoQueEncriptaremos) en E:\Proyectos\Side\VentasConsignacion\Side\Source\Base.Common\Seguridad.cs:línea 25
+   en Base.Web.Controllers.UsuarioController.Add(UsuarioDTO usuarioDTO)

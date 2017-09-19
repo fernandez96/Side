@@ -63,6 +63,9 @@ namespace Base.Web.Controllers
 
                 if (!UsuarioBL.Instancia.Exists(usuario))
                 {
+                 
+                    string passwordEncriptdo = Seguridad.encriptar(usuario.Password.Trim());
+                    usuario.Password = passwordEncriptdo;
                     resultado = UsuarioBL.Instancia.Add(usuario);
 
                     if (resultado > 0)
@@ -254,6 +257,7 @@ namespace Base.Web.Controllers
             try
             {
                 var usuario = MapperHelper.Map<UsuarioDTO, Usuario>(usuarioDTO);
+                usuario.Password = Seguridad.encriptar(usuario.Password);
                 int resultado = UsuarioBL.Instancia.Update(usuario);
 
                 if (resultado > 0)

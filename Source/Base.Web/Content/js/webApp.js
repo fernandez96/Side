@@ -1000,7 +1000,30 @@ var webApp = function () {
             }
 
             popup.modal('show');
-        },  
+        },
+        showReDeleteConfirmDialog: function (fnSuccess, message, fnCancel) {
+            var popup = $('#' + _popupReConfirmacion);
+            var btnSuccess = $(popup).find('.btn-success');
+            var btnCancel = $(popup).find('.btn-primary');
+
+            btnSuccess.off('click');
+            if ($.isFunction(fnSuccess)) {
+                btnSuccess.on('click', function () { fnSuccess(); })
+            }
+
+            btnCancel.off('click');
+            if ($.isFunction(fnCancel)) {
+                btnCancel.on('click', function () { fnCancel(); })
+            }
+
+            if (message != null && message != '') {
+                $('#' + _popupReConfirmacion + ' .modal-body p').html(message);
+            } else {
+                $('#' + _popupReConfirmacion + ' .modal-body p').html(_mensajePopupEliminacionConfirmacion);
+            }
+
+            popup.modal('show');
+        },
         showConfirmResumeDialog: function (fnSuccess, message, fnCancel) {
             
             var popup = $('#' + _popupConfirmacion);
