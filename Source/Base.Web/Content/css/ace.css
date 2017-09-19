@@ -4771,7 +4771,7 @@ body.mob-safari .sidebar.sidebar-fixed {
   position: relative;
   z-index: auto;
   border-bottom: 1px solid #e5e5e5;
-  background-color: #438EB9;
+  background-color: #F5F5F5;
   min-height: 41px;
   line-height: 40px;
   padding: 0 12px 0 0;
@@ -4788,12 +4788,12 @@ body.mob-safari .sidebar.sidebar-fixed {
 }
 .breadcrumb > li,
 .breadcrumb > li.active {
-  color: #fff;
+  color: #251f1f;
   padding: 0 3px 0 3px;
 }
 .breadcrumb > li > a {
   display: inline-block;
-  color: #FFFFFF;
+  color: #4C8FBD;
 }
 .breadcrumb > li + li:before {
   font-family: FontAwesome;
@@ -19172,7 +19172,7 @@ input.typeahead.scrollable ~ .tt-dropdown-menu {
 .no-skin .sidebar {
   background-color: #F2F2F2;
   border-style: solid;
-  border-color: #00512F;
+  border-color: rgba(0, 81, 47, 0.32);
   border-width: 0 1px 0 0;
 }
 .no-skin .nav-list .open > a,
@@ -19277,7 +19277,7 @@ input.typeahead.scrollable ~ .tt-dropdown-menu {
   background-color: #ffffff;
 }
 .no-skin .sidebar-shortcuts {
-  background-color: #007835;
+  background-color: #f5f5f5;
 }
 .no-skin .sidebar-fixed .sidebar-shortcuts {
   border-color: #dddddd;

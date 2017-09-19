@@ -318,6 +318,7 @@
     <Content Include="Content\js\ace\elements.wizard.js" />
     <Content Include="Content\js\ace\elements.wysiwyg.js" />
     <Content Include="Content\js\additional-methods.js" />
+    <Content Include="Content\js\bootbox.js" />
     <Content Include="Content\js\bootstrap-tag.js" />
     <Content Include="Content\js\bootstrap-tagsinput.min.js" />
     <Content Include="Content\js\bootstrap.js" />

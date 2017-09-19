@@ -43,7 +43,7 @@
                     <div class="search-area well no-margin-bottom">
                         <form id="TablaSearchForm" role="form">
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-md-7">
                                     <div class="input-group">
 
                                         <input type="text" class="form-control" name="Codigosearch" id="Codigosearch" placeholder="Codigo">
@@ -58,33 +58,34 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="clearfix">
+                                    <div class="pull-right tableTools-container">
+                                        <div class="dt-buttons btn-overlap btn-group">
+                                            <a id="btnAgregarTabla" data-toggle="tooltip" class="dt-button buttons-collection buttons-colvis btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Nuevo">
+                                                <span><i class="fa fa-plus-circle bigger-110 blue"></i> </span>
+                                            </a>
+
+                                            <a id="btnEditarTable" data-toggle="tooltip" class="dt-button buttons-copy buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Editar">
+                                                <span><i class="fa fa-pencil bigger-110 pink"></i> </span>
+                                            </a>
+                                            <a id="btnEliminarTable" data-toggle="tooltip" class="dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold hidden" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Eliminar">
+                                                <span><i class="fa fa-trash-o bigger-110 orange"></i></span>
+                                            </a>
+                                            <a id="btnaccesoTable" data-toggle="tooltip" class="dt-button buttons-print btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Detalle de tabla">
+                                                <span><i class="fa fa-info-circle bigger-110 grey"></i> </span>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
+              
                         </form>
                         <div class="space space-6"></div>
                     </div>
                     <br />
 
                     <div class="col-xs-12">
-                        <div class="clearfix">
-                            <div class="pull-right tableTools-container">
-                                <div class="dt-buttons btn-overlap btn-group">
-                                    <a id="btnAgregarTabla" class="dt-button buttons-collection buttons-colvis btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="">
-                                        <span><i class="fa fa-plus-circle bigger-110 blue"> Nuevo</i> </span>
-                                    </a>
-
-                                    <a id="btnEditarTable" class="dt-button buttons-copy buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="">
-                                        <span><i class="fa fa-pencil bigger-110 pink"> Editar</i> </span>
-                                    </a>
-                                    <a id="btnEliminarTable" class="dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold hidden" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="">
-                                        <span><i class="fa fa-trash-o bigger-110 orange"> Eliminar</i></span>
-                                    </a>
-                                    <a id="btnaccesoTable" class="dt-button buttons-print btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="">
-                                        <span><i class="fa fa-info-circle bigger-110 grey"> Detalle  tabla</i> </span>
-                                    </a>
-
-                                </div>
-                            </div>
-                        </div>
                         <div class="table-header">
                             Resultado " Tablas de opciones "
                         </div>
@@ -174,7 +175,7 @@
                                         <div class="search-area well no-margin-bottom" style="margin-left:10px;">
                                             <form id="TablaDetalleSearchForm" role="form">
                                                 <div class="row">
-                                                    <div class="col-md-9">
+                                                    <div class="col-md-7">
                                                         <div class="input-group">
 
                                                             <input type="text" class="form-control" name="CodigoDetallesearch" id="CodigoDetallesearch" placeholder="Codigo">
@@ -189,7 +190,24 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="clearfix">
+                                      
+                                                            <div class="dt-buttons btn-overlap btn-group">
+                                                                <a id="btnAgregarTablaDetalle" data-toggle="tooltip" class="dt-button buttons-collection buttons-colvis btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Nuevo">
+                                                                    <span><i class="fa fa-plus-circle bigger-110 blue"></i> </span>
+                                                                </a>
+
+                                                                <a id="btnEditarTablaDetalle" data-toggle="tooltip" class="dt-button buttons-copy buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Editar">
+                                                                    <span><i class="fa fa-pencil bigger-110 pink"> </i> </span>
+                                                                </a>
+                                                                <a id="btnEliminarTablaDetalle" data-toggle="tooltip" class="dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold " tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Eliminar">
+                                                                    <span><i class="fa fa-trash-o bigger-110 orange"></i></span>
+                                                                </a>
+                                                       
+                                                        </div>
+                                                    </div>
                                                 </div>
+                                          
                                             </form>
 
                                             <div class="space space-6"></div>
@@ -198,26 +216,7 @@
                                         </div>
                                         <!-- PAGE CONTENT BEGINS -->
                                         <br />
-                                        <div class="clearfix">
-                                            <div class="pull-right tableTools-container">
-                                                <div class="dt-buttons btn-overlap btn-group">
-                                                    <a id="btnAgregarTablaDetalle" class="dt-button buttons-collection buttons-colvis btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="">
-                                                        <span><i class="fa fa-plus-circle bigger-110 blue"> Nuevo</i> </span>
-                                                    </a>
-
-                                                    <a id="btnEditarTablaDetalle" class="dt-button buttons-copy buttons-html5 btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="">
-                                                        <span><i class="fa fa-pencil bigger-110 pink"> Editar</i> </span>
-                                                    </a>
-                                                    <a id="btnEliminarTablaDetalle" class="dt-button buttons-csv buttons-html5 btn btn-white btn-primary btn-bold " tabindex="0" aria-controls="dynamic-table" data-original-title="" title="">
-                                                        <span><i class="fa fa-trash-o bigger-110 orange"> Eliminar</i></span>
-                                                    </a>
-                                                    <a id="btnDetalleTabla" class="dt-button buttons-print btn btn-white btn-primary btn-bold hidden" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="">
-                                                        <span><i class="fa fa-info-circle bigger-110 grey"> Detalle  tabla</i> </span>
-                                                    </a>
-
-                                                </div>
-                                            </div>
-                                        </div>
+                         
                                         <div class="table-header" style="margin-left:10px;">
                                             Resultado detalle de tabla -  <span id="nombreTabla"></span>
                                         </div>
@@ -311,6 +310,7 @@
     <script src="@Url.Content("~/Content/js/additional-methods.js")"></script>
     <script src="@Url.Content("~/Content/js/jquery.gritter.js")"></script>
     <script src="@Url.Content("~/Content/js/jquery.blockUI.js")"></script>
+    <script src="@Url.Content("~/Content/js/bootbox.js")"></script>
 
     <!-- inline scripts related to this page -->
     <script src="@Url.Content("~/Content/js/viewsJs/TablaRegistro.js")"></script>

@@ -165,6 +165,9 @@ $(document).ready(function () {
     CargarCargo();
     CargarRol();
 
+
+
+        $('[data-toggle="tooltip"]').tooltip();
 });
 
 function VisualizarDataTableUsuario() {

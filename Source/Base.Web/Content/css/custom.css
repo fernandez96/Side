@@ -5,11 +5,11 @@
 }
 
 .no-skin .navbar .navbar-toggle {
-    margin-top: 15px;
+    margin-top: 5px;
 }
 
 .table-header {
-    background-color: #007835;}
+    background-color: rgba(67, 142, 185, 0.55);}
 
  /*.login-layout {background: url('img/fondo.png') no-repeat fixed center; background-size: cover;}*/
  .login-layout{background-color:white}
@@ -20,7 +20,7 @@
 }
 
 .ace-nav > li.light-blue > a {
-    background-color: #438EB9;
+    background-color: rgb(98, 168, 209);
 }
 
 .ace-nav > li.light-blue > a:hover {
@@ -38,12 +38,12 @@
 }
 
 .no-skin .nav-list li.active > a:after {
-    border-right-color: #007936;
+    border-right-color: #438eb9;
     -moz-border-right-colors: #007936;
 }
 
 .no-skin .nav-list > li.active:after {
-    border-color: #007936;
+    border-color: #438eb9;
 }
 
 .no-skin .nav-list > li .submenu > li > a:hover {
@@ -171,7 +171,7 @@ login-layout
     .main-container{margin-top: 19px;}
 }
 .no-skin .nav-list > li.open > a {
-    color: #007936;
+    color: #438eb9;
 }
 
 .gritter-error .gritter-close, .gritter-success .gritter-close, .gritter-warning .gritter-close {
@@ -369,7 +369,7 @@ table.dataTable, table.dataTable th, table.dataTable td {
     background-color:#438EB9;
 }
 .navbar{
-    background-color:#F5F5F5;
+    background-color:#438eb9;
 }
 label input[type=checkbox].ace, label input[type=radio].ace {
     z-index: -100!important;

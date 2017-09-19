@@ -181,7 +181,7 @@ $(document).ready(function () {
                 required: "Por favor ingrese Descripción."
             }
         });
-
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 
