@@ -12,6 +12,7 @@ var rowUsuario = null;
 var rowModulo = null;
 var selected = [];
 var IdModulocheck = [];
+var countCheck = [];
 var checkselect = [];
 Array.prototype.unique = function (a) {
     return function () { return this.filter(a) }
@@ -63,6 +64,7 @@ $(document).ready(function () {
             cleanInputCheckList();
             CargarselecinadoModulos(rowUsuario.Id);
             IdModulocheck.length = 0;
+         
         }    
     });
 
@@ -133,17 +135,24 @@ $(document).ready(function () {
 
   
     $("#btnGuardarAccesoModulo").on("click", function (e) {
-        
-        if (IdModulocheck.unique().length <= 0) {
+          CountInputCheckList();
+        if (countCheck.unique().length <= 0) {
             webApp.showMessageDialog("Por favor seleccione un modulo.");
         }
         else {
-            webApp.showReConfirmDialog(function () {
-                checkSession(function () {
-                    GuardarAccesoModulo(rowUsuario.Id);
+            if (IdModulocheck.unique().length==0) {
+                $("#Nuevoacceso").modal("hide");
+            }
+            else {
+                webApp.showReConfirmDialog(function () {
+                    checkSession(function () {
+                        GuardarAccesoModulo(rowUsuario.Id);
+                    });
                 });
-            });
-            e.preventDefault();
+                e.preventDefault();
+            }
+        
+          
         }
     });
     
@@ -635,6 +644,16 @@ function CargarselecinadoModulos(id) {
 function cleanInputCheckList() {
     jQuery('#' + divCheckList + ' input[type=checkbox]').each(function (index, item) {
         jQuery(this).prop('checked', false);
+    });
+}
+
+
+function CountInputCheckList() {
+    jQuery('#' + divCheckList + ' input[type=checkbox]').each(function (index, item) {
+        if ($(this).prop('checked')) {
+            countCheck.push($(this).attr("data-permiso"));
+        }
+ 
     });
 }
 

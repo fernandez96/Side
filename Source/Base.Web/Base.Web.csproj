@@ -551,6 +551,7 @@
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\campana\Index.cshtml" />
     <Content Include="Views\Diplomado\Index.cshtml" />
+    <None Include="Properties\PublishProfiles\SideWeb.pubxml" />
     <None Include="Properties\PublishProfiles\Web.pubxml" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Acceso\Index.cshtml" />
