@@ -7,6 +7,12 @@ $(document).ready(function () {
         CargarRol();
     });
 
+    
+    
+    //$("#igv").inputmask('Regex', {
+    //    regex: "^[0-9]{1,6}(\\.\\d{1,2})?$"
+    //});
+   
     webApp.InicializarValidacion(formularioMantenimiento,
         {
             Empresa: {
@@ -65,7 +71,6 @@ function GuardarParametro() {
         igv: $("#igv").val(),
         UsuarioRegistro: $("#usernameLogOn strong").text()
     };
-
     if (modelView.Id == 0)
         action = 'Add';
     else
@@ -128,10 +133,11 @@ function CargarRol() {
             } else {
                 LimpiarFormulario();
                 var parametro = response.Data;
+
                 $("#Empresa").val(parametro.empresa);
                 $("#Direccion").val(parametro.direccion);
                 $("#ruc").val(parametro.ruc);
-                $("#igv").val(parametro.igv);
+                $("#igv").val(parseFloat(parametro.igv)+'.00');
                 $("#ParametroId").val(parametro.Id);
          
             }

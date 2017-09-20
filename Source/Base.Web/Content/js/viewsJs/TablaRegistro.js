@@ -41,6 +41,7 @@ $(document).ready(function () {
         $("#accionTitle").text('Nuevo');
         $("#codigo").prop("disabled", false);
         $("#NuevoTabla").modal("show");
+        GetCorrelativoCab();
     });
 
     $('#btnaccesoTable').on('click', function () {
@@ -55,7 +56,7 @@ $(document).ready(function () {
             $("#DetalleTabla").modal("show");
             $("#idtable").text(rowTabla.tbpc_vcod_tabla_opciones + ' - ' + rowTabla.tbpc_vdescripcion);
             $("#nombreTabla").text(rowTabla.tbpc_vdescripcion);
-          
+           
             VisualizarDataTableTablaDetalle();
             dataTableTablaDetalle.clear();
             dataTableTablaDetalle.ajax.reload();
@@ -83,6 +84,7 @@ $(document).ready(function () {
         $("#accionTitleTablaDetalle").text('Nuevo');
         $("#codigoDetalle").prop("disabled", false);
         $("#NuevoTablaDetalle").modal("show");
+        GetCorrelativoDet(rowTabla.Id);
     });
 
 
@@ -556,6 +558,112 @@ function GuardarTablaDetalle() {
     });
 }
 
+function GetCorrelativoCab() {
+        webApp.Ajax({
+            url: urlMantenimiento + 'GetCorrelativoCab'
+        }, function (response) {
+            if (response.Success) {
+                if (response.Warning) {
+                    $.gritter.add({
+                        title: 'Alerta',
+                        text: response.Message,
+                        class_name: 'gritter-warning gritter'
+                    });
+                } else {
+                    LimpiarFormularioTabla();
+                    var tipodocumento = response.Data;
+                    if (tipodocumento==null) {
+                        $("#codigo").val('00' + 1);
+                    }
+                   else if (tipodocumento.correlativaCab < 10) {
+                        $("#codigo").val('00' + tipodocumento.correlativaCab);
+                    }
+                   else if (tipodocumento.correlativaCab >= 10) {
+                       $("#codigo").val('0' + tipodocumento.correlativaCab);
+                    }
+                   else if (tipodocumento.correlativaCab >99 ) {
+                       $("#codigo").val(tipodocumento.correlativaCab);
+                    }
+                }
+
+            } else {
+                $.gritter.add({
+                    title: 'Error',
+                    text: response.Message,
+                    class_name: 'gritter-error gritter'
+                });
+            }
+        }, function (response) {
+            $.gritter.add({
+                title: 'Error',
+                text: response,
+                class_name: 'gritter-error gritter'
+            });
+        }, function (XMLHttpRequest, textStatus, errorThrown) {
+            $.gritter.add({
+                title: 'Error',
+                text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
+                class_name: 'gritter-error gritter'
+            });
+        });
+    
+}
+
+
+function GetCorrelativoDet(id) {
+    var modelView = {
+        Id: id
+    };
+    webApp.Ajax({
+        url: urlMantenimiento + 'GetCorrelativoDet',
+        parametros: modelView
+    }, function (response) {
+        if (response.Success) {
+            if (response.Warning) {
+                $.gritter.add({
+                    title: 'Alerta',
+                    text: response.Message,
+                    class_name: 'gritter-warning gritter'
+                });
+            } else {
+                LimpiarFormularioTablaDetalle();
+                var tipodocumento = response.Data;
+                if (tipodocumento==null) {
+                    $("#codigoDetalle").val('00' +1);
+                }
+               else if (tipodocumento.correlativaDet < 10) {
+                    $("#codigoDetalle").val('00' + tipodocumento.correlativaDet);
+                }
+                else if (tipodocumento.correlativaDet >= 10) {
+                    $("#codigoDetalle").val('0' + tipodocumento.correlativaDet);
+                }
+                else if (tipodocumento.correlativaDet > 99) {
+                    $("#codigoDetalle").val(tipodocumento.correlativaDet);
+                }
+            }
+
+        } else {
+            $.gritter.add({
+                title: 'Error',
+                text: response.Message,
+                class_name: 'gritter-error gritter'
+            });
+        }
+    }, function (response) {
+        $.gritter.add({
+            title: 'Error',
+            text: response,
+            class_name: 'gritter-error gritter'
+        });
+    }, function (XMLHttpRequest, textStatus, errorThrown) {
+        $.gritter.add({
+            title: 'Error',
+            text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
+            class_name: 'gritter-error gritter'
+        });
+    });
+
+}
 
 function Eliminartabladetalle(id) {
     var modelView = {

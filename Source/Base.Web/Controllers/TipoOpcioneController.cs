@@ -238,6 +238,37 @@ namespace Base.Web.Controllers
         }
 
         [HttpPost]
+        public JsonResult GetCorrelativoCab()
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+            
+                var getcorrelativoDTO = TablaRegistroBL.Instancia.GetCorrelativaCab();
+                if (getcorrelativoDTO != null)
+                {
+                    jsonResponse.Data = getcorrelativoDTO;
+                }
+                else
+                {
+                    jsonResponse.Success = true;
+                    jsonResponse.Data = getcorrelativoDTO;
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return Json(jsonResponse);
+        }
+
+
+        [HttpPost]
         public JsonResult AddDetalle(TablaRegistroDTO tablaRegistroDTO)
         {
             var jsonResponse = new JsonResponse { Success = true };
@@ -437,6 +468,36 @@ namespace Base.Web.Controllers
             return Json(jsonResponse);
         }
 
+        public JsonResult GetCorrelativoDet(TablaRegistroDTO tablaRegistroDTO)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var tablaregistro = MapperHelper.Map<TablaRegistroDTO, TablaRegistro>(tablaRegistroDTO);
+
+                var getcorrelativoDTO = TablaRegistroBL.Instancia.GetCorrelativaDet(tablaregistro);
+                if (getcorrelativoDTO != null)
+                {
+                    tablaRegistroDTO = MapperHelper.Map<TablaRegistro, TablaRegistroDTO>(getcorrelativoDTO);
+                    jsonResponse.Data = tablaRegistroDTO;
+                }
+                else
+                {
+                    jsonResponse.Success = true;
+                    tablaRegistroDTO = MapperHelper.Map<TablaRegistro, TablaRegistroDTO>(getcorrelativoDTO);
+                    jsonResponse.Data = tablaRegistroDTO;
+                }
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return Json(jsonResponse);
+        }
 
 
         #region Métodos Privados

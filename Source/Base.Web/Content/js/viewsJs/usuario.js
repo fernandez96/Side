@@ -175,8 +175,6 @@ $(document).ready(function () {
     CargarCargo();
     CargarRol();
     CargarEstado();
-
-
         $('[data-toggle="tooltip"]').tooltip();
 });
 
@@ -274,6 +272,7 @@ function GetUsuarioById() {
                     $("#Contrasena").val(usuario.Password);
                     $("#accionTitle").text('Editar');
                     $("#NuevoUsuario").modal("show");
+                    $("#ContrasenaConf").val(usuario.ConfirmarPassword);
                     $("#Username").prop("disabled", true);
                 }           
 
@@ -356,6 +355,7 @@ function GuardarUsuario() {
         Id : $("#UsuarioId").val(),    
         Username: $("#Username").val(),
         Password: $("#Contrasena").val(),
+        ConfirmarPassword: $("#ContrasenaConf").val(),
         Nombre : $("#Nombre").val(),
         Apellido : $("#Apellido").val(),
         Correo: $("#Correo").val(),
@@ -413,13 +413,13 @@ function GuardarUsuario() {
 }
 
 function CargarCargo() {
-    var WhereFilters = {
-        whereFilter: 'WHERE Estado IN (1,2)'
+    var WhereFilter = {
+        idtabla: 2
     };
     webApp.Ajax({
-        url: urlListaCargo + 'GetCargoAll',
+        url: urlListaCargo + 'GetAll',
         async: false,
-        parametros: WhereFilters,
+        parametros: WhereFilter,
     }, function (response) {
         if (response.Success) {
 
@@ -431,7 +431,7 @@ function CargarCargo() {
                 });
             } else {
                 $.each(response.Data, function (index, item) {
-                    $("#CargoId").append('<option value="' + item.Id + '">' + item.Nombre + '</option>');
+                    $("#CargoId").append('<option value="' + item.Id + '">' + item.tbpd_vdescripcion_detalle + '</option>');
                 });
             }
         } else {
@@ -457,9 +457,12 @@ function CargarCargo() {
 }
 
 function CargarRol(){
-
+    var WhereFilter = {
+        idtabla: 3
+    };
     webApp.Ajax({
-        url: urlMantenimiento + 'GetAllActives',
+        url: urlMantenimiento + 'GetAll',
+        parametros: WhereFilter,
         async: false,
     }, function(response){
         if(response.Success){
@@ -473,7 +476,7 @@ function CargarRol(){
             } else {
                 $("#RolIdSearch").append('<option value=""> - TODOS - </option>');
                 $.each(response.Data, function(index, item){
-                    $("#RolId,#RolIdSearch").append('<option value="' + item.Id + '">' + item.Nombre + '</option>');
+                    $("#RolId,#RolIdSearch").append('<option value="' + item.Id + '">' + item.tbpd_vdescripcion_detalle + '</option>');
                 });
                 console.log(response.Data);
                 webApp.clearForm('UsuarioSearchForm');
@@ -502,8 +505,7 @@ function CargarRol(){
 
 function CargarEstado() {
     var modelView = {
-        idtabla: 3
-
+        idtabla: 1
     };
     webApp.Ajax({
         url: urlMantenimiento + 'GetAll',
@@ -519,11 +521,9 @@ function CargarEstado() {
                     class_name: 'gritter-warning gritter'
                 });
             } else {
-        
-                $.each(response.Data, function (index, item) {
+                    $.each(response.Data, function (index, item) {
                     $("#Estado").append('<option value="' + item.Id + '">' + item.tbpd_vdescripcion_detalle + '</option>');
                 });
-                console.log(response.Data);
                 webApp.clearForm('UsuarioSearchForm');
             }
         } else {

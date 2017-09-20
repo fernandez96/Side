@@ -14,6 +14,7 @@ namespace Base.Web.Core
         public static string MapaCampanaNoExiste = "El mapa de campaña no pertenece al sistema.";
         public static string ConfiguracionNoExiste = "La configuración no pertenece al sistema.";
         public static string RegistroSatisfactorio = "Se realizó el registro satisfactoriamente.";
+        public static string ContraseñaNoConsiden = "No son iguales las contraseñas.";
         public static string RegistroFallido = "No se pudo realizar el registro.";
         public static string ActualizacionSatisfactoria = "Se realizó la actualización satisfactoriamente.";
         public static string ActualizacionFallida = "No se pudo realizar la actualización.";

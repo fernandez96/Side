@@ -28,6 +28,7 @@ namespace Base.DataAccess
             {
                 _database.AddInParameter(comando, "@Username", DbType.String, entity.Username);
                 _database.AddInParameter(comando, "@Password", DbType.String, entity.Password);
+                _database.AddInParameter(comando, "@ConfirmarPassword", DbType.String, entity.ConfirmarPassword);
                 _database.AddInParameter(comando, "@Nombre", DbType.String, entity.Nombre);
                 _database.AddInParameter(comando, "@Apellido", DbType.String, entity.Apellido);
                 _database.AddInParameter(comando, "@Correo", DbType.String, entity.Correo);
@@ -138,6 +139,7 @@ namespace Base.DataAccess
                             Id = lector.IsDBNull(lector.GetOrdinal("Id")) ? default(int) : lector.GetInt32(lector.GetOrdinal("Id")),
                             Username = lector.IsDBNull(lector.GetOrdinal("Username")) ? default(string) : lector.GetString(lector.GetOrdinal("Username")),
                             Password= lector.IsDBNull(lector.GetOrdinal("Password")) ? default(string) : lector.GetString(lector.GetOrdinal("Password")),
+                            ConfirmarPassword = lector.IsDBNull(lector.GetOrdinal("ConfirmarPassword")) ? default(string) : lector.GetString(lector.GetOrdinal("ConfirmarPassword")),
                             Nombre = lector.IsDBNull(lector.GetOrdinal("Nombre")) ? default(string) : lector.GetString(lector.GetOrdinal("Nombre")),
                             Apellido = lector.IsDBNull(lector.GetOrdinal("Apellido")) ? default(string) : lector.GetString(lector.GetOrdinal("Apellido")),
                             Correo = lector.IsDBNull(lector.GetOrdinal("Correo")) ? default(string) : lector.GetString(lector.GetOrdinal("Correo")),
@@ -189,6 +191,7 @@ namespace Base.DataAccess
             {
                 _database.AddInParameter(comando, "@Username", DbType.String, entity.Username);
                 _database.AddInParameter(comando, "@Password", DbType.String, entity.Password);
+                _database.AddInParameter(comando, "@ConfirmarPassword", DbType.String, entity.ConfirmarPassword);
                 _database.AddInParameter(comando, "@Nombre", DbType.String, entity.Nombre);
                 _database.AddInParameter(comando, "@Apellido", DbType.String, entity.Apellido);
                 _database.AddInParameter(comando, "@Correo", DbType.String, entity.Correo);

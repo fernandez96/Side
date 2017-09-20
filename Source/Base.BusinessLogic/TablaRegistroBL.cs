@@ -24,6 +24,10 @@ namespace Base.BusinessLogic
             return TablaRegistroRepository.Instancia.GetById(entity);
         }
 
+        public TablaRegistro GetCorrelativaCab()
+        {
+            return TablaRegistroRepository.Instancia.GetCorrelativaCab();
+        }
         public int Update(TablaRegistro entity)
         {
             return TablaRegistroRepository.Instancia.Update(entity);
@@ -53,6 +57,10 @@ namespace Base.BusinessLogic
             return TablaRegistroRepository.Instancia.DeleteDetalle(entity);
         }
 
+        public TablaRegistro GetCorrelativaDet(TablaRegistro entity)
+        {
+            return TablaRegistroRepository.Instancia.GetCorrelativaDet(entity);
+        }
         public IList<TablaRegistro> GetAll( int idtable)
         {
             return TablaRegistroRepository.Instancia.GetAll(idtable);

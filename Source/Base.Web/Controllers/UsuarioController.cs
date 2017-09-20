@@ -63,22 +63,33 @@ namespace Base.Web.Controllers
 
                 if (!UsuarioBL.Instancia.Exists(usuario))
                 {
-                 
-                    string passwordEncriptdo = Seguridad.Encriptar(usuario.Password.Trim());
-                    usuario.Password = passwordEncriptdo;
-                    resultado = UsuarioBL.Instancia.Add(usuario);
 
-                    if (resultado > 0)
+                    usuario.Password  = Seguridad.Encriptar(usuario.Password.Trim());
+                    usuario.ConfirmarPassword = Seguridad.Encriptar(usuario.ConfirmarPassword.Trim());
+                    
+                  
+                    if (usuario.Password == usuario.ConfirmarPassword)
                     {
-                        jsonResponse.Title = Title.TitleRegistro;
-                        jsonResponse.Message = Mensajes.RegistroSatisfactorio;
+                        resultado = UsuarioBL.Instancia.Add(usuario);
+                        if (resultado > 0)
+                        {
+                            jsonResponse.Title = Title.TitleRegistro;
+                            jsonResponse.Message = Mensajes.RegistroSatisfactorio;
+                        }
+                        else
+                        {
+                            jsonResponse.Title = Title.TitleAlerta;
+                            jsonResponse.Warning = true;
+                            jsonResponse.Message = Mensajes.RegistroFallido;
+                        }
                     }
                     else
                     {
-                        jsonResponse.Title = Title.TitleAlerta;
                         jsonResponse.Warning = true;
-                        jsonResponse.Message = Mensajes.RegistroFallido;
+                        jsonResponse.Title = Title.TitleAlerta;
+                        jsonResponse.Message = Mensajes.ContraseñaNoConsiden;
                     }
+
                 }
                 else
                 {
@@ -203,6 +214,8 @@ namespace Base.Web.Controllers
                 if (usuarioResult != null)
                 {
                     usuarioDTO = MapperHelper.Map<Usuario, UsuarioDTO>(usuarioResult);
+                    usuarioDTO.Password = Seguridad.Desencriptar(usuarioDTO.Password.Trim());
+                    usuarioDTO.ConfirmarPassword = Seguridad.Desencriptar(usuarioDTO.ConfirmarPassword.Trim());
                     jsonResponse.Data = usuarioDTO;
                 }
                 else
@@ -258,25 +271,39 @@ namespace Base.Web.Controllers
             {
                 var usuario = MapperHelper.Map<UsuarioDTO, Usuario>(usuarioDTO);
                 usuario.Password = Seguridad.Encriptar(usuario.Password);
-                int resultado = UsuarioBL.Instancia.Update(usuario);
+                usuario.ConfirmarPassword = Seguridad.Encriptar(usuario.ConfirmarPassword);
+                int resultado=0;
 
-                if (resultado > 0)
+                if (usuario.Password==usuario.ConfirmarPassword)
                 {
-                    jsonResponse.Title = Title.TitleActualizar;
-                    jsonResponse.Message = Mensajes.ActualizacionSatisfactoria;
+                     resultado = UsuarioBL.Instancia.Update(usuario);
+                    if (resultado > 0)
+                    {
+                        jsonResponse.Title = Title.TitleActualizar;
+                        jsonResponse.Message = Mensajes.ActualizacionSatisfactoria;
+                    }
+                    if (resultado == 0)
+                    {
+                        jsonResponse.Title = Title.TitleAlerta;
+                        jsonResponse.Warning = true;
+                        jsonResponse.Message = Mensajes.ActualizacionFallida;
+                    }
+                    if (resultado == -2)
+                    {
+                        jsonResponse.Title = Title.TitleAlerta;
+                        jsonResponse.Warning = true;
+                        jsonResponse.Message = Mensajes.YaExisteRegistro;
+                    }
                 }
-                if (resultado == 0)
+                else
                 {
-                    jsonResponse.Title = Title.TitleAlerta;
                     jsonResponse.Warning = true;
-                    jsonResponse.Message = Mensajes.ActualizacionFallida;
-                }
-                if (resultado == -2)
-                {
                     jsonResponse.Title = Title.TitleAlerta;
-                    jsonResponse.Warning = true;
-                    jsonResponse.Message = Mensajes.YaExisteRegistro;
+                    jsonResponse.Message = Mensajes.ContraseñaNoConsiden;
+
                 }
+
+               
 
                 LogBL.Instancia.Add(new Log
                 {
@@ -384,10 +411,10 @@ namespace Base.Web.Controllers
                 dataTableModel.orderBy = (" [" + column + "] " + columnDir + " ");
             }
 
-            dataTableModel.whereFilter = "WHERE U.Estado IN (1,2)";
+            dataTableModel.whereFilter = "WHERE U.Estado IN (1)";
 
             if (dataTableModel.filter.RolIdSearch > 0)
-                dataTableModel.whereFilter += (" AND R.Id = " + dataTableModel.filter.RolIdSearch);
+                dataTableModel.whereFilter += (" AND RolId = " + dataTableModel.filter.RolIdSearch);
 
             if (!string.IsNullOrWhiteSpace(dataTableModel.filter.UsernameSearch))
                 dataTableModel.whereFilter += (" AND U.Username LIKE '%" + dataTableModel.filter.UsernameSearch + "%'");

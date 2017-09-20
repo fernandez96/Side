@@ -110,6 +110,27 @@ namespace Base.DataAccess
             return id;
         }
 
+        public TablaRegistro GetCorrelativaCab()
+        {
+            TablaRegistro tablaregistro = null;
+            using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "SGE_TABLA_OPCIONES_CAB_GetDocumento")))
+            {
+                using (var lector = _database.ExecuteReader(comando))
+                {
+                    if (lector.Read())
+                    {
+                        tablaregistro = new TablaRegistro
+                        {
+                            correlativaCab = lector.IsDBNull(lector.GetOrdinal("Correlativo")) ? default(int) : lector.GetInt32(lector.GetOrdinal("Correlativo")),
+
+                        };
+                    }
+                }
+            }
+
+            return tablaregistro;
+        }
+
         #endregion
 
         #region Métodos publicos de Detalle
@@ -222,6 +243,26 @@ namespace Base.DataAccess
             return idResult;
         }
 
+        public TablaRegistro GetCorrelativaDet(TablaRegistro entity)
+        {
+            TablaRegistro tablaregistro = null;
+            using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "SGE_TABLA_OPCIONES_DET_GetDocumento")))
+            {
+                _database.AddInParameter(comando, "@idtabla", DbType.Int32, entity.Id);
+                using (var lector = _database.ExecuteReader(comando))
+                {
+                    if (lector.Read())
+                    {
+                        tablaregistro = new TablaRegistro
+                        {
+                            correlativaDet = lector.IsDBNull(lector.GetOrdinal("Correlativo")) ? default(int) : lector.GetInt32(lector.GetOrdinal("Correlativo"))
+                        };
+                    }
+                }
+            }
+
+            return tablaregistro;
+        }
 
         #endregion
 
@@ -248,7 +289,7 @@ namespace Base.DataAccess
             }
 
             return tablaregistro;
-        }
+        }       
         #endregion
 
     }

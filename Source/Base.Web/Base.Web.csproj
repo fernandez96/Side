@@ -350,6 +350,7 @@
     <Content Include="Content\js\go\go.js" />
     <Content Include="Content\js\go\icons.js" />
     <Content Include="Content\js\html5shiv.js" />
+    <Content Include="Content\js\inputmask.js" />
     <Content Include="Content\js\jqGrid\i18n\grid.locale-es.js" />
     <Content Include="Content\js\jqGrid\jquery.jqGrid.src.js" />
     <Content Include="Content\js\jquery-ui-1.10.4.custom.min.js" />

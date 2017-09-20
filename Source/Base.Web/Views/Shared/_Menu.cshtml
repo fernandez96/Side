@@ -29,7 +29,7 @@
     <ul class="nav nav-list">
         @if (WebSession.Usuario != null)
         {
-            if (WebSession.Usuario.RolId == ConstantesWeb.RolAdministrador)
+            if (WebSession.Usuario.RolId == WebSession.Usuario.RolId)
             {
                 <li class="active">
                     <a href="#" class="dropdown-toggle">
