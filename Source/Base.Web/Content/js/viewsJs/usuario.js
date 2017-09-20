@@ -69,17 +69,26 @@ $(document).ready(function () {
     
     });
 
-    $("#mostarPass ,#mostarPassConf").on('click', function () {
+    $("#mostarPass").on('click', function () {
         var allInputs = $("#Contrasena").get(0).type;
         if (allInputs === 'text') {
             $("#Contrasena").prop("type", "password");
-            $("#ContrasenaConf").prop("type", "password");
         }
         if (allInputs === 'password') {
             $("#Contrasena").prop("type", "text");
-            $("#ContrasenaConf").prop("type", "password");
         }
        });
+
+    $("#mostarPassConf").on('click', function () {
+        var allInputs = $("#ContrasenaConf").get(0).type;
+        if (allInputs === 'text') {
+            $("#ContrasenaConf").prop("type", "password");
+        }
+        if (allInputs === 'password') {
+            $("#ContrasenaConf").prop("type", "text");
+        }
+    });
+
 
     $("#btnSearchUsuario").on("click", function (e) {
         if ($('#UsuarioSearchForm').valid()) {
