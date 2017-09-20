@@ -64,7 +64,7 @@ namespace Base.Web.Controllers
                 if (!UsuarioBL.Instancia.Exists(usuario))
                 {
                  
-                    string passwordEncriptdo = Seguridad.encriptar(usuario.Password.Trim());
+                    string passwordEncriptdo = Seguridad.Encriptar(usuario.Password.Trim());
                     usuario.Password = passwordEncriptdo;
                     resultado = UsuarioBL.Instancia.Add(usuario);
 
@@ -257,7 +257,7 @@ namespace Base.Web.Controllers
             try
             {
                 var usuario = MapperHelper.Map<UsuarioDTO, Usuario>(usuarioDTO);
-                usuario.Password = Seguridad.encriptar(usuario.Password);
+                usuario.Password = Seguridad.Encriptar(usuario.Password);
                 int resultado = UsuarioBL.Instancia.Update(usuario);
 
                 if (resultado > 0)
@@ -351,6 +351,27 @@ namespace Base.Web.Controllers
 
             return Json(jsonResponse);
         }
+
+        public JsonResult GetAll(int idtabla)
+        {
+            var jsonResponse = new JsonResponse { Success = true };
+
+            try
+            {
+                var estadoList = TablaRegistroBL.Instancia.GetAll(idtabla);
+                var usuarioDTOList = MapperHelper.Map<IEnumerable<TablaRegistro>, IEnumerable<TablaRegistroDTO>>(estadoList);
+                jsonResponse.Data = usuarioDTOList;
+            }
+            catch (Exception ex)
+            {
+                LogError(ex);
+                jsonResponse.Success = false;
+                jsonResponse.Message = Mensajes.IntenteloMasTarde;
+            }
+
+            return Json(jsonResponse);
+        }
+
         #region Métodos Privados
 
         public void FormatDataTable(DataTableModel<UsuarioFilterModel, int> dataTableModel)

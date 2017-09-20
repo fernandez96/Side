@@ -105,6 +105,8 @@ namespace Base.Web.Controllers
                     UsuarioAD usuarioAD = new UsuarioAD();
                     if (usuarioAD.AutenticarEnDominio(loginDTO.Username, loginDTO.Password))
                     {
+                        string passwordencriptado = Seguridad.Encriptar(loginDTO.Password.Trim());
+                        loginDTO.Password = passwordencriptado;
                         var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username,loginDTO.Password);
                         if (usuario != null)
                         {
@@ -137,6 +139,8 @@ namespace Base.Web.Controllers
                 }
                 else
                 {
+                    string passwordencriptado = Seguridad.Encriptar(loginDTO.Password.Trim());
+                    loginDTO.Password = passwordencriptado;
                     var usuario = UsuarioBL.Instancia.GetByUsername(loginDTO.Username,loginDTO.Password);
                     if (usuario != null)
                     {

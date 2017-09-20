@@ -53,5 +53,10 @@ namespace Base.BusinessLogic
             return TablaRegistroRepository.Instancia.DeleteDetalle(entity);
         }
 
+        public IList<TablaRegistro> GetAll( int idtable)
+        {
+            return TablaRegistroRepository.Instancia.GetAll(idtable);
+        }
+
     }
 }

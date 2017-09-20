@@ -174,7 +174,7 @@ $(document).ready(function () {
         });
     CargarCargo();
     CargarRol();
-
+    CargarEstado();
 
 
         $('[data-toggle="tooltip"]').tooltip();
@@ -499,6 +499,55 @@ function CargarRol(){
         });
     });
 }
+
+function CargarEstado() {
+    var modelView = {
+        idtabla: 3
+
+    };
+    webApp.Ajax({
+        url: urlMantenimiento + 'GetAll',
+        async: false,
+        parametros:modelView
+    }, function (response) {
+        if (response.Success) {
+
+            if (response.Warning) {
+                $.gritter.add({
+                    title: 'Alerta',
+                    text: response.Message,
+                    class_name: 'gritter-warning gritter'
+                });
+            } else {
+        
+                $.each(response.Data, function (index, item) {
+                    $("#Estado").append('<option value="' + item.Id + '">' + item.tbpd_vdescripcion_detalle + '</option>');
+                });
+                console.log(response.Data);
+                webApp.clearForm('UsuarioSearchForm');
+            }
+        } else {
+            $.gritter.add({
+                title: 'Error',
+                text: response.Message,
+                class_name: 'gritter-error gritter'
+            });
+        }
+    }, function (response) {
+        $.gritter.add({
+            title: 'Error',
+            text: response,
+            class_name: 'gritter-error gritter'
+        });
+    }, function (XMLHttpRequest, textStatus, errorThrown) {
+        $.gritter.add({
+            title: 'Error',
+            text: "Status: " + textStatus + "<br/>Error: " + errorThrown,
+            class_name: 'gritter-error gritter'
+        });
+    });
+}
+
 
 function AddSearchFilter() {
     $("#UsuarioDataTable_wrapper").prepend($("#searchFilterDiv").html());
