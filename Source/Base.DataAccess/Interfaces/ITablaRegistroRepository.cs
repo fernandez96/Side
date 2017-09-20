@@ -16,6 +16,8 @@ namespace Base.DataAccess.Interfaces
         T GetByIdDetalle(T entity);
         Q DeleteDetalle(T entity);
 
+        IList<T> GetAll(Q idtable);
+
 
     }
 }

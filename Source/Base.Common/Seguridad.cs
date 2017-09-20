@@ -8,118 +8,66 @@ namespace Base.Common
 {
    public class Seguridad
     {
-        private static string _sHashAlgorithm;
-        #region Encriptar
+        #region Variables
+
+        private const string PasswordHash = "pass75dc@avz10";
+        private const string SaltKey = "s@lAvz10";
+        private const string VIKey = "@1B2c3D4e5F6g7H8";
+        private const int KeySize = 64;
+
+        #endregion Variables
 
         /// <summary>
-        ///     Método para encriptar un texto plano usando el algoritmo (Rijndael).
-        ///     Este es el mas simple posible, muchos de los datos necesarios los
-        ///     definimos como constantes.
+        /// Método para encriptar un texto plano usando el algoritmo (Rijndael).
+        /// Este es el mas simple posible, muchos de los datos necesarios los
+        /// definimos como constantes.
         /// </summary>
-        /// <param name="textoQueEncriptaremos">texto a encriptar</param>
-        /// <returns>Texto encriptado</returns>
-        public static string encriptar(string textoQueEncriptaremos)
+        /// <param name="plainText"></param>
+        /// <returns></returns>
+        public static string Encriptar(string plainText)
         {
-            if (string.IsNullOrWhiteSpace(textoQueEncriptaremos))
-                return string.Empty;
-            return encriptar(textoQueEncriptaremos, "pass75dc@avz10", "s@lAvz", GetHashAlgorithm(), 1, "@1B2c3D4e5F6g7H8", 64);
+            byte[] plainTextBytes = Encoding.UTF8.GetBytes(plainText);
+
+            byte[] keyBytes = new Rfc2898DeriveBytes(PasswordHash, Encoding.ASCII.GetBytes(SaltKey)).GetBytes(KeySize / 8);
+            var symmetricKey = new RijndaelManaged { Mode = CipherMode.CBC, Padding = PaddingMode.Zeros };
+            var encryptor = symmetricKey.CreateEncryptor(keyBytes, Encoding.ASCII.GetBytes(VIKey));
+
+            byte[] cipherTextBytes;
+
+            using (var memoryStream = new MemoryStream())
+            {
+                using (var cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write))
+                {
+                    cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
+                    cryptoStream.FlushFinalBlock();
+                    cipherTextBytes = memoryStream.ToArray();
+                    cryptoStream.Close();
+                }
+                memoryStream.Close();
+            }
+            return Convert.ToBase64String(cipherTextBytes);
         }
 
         /// <summary>
-        ///     Método para encriptar un texto plano usando el algoritmo (Rijndael)
+        /// Método para desencriptar un texto encriptado (Rijndael)
         /// </summary>
-        /// <returns>Texto encriptado</returns>
-        public static string encriptar(string textoQueEncriptaremos,
-            string passBase, string saltValue, string hashAlgorithm,
-            int passwordIterations, string initVector, int keySize)
+        /// <param name="encryptedText"></param>
+        /// <returns></returns>
+        public static string Desencriptar(string encryptedText)
         {
-            byte[] initVectorBytes = Encoding.ASCII.GetBytes(initVector);
-            byte[] saltValueBytes = Encoding.ASCII.GetBytes(saltValue);
-            byte[] plainTextBytes = Encoding.UTF8.GetBytes(textoQueEncriptaremos);
+            byte[] cipherTextBytes = Convert.FromBase64String(encryptedText);
+            byte[] keyBytes = new Rfc2898DeriveBytes(PasswordHash, Encoding.ASCII.GetBytes(SaltKey)).GetBytes(KeySize / 8);
+            var symmetricKey = new RijndaelManaged { Mode = CipherMode.CBC, Padding = PaddingMode.None };
 
-            var password = new PasswordDeriveBytes(passBase, saltValueBytes, hashAlgorithm, passwordIterations);
-
-            byte[] keyBytes = password.GetBytes(keySize / 8);
-            var symmetricKey = new RijndaelManaged { Mode = CipherMode.CBC };
-            ICryptoTransform encryptor = symmetricKey.CreateEncryptor(keyBytes, initVectorBytes);
-
-            var memoryStream = new MemoryStream();
-            var cryptoStream = new CryptoStream(memoryStream, encryptor, CryptoStreamMode.Write);
-            cryptoStream.Write(plainTextBytes, 0, plainTextBytes.Length);
-            cryptoStream.FlushFinalBlock();
-
-            byte[] cipherTextBytes = memoryStream.ToArray();
-
-            memoryStream.Close();
-            cryptoStream.Close();
-
-            string cipherText = Convert.ToBase64String(cipherTextBytes);
-            return cipherText;
-        }
-
-        #endregion Encriptar
-
-        #region Desencriptar
-
-        /// <summary>
-        ///     Método para desencriptar un texto encriptado.
-        /// </summary>
-        /// <returns>Texto desencriptado</returns>
-        public static string desencriptar(string textoEncriptado)
-        {
-            if (string.IsNullOrWhiteSpace(textoEncriptado))
-                return string.Empty;
-            return desencriptar(textoEncriptado, "pass75dc@avz10", "s@lAvz", GetHashAlgorithm(), 1, "@1B2c3D4e5F6g7H8", 64);
-        }
-
-        /// <summary>
-        ///     Método para desencriptar un texto encriptado (Rijndael)
-        /// </summary>
-        /// <returns>Texto desencriptado</returns>
-        public static string desencriptar(string textoEncriptado, string passBase,
-            string saltValue, string hashAlgorithm, int passwordIterations,
-            string initVector, int keySize)
-        {
-            byte[] initVectorBytes = Encoding.ASCII.GetBytes(initVector);
-            byte[] saltValueBytes = Encoding.ASCII.GetBytes(saltValue);
-            byte[] cipherTextBytes = Convert.FromBase64String(textoEncriptado);
-            var password = new PasswordDeriveBytes(passBase, saltValueBytes, hashAlgorithm, passwordIterations);
-
-            byte[] keyBytes = password.GetBytes(keySize / 8);
-            var symmetricKey = new RijndaelManaged { Mode = CipherMode.CBC };
-
-            ICryptoTransform decryptor = symmetricKey.CreateDecryptor(keyBytes, initVectorBytes);
-
+            var decryptor = symmetricKey.CreateDecryptor(keyBytes, Encoding.ASCII.GetBytes(VIKey));
             var memoryStream = new MemoryStream(cipherTextBytes);
             var cryptoStream = new CryptoStream(memoryStream, decryptor, CryptoStreamMode.Read);
-
             var plainTextBytes = new byte[cipherTextBytes.Length];
-            int decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
 
+            int decryptedByteCount = cryptoStream.Read(plainTextBytes, 0, plainTextBytes.Length);
             memoryStream.Close();
             cryptoStream.Close();
-
-            string plainText = Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount);
-            return plainText;
-        }
-
-        #endregion Desencriptar
-
-        private static string GetHashAlgorithm()
-        {
-            if (_sHashAlgorithm != null)
-            {
-                return _sHashAlgorithm;
-            }
-
-            string hashAlgorithmType = ConfigurationManager.AppSettings["HashAlgorithmType"];
-
-            HashAlgorithm algorithm = HashAlgorithm.Create(hashAlgorithmType);
-            if (algorithm == null)
-            {
-                throw new ConfigurationErrorsException("Invalid_hash_algorithm_type");
-            }
-            return _sHashAlgorithm = hashAlgorithmType;
+            return Encoding.UTF8.GetString(plainTextBytes, 0, decryptedByteCount).TrimEnd("\0".ToCharArray());
         }
     }
 }

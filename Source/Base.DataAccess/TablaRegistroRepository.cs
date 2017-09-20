@@ -224,5 +224,32 @@ namespace Base.DataAccess
 
 
         #endregion
+
+        #region metodo universal 
+        public IList<TablaRegistro> GetAll(int idtatble)
+        {
+            List<TablaRegistro> tablaregistro = new List<TablaRegistro>();
+            using (var comando = _database.GetStoredProcCommand(string.Format("{0}{1}", ConectionStringRepository.EsquemaName, "SGE_TABLA_OPCIONES_GetById")))
+            {
+                _database.AddInParameter(comando, "@idTabla", DbType.Int32, idtatble);
+
+                using (var lector = _database.ExecuteReader(comando))
+                {
+                    while (lector.Read())
+                    {
+                        tablaregistro.Add(new TablaRegistro
+                        {
+                            Id = lector.IsDBNull(lector.GetOrdinal("tbpd_iid_tabla_opciones_det")) ? default(int) : lector.GetInt32(lector.GetOrdinal("tbpd_iid_tabla_opciones_det")),
+                            tbpd_vdescripcion_detalle = lector.IsDBNull(lector.GetOrdinal("tbpd_vdescripcion_detalle")) ? default(string) : lector.GetString(lector.GetOrdinal("tbpd_vdescripcion_detalle")),
+                           
+                        });
+                    }
+                }
+            }
+
+            return tablaregistro;
+        }
+        #endregion
+
     }
 }
