@@ -1,10 +1,16 @@
-﻿using Base.Common;
+﻿using Base.BusinessEntity;
+using Base.BusinessLogic;
+using Base.Common;
 using Base.Common.DataTable;
+using Base.DTO;
+using Base.DTO.AutoMapper;
 using Base.Web.ApiService;
 using Base.Web.Core;
 using Base.Web.Models;
 using Base.Web.Utilities;
 using Newtonsoft.Json;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,69 +21,25 @@ namespace Base.Web.Controllers
 {
     public class ReporteController : BaseController
     {
-        // GET: Reporte
-        public ActionResult Index()
+        [HttpPost]
+        public ActionResult StimulsoftControl(string controllerGetSnapshot, Dictionary<string, string> parametros)
         {
-            return View();
+          //  return PartialView();
+            return StiMvcViewer.ViewerEventResult();
         }
-
-        public JsonResult Listar(DataTableModel<ReporteFilterModel, int> dataTableModel)
+        public ActionResult GetReportSnapshot()
         {
-            try
-            {
-                FormatDataTable(dataTableModel);
-                var jsonResponse = new JsonResponse { Success = false };
-                jsonResponse = InvokeHelper.MakeRequest(ConstantesWeb.WS_Reporte_GetAllPaging,
-                    new PaginationParameter<int>
-                    {
-                        AmountRows = dataTableModel.length,
-                        WhereFilter = dataTableModel.whereFilter,
-                        Start = dataTableModel.start,
-                        OrderBy = dataTableModel.orderBy
-                    }, ConstantesWeb.METHODPOST);
+            TablaRegistroDTO tablaRegistroDTO = new TablaRegistroDTO();
+            var tablaregistro = MapperHelper.Map<TablaRegistroDTO, TablaRegistro>(tablaRegistroDTO);
+            var dataDocumento = TablaRegistroBL.Instancia.GetById(new TablaRegistro { Id = 2 });
 
-                var usuarioPaginationModelList = (List<ReportePaginationModel>)JsonConvert.DeserializeObject(jsonResponse.Data.ToString(), (new List<ReportePaginationModel>()).GetType());
-                dataTableModel.data = usuarioPaginationModelList;
-                if (usuarioPaginationModelList.Count > 0)
-                {
-                    dataTableModel.recordsTotal = usuarioPaginationModelList[0].CantidadRows;
-                    dataTableModel.recordsFiltered = dataTableModel.recordsTotal;
-                }
-            }
-            catch (Exception ex)
-            {
-                LogError(ex);
-
-                ViewBag.MessageError = ex.Message;
-                dataTableModel.data = new List<UsuarioPaginationModel>();
-            }
-            return Json(dataTableModel);
+            var report = new StiReport();
+            report.Load(Server.MapPath("~/Prints/M_Administrador/TablaRegistro/ReporteIngreso.mrt"));
+            //report.RegBusinessObject("Almacen", "Documento", dataDocumento);
+            //report.RegBusinessObject("Almacen", "DetalleDocumento", dataDocumento);
+            //report.GetComponentByName("txtAnulado").Enabled = dataDocumento.EstadoDocumento ==
+            //                                                  (int)EstadoDocumento.Anulado;
+            return StiMvcViewer.GetReportSnapshotResult(HttpContext, report);
         }
-
-        #region Métodos Privados
-
-        public void FormatDataTable(DataTableModel<ReporteFilterModel, int> dataTableModel)
-        {
-            for (int i = 0; i < dataTableModel.order.Count; i++)
-            {
-                var columnIndex = dataTableModel.order[0].column;
-                var columnDir = dataTableModel.order[0].dir.ToUpper();
-                var column = dataTableModel.columns[columnIndex].data;
-                dataTableModel.orderBy = (" [" + column + "] " + columnDir + " ");
-            }
-            string WhereModel = "WHERE 1=1";
-            if (dataTableModel.filter.AnioSearch!=0)
-            {
-                WhereModel += " OR Anio="+ dataTableModel.filter.AnioSearch +"";
-            }
-            if (dataTableModel.filter.ClienteSearch!=null || dataTableModel.filter.ClienteSearch != "")
-            {
-                WhereModel += " OR Cliente='" + dataTableModel.filter.ClienteSearch + "'";
-            }
-            dataTableModel.whereFilter = WhereModel;
-
-        }
-
-        #endregion
     }
 }

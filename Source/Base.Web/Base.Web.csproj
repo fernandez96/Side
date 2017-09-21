@@ -144,6 +144,21 @@
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Stimulsoft.Base">
+      <HintPath>..\..\Lib\Stimulsoft.Base.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report">
+      <HintPath>..\..\Lib\Stimulsoft.Report.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Mvc">
+      <HintPath>..\..\Lib\Stimulsoft.Report.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.MvcMobile">
+      <HintPath>..\..\Lib\Stimulsoft.Report.MvcMobile.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -376,6 +391,7 @@
     <None Include="Content\js\JSLINQ-vsdoc.js" />
     <Content Include="Content\js\JSLINQ.js" />
     <Content Include="Content\js\jstree.min.js" />
+    <Content Include="Content\js\languages\stimulsoft\es.xml" />
     <Content Include="Content\js\realTime.js" />
     <Content Include="Content\js\respond.js" />
     <Content Include="Content\js\tree\tree_component.js" />
@@ -548,11 +564,12 @@
     <Content Include="Views\Error\ServerError.cshtml" />
     <Content Include="Views\Error\NotFound.cshtml" />
     <Content Include="Views\Usuario\Index.cshtml" />
-    <Content Include="Views\Reporte\Index.cshtml" />
     <Content Include="Views\EnvioEmail\Index.cshtml" />
     <Content Include="Views\Curso\Index.cshtml" />
     <Content Include="Views\campana\Index.cshtml" />
     <Content Include="Views\Diplomado\Index.cshtml" />
+    <Content Include="Prints\M_Administrador\TablaRegistro\ReporteIngreso.mrt" />
+    <Content Include="Prints\M_Administrador\TablaRegistro\TablaOpciones.mrt" />
     <None Include="Properties\PublishProfiles\SideWeb.pubxml" />
     <None Include="Properties\PublishProfiles\Web.pubxml" />
     <Content Include="Views\_ViewStart.cshtml" />
@@ -560,6 +577,8 @@
     <Content Include="Views\TipoDocumento\Index.cshtml" />
     <Content Include="Views\TipoOpcione\Index.cshtml" />
     <Content Include="Views\Parametro\Index.cshtml" />
+    <Content Include="Views\TipoOpcione\StimulsoftControl.cshtml" />
+    <Content Include="Views\Reporte\StimulsoftControl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

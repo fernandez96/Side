@@ -74,7 +74,9 @@
                                             <a id="btnaccesoTable" data-toggle="tooltip" class="dt-button buttons-print btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Detalle de tabla">
                                                 <span><i class="fa fa-newspaper-o bigger-110 grey"></i> </span>
                                             </a>
-
+                                            <a id="btprint" data-toggle="tooltip" class="dt-button buttons-print btn btn-white btn-primary btn-bold" tabindex="0" aria-controls="dynamic-table" data-original-title="" title="Imprimir">
+                                                <span><i class="fa fa-print bigger-110 grey"></i> </span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -292,6 +294,21 @@
                     </div>
                 </div>
             </div>
+
+            <div id="modal-print-tabla" class="modal fade">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="bootbox-close-button close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class='modal-title'><span id='print'></span> Imprimir</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div id="divReport"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             </div><!-- /.page-content -->
     </div>
 </div><!-- /.main-content -->

@@ -7,6 +7,9 @@ using Base.DTO.AutoMapper;
 using Base.Web.Core;
 using Base.Web.Models;
 using Newtonsoft.Json;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Components;
+using Stimulsoft.Report.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -499,6 +502,35 @@ namespace Base.Web.Controllers
             return Json(jsonResponse);
         }
 
+
+        //imprimir
+
+        public ActionResult StimulsoftControl(TablaRegistroDTO entity)
+        {
+            TempData["parametro"] = entity;
+             return StiMvcViewer.ViewerEventResult();
+        }
+  
+        public  ActionResult GetReportSnapshot()
+        {
+            TablaRegistroDTO tablaRegistroDTO = new TablaRegistroDTO();
+            tablaRegistroDTO.Id=ViewBag["ID"];
+            var tablaregistro = MapperHelper.Map<TablaRegistroDTO, TablaRegistro>(tablaRegistroDTO);
+            var dataTabla = TablaRegistroBL.Instancia.GetById(tablaregistro);
+            var dataBtabladetablle = TablaRegistroBL.Instancia.GetAllPagingDetalle(new PaginationParameter<int> {
+                AmountRows = 100,
+                WhereFilter = "WHERE tbpd_flag_estado=1 AND tbpc_iid_tabla_opciones =" + tablaregistro.Id + "",
+                Start = 0,
+                OrderBy = "",
+            });
+
+            var report = new StiReport();
+            report.Load(Server.MapPath("~/Prints/M_Administrador/TablaRegistro/TablaOpciones.mrt"));
+            report.RegBusinessObject("tabla", "tabla", dataTabla);
+            report.RegBusinessObject("tabladetalle", "tabladetalle", dataBtabladetablle);
+
+            return StiMvcViewer.GetReportSnapshotResult(HttpContext, report);
+        }
 
         #region Métodos Privados
 

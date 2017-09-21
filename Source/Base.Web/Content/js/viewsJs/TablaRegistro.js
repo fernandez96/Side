@@ -7,6 +7,8 @@ var delRowID = 0;
 var urlListarCabezera = baseUrl + 'TipoOpcione/ListarCabezera';
 var urlListarDetalle = baseUrl + 'TipoOpcione/ListarDetalle';
 var urlMantenimiento = baseUrl + 'TipoOpcione/';
+var urlMantenimientoReport = baseUrl + 'Reporte/';
+
 var rowTabla = null;
 var rowTablaDetalle = null;
 var selected = [];
@@ -118,6 +120,22 @@ $(document).ready(function () {
             GetTablaById();
         });
     });
+    $('#btprint').on('click', function () {
+        rowTabla = dataTableTabla.row('.selected').data();
+        if (typeof rowTabla === "undefined") {
+            webApp.showMessageDialog("Por favor seleccione un registro.");
+        }
+        else {
+            checkSession(function () {
+                Imprimir(rowTabla.Id);
+            });
+        }
+        
+    });
+
+    
+   
+
 
     $('#btnEliminarTablaDetalle').on('click', function () {
         rowTablaDetalle = dataTableTablaDetalle.row('.selected').data();
@@ -166,6 +184,8 @@ $(document).ready(function () {
 
         e.preventDefault();
     });
+
+
 
     $("#btnGuardarTabla").on("click", function (e) {
 
@@ -337,6 +357,7 @@ function GetTablaById() {
     if (typeof rowTabla === "undefined") {
         webApp.showMessageDialog("Por favor seleccione un registro.");
     }
+    
     else {
         var modelView = {
             Id: rowTabla.Id
@@ -715,6 +736,22 @@ function Eliminartabladetalle(id) {
 
     delRowPos = null;
     delRowID = 0;
+}
+
+function Imprimir(id) {
+    var modelView = {
+        Id: id
+    };
+    alert(modelView.Id);
+    webApp.Ajax({
+        url: urlMantenimiento + 'StimulsoftControl',
+        contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
+        datatype: 'html',
+        parametros: modelView,
+    }, function (result) {
+        $('#divReport').html(result);
+        $("#modal-print-tabla").modal("show");
+    });
 }
 
 function LimpiarFormularioTabla() {

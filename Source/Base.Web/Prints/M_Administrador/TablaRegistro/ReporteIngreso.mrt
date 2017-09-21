@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<StiSerializer version="1.02" type="Net" application="StiReport">
+  <Culture>es-PE</Culture>
+  <Dictionary Ref="1" type="Dictionary" isKey="true">
+    <BusinessObjects isList="true" count="1">
+      <IngresoAlbergue Ref="2" type="Stimulsoft.Report.Dictionary.StiBusinessObject" isKey="true">
+        <Alias>IngresoAlbergue</Alias>
+        <BusinessObjects isList="true" count="0" />
+        <Category>Ingresos</Category>
+        <Columns isList="true" count="10">
+          <value>Id,System.Int32</value>
+          <value>Ninho,System.String</value>
+          <value>Edad,System.Int32</value>
+          <value>FechaIngreso,System.String</value>
+          <value>TipoNinho,System.Int32</value>
+          <value>Sexo,System.Int32</value>
+          <value>Procedencia,System.String</value>
+          <value>TipoVivienda,System.String</value>
+          <value>TipoAlojamiento,System.String</value>
+          <value>FechaSalida,System.String</value>
+        </Columns>
+        <Dictionary isRef="1" />
+        <Guid>0b6f500867c1430aa916f76ab6013602</Guid>
+        <Name>IngresoAlbergue</Name>
+      </IngresoAlbergue>
+    </BusinessObjects>
+    <Databases isList="true" count="0" />
+    <DataSources isList="true" count="0" />
+    <Relations isList="true" count="0" />
+    <Report isRef="0" />
+    <Variables isList="true" count="3">
+      <value>,Fecha,Fecha,,System.String,,False,False,False,False</value>
+      <value>,FechaInicio,FechaInicio,,System.String,,False,False,False,False</value>
+      <value>,FechaFin,FechaFin,,System.String,,False,False,False,False</value>
+    </Variables>
+  </Dictionary>
+  <EngineVersion>EngineV2</EngineVersion>
+  <GlobalizationStrings isList="true" count="0" />
+  <MetaTags isList="true" count="0" />
+  <Pages isList="true" count="1">
+    <Page1 Ref="3" type="Page" isKey="true">
+      <Border>None;Black;2;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Components isList="true" count="3">
+        <PageHeaderBand1 Ref="4" type="PageHeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,0.4,27.7,3</ClientRectangle>
+          <Components isList="true" count="7">
+            <Text1 Ref="5" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0,0.6,27.7,1</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,16,Bold</Font>
+              <HorAlignment>Center</HorAlignment>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text1</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>TABLA DE OPCIONES</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text1>
+            <Text47 Ref="6" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>2.4,2,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Italic</Font>
+              <Guid>51935001ea8342cebbdcdc3c5ff5a2a0</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text47</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{Fecha}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text47>
+            <Text2 Ref="7" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>0.2,2,2.2,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text2</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Fecha Reporte:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text2>
+            <Text3 Ref="8" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>13.6,2,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Italic</Font>
+              <Guid>039287d4fe864142a48c86eff02349a8</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text3</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{FechaInicio}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text3>
+            <Text4 Ref="9" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>11.8,2,1.8,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>46a084fc99ad403eb8c91f8305c84895</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text4</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Fecha Inicio:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text4>
+            <Text5 Ref="10" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>24.8,2,2.4,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8,Italic</Font>
+              <Guid>d80c3bc021004d43b0ef7a5c5712d41c</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text5</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>{FechaFin}</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text5>
+            <Text6 Ref="11" type="Text" isKey="true">
+              <Brush>Transparent</Brush>
+              <ClientRectangle>23.2,2,1.6,0.4</ClientRectangle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>bc8843b0c01e4035b0f13b0940c94465</Guid>
+              <Margins>0,0,0,0</Margins>
+              <Name>Text6</Name>
+              <Page isRef="3" />
+              <Parent isRef="4" />
+              <Text>Fecha Fin:</Text>
+              <TextBrush>Black</TextBrush>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text6>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>PageHeaderBand1</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </PageHeaderBand1>
+        <Header Ref="12" type="HeaderBand" isKey="true">
+          <Brush>Transparent</Brush>
+          <ClientRectangle>0,4.2,27.7,0.6</ClientRectangle>
+          <Components isList="true" count="10">
+            <HeaderIngresoAlbergue_Id Ref="13" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>0,0,1.71,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_Id</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>Nº Ingreso</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_Id>
+            <HeaderIngresoAlbergue_Ninho Ref="14" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>1.71,0,6.51,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_Ninho</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>Niño</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_Ninho>
+            <HeaderIngresoAlbergue_Edad Ref="15" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>8.22,0,1.6,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_Edad</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>Edad</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_Edad>
+            <HeaderIngresoAlbergue_FechaIngreso Ref="16" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>9.82,0,2.2,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_FechaIngreso</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>F. Ingreso</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_FechaIngreso>
+            <HeaderIngresoAlbergue_TipoNinho Ref="17" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>14.22,0,2.2,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_TipoNinho</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>Tipo de Niño</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_TipoNinho>
+            <HeaderIngresoAlbergue_Sexo Ref="18" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>16.42,0,1.6,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_Sexo</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>Sexo</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_Sexo>
+            <HeaderIngresoAlbergue_Procedencia Ref="19" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>18.02,0,4.6,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_Procedencia</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>Procedencia</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_Procedencia>
+            <HeaderIngresoAlbergue_TipoVivienda Ref="20" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>22.62,0,2.4,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_TipoVivienda</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>Tipo de Vivienda</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_TipoVivienda>
+            <HeaderIngresoAlbergue_TipoAlojamiento Ref="21" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>25.02,0,2.7,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>HeaderIngresoAlbergue_TipoAlojamiento</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>Tipo de Alojamiento</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </HeaderIngresoAlbergue_TipoAlojamiento>
+            <Text8 Ref="22" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>LightGray</Brush>
+              <ClientRectangle>12.02,0,2.2,0.6</ClientRectangle>
+              <ComponentStyle>Estilo1</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8.25,Bold,Point,False,0</Font>
+              <Guid>7a528cce9eda42a2824f5e805ee998e1</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text8</Name>
+              <Page isRef="3" />
+              <Parent isRef="12" />
+              <Text>F. Salida</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text8>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <Name>Header</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+        </Header>
+        <Data Ref="23" type="DataBand" isKey="true">
+          <Border>All;Black;1;Solid;False;4;Black</Border>
+          <Brush>Transparent</Brush>
+          <BusinessObjectGuid>0b6f500867c1430aa916f76ab6013602</BusinessObjectGuid>
+          <ClientRectangle>0,5.6,27.7,0.8</ClientRectangle>
+          <Components isList="true" count="10">
+            <DataIngresoAlbergue_Id Ref="24" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>0,0,1.71,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_Id</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IngresoAlbergue.Id}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_Id>
+            <DataIngresoAlbergue_Ninho Ref="25" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>1.71,0,6.51,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_Ninho</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IngresoAlbergue.Ninho}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_Ninho>
+            <DataIngresoAlbergue_Edad Ref="26" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>8.22,0,1.6,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_Edad</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IngresoAlbergue.Edad}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_Edad>
+            <DataIngresoAlbergue_FechaIngreso Ref="27" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>9.82,0,2.2,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_FechaIngreso</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IngresoAlbergue.FechaIngreso}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_FechaIngreso>
+            <Text7 Ref="28" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>12.02,0,2.2,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Guid>c02184c9b0fc4db09be7288b3a2b11a6</Guid>
+              <Margins>5,0,0,0</Margins>
+              <Name>Text7</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IngresoAlbergue.FechaSalida}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>DataColumn</Type>
+              <VertAlignment>Center</VertAlignment>
+            </Text7>
+            <DataIngresoAlbergue_TipoNinho Ref="29" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>14.22,0,2.2,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_TipoNinho</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IIF(IngresoAlbergue.TipoNinho == 2,"Nuevo ingresante", "Reingresante")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_TipoNinho>
+            <DataIngresoAlbergue_Sexo Ref="30" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>16.42,0,1.6,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_Sexo</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IIF(IngresoAlbergue.Sexo == 1,"F","M")}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <Type>Expression</Type>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_Sexo>
+            <DataIngresoAlbergue_Procedencia Ref="31" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>18.02,0,4.6,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_Procedencia</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IngresoAlbergue.Procedencia}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_Procedencia>
+            <DataIngresoAlbergue_TipoVivienda Ref="32" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>22.62,0,2.4,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_TipoVivienda</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IngresoAlbergue.TipoVivienda}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_TipoVivienda>
+            <DataIngresoAlbergue_TipoAlojamiento Ref="33" type="Text" isKey="true">
+              <Border>All;Black;1;Solid;False;4;Black</Border>
+              <Brush>Transparent</Brush>
+              <CanGrow>True</CanGrow>
+              <ClientRectangle>25.02,0,2.7,0.8</ClientRectangle>
+              <ComponentStyle>Celda</ComponentStyle>
+              <Conditions isList="true" count="0" />
+              <Font>Arial,8</Font>
+              <Margins>5,0,0,0</Margins>
+              <Name>DataIngresoAlbergue_TipoAlojamiento</Name>
+              <Page isRef="3" />
+              <Parent isRef="23" />
+              <Text>{IngresoAlbergue.TipoAlojamiento}</Text>
+              <TextBrush>Black</TextBrush>
+              <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
+              <VertAlignment>Center</VertAlignment>
+            </DataIngresoAlbergue_TipoAlojamiento>
+          </Components>
+          <Conditions isList="true" count="0" />
+          <DataSourceName isNull="true" />
+          <Filters isList="true" count="0" />
+          <Name>Data</Name>
+          <Page isRef="3" />
+          <Parent isRef="3" />
+          <Sort isList="true" count="0" />
+        </Data>
+      </Components>
+      <Conditions isList="true" count="0" />
+      <Guid>7acbf0aba9a14a6f927e3bbdec7780d7</Guid>
+      <Margins>1,1,1,1</Margins>
+      <Name>Page1</Name>
+      <Orientation>Landscape</Orientation>
+      <PageHeight>21</PageHeight>
+      <PageWidth>29.7</PageWidth>
+      <Report isRef="0" />
+      <Watermark Ref="34" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
+    </Page1>
+  </Pages>
+  <PrinterSettings Ref="35" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
+  <ReferencedAssemblies isList="true" count="8">
+    <value>System.Dll</value>
+    <value>System.Drawing.Dll</value>
+    <value>System.Windows.Forms.Dll</value>
+    <value>System.Data.Dll</value>
+    <value>System.Xml.Dll</value>
+    <value>Stimulsoft.Controls.Dll</value>
+    <value>Stimulsoft.Base.Dll</value>
+    <value>Stimulsoft.Report.Dll</value>
+  </ReferencedAssemblies>
+  <ReportAlias>Report</ReportAlias>
+  <ReportChanged>2/8/2017 4:38:50 PM</ReportChanged>
+  <ReportCreated>1/26/2015 9:55:38 AM</ReportCreated>
+  <ReportFile>D:\Miguel\SIGCOMT\Magia\Albergue\Source\Albergue\Source\Presentation.Web\Reports\ReporteIngreso.mrt</ReportFile>
+  <ReportGuid>5c9b503b6d2849a08ee2817a26d85b29</ReportGuid>
+  <ReportImage isNull="true" />
+  <ReportName>Report</ReportName>
+  <ReportUnit>Centimeters</ReportUnit>
+  <ReportVersion>2016.2.0</ReportVersion>
+  <Script>using System;
+using System.Drawing;
+using System.Windows.Forms;
+using System.Data;
+using Stimulsoft.Controls;
+using Stimulsoft.Base.Drawing;
+using Stimulsoft.Report;
+using Stimulsoft.Report.Dialogs;
+using Stimulsoft.Report.Components;
+
+namespace Reports
+{
+    public class Report : Stimulsoft.Report.StiReport
+    {
+        public Report()        {
+            this.InitializeComponent();
+        }
+
+        #region StiReport Designer generated code - do not modify
+		#endregion StiReport Designer generated code - do not modify
+    }
+}
+</Script>
+  <ScriptLanguage>CSharp</ScriptLanguage>
+  <Styles isList="true" count="2">
+    <Celda Ref="36" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>All;Black;1;Solid;False;4;Black</Border>
+      <Brush>Transparent</Brush>
+      <Conditions isList="true" count="0" />
+      <Font>Arial,8</Font>
+      <Name>Celda</Name>
+      <TextBrush>Black</TextBrush>
+    </Celda>
+    <Estilo1 Ref="37" type="Stimulsoft.Report.StiStyle" isKey="true">
+      <Border>All;Black;1;Solid;False;4;Black</Border>
+      <Brush>LightGray</Brush>
+      <Conditions isList="true" count="0" />
+      <Font>Arial,8.25,Bold,Point,False,0</Font>
+      <Name>Estilo1</Name>
+      <TextBrush>Black</TextBrush>
+    </Estilo1>
+  </Styles>
+</StiSerializer>
