@@ -3101,3 +3101,4 @@ Nombre del parámetro: value
 2017-09-21 18:16:50,809 ERROR  - Controlador:TipoOpcione  Action:GetReportSnapshot  Mensaje:No se puede aplicar la indización con [] a una expresión del tipo 'System.Dynamic.DynamicObject'
 2017-09-21 18:17:00,103 ERROR  - Controlador:TipoOpcione  Action:StimulsoftControl  Mensaje:El valor no puede ser nulo.
 Nombre del parámetro: value
+2017-09-22 12:41:33,874 ERROR  - Controlador:TipoOpcione  Action:StimulsoftControl  Mensaje:Referencia a objeto no establecida como instancia de un objeto.
