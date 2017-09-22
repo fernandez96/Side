@@ -8,17 +8,17 @@ using Base.Web.Core;
 using Base.Web.Models;
 using Newtonsoft.Json;
 using Stimulsoft.Report;
-using Stimulsoft.Report.Components;
 using Stimulsoft.Report.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using Base.Web.Controllers;
+
 
 namespace Base.Web.Controllers
 {
-    public class TipoOpcioneController : BaseController
+    public class TipoOpcioneController : ReportBaseController
     {
         // GET: TipoOpcione
         public ActionResult Index()
@@ -504,14 +504,13 @@ namespace Base.Web.Controllers
 
 
         //imprimir
-   
-        public ActionResult StimulsoftControl()
+
+        [HttpPost]
+        public override ActionResult GetReportSnapshot()
         {
-             return StiMvcViewer.ViewerEventResult();
-        }
-  
-        public  ActionResult GetReportSnapshot(TablaRegistroDTO entity)
-        {
+            var documentoId = int.Parse(ParametrosReport["TablaId"]);
+            TablaRegistroDTO entity = new TablaRegistroDTO();
+            entity.Id = documentoId;
             var tablaregistro = MapperHelper.Map<TablaRegistroDTO, TablaRegistro>(entity);
             var dataTabla = TablaRegistroBL.Instancia.GetById(tablaregistro);
             var dataBtabladetablle = TablaRegistroBL.Instancia.GetAllPagingDetalle(new PaginationParameter<int> {

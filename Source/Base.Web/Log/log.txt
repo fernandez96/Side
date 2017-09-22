@@ -3102,3 +3102,6 @@ Nombre del parámetro: value
 2017-09-21 18:17:00,103 ERROR  - Controlador:TipoOpcione  Action:StimulsoftControl  Mensaje:El valor no puede ser nulo.
 Nombre del parámetro: value
 2017-09-22 12:41:33,874 ERROR  - Controlador:TipoOpcione  Action:StimulsoftControl  Mensaje:Referencia a objeto no establecida como instancia de un objeto.
+2017-09-22 15:50:57,503 ERROR  - Controlador:TipoOpcione  Action:GetReportSnapshot  Mensaje:Referencia a objeto no establecida como instancia de un objeto.
+2017-09-22 15:51:01,149 ERROR  - Controlador:TipoOpcione  Action:Interaction  Mensaje:El valor no puede ser nulo.
+Nombre del parámetro: value

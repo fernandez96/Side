@@ -295,7 +295,7 @@
                 </div>
             </div>
 
-            <div id="modal-print-tabla" class="modal fade">
+            <div id="modal-print-tabla" tabindex='-1' role='dialog' aria-hidden='true' class='modal fade' data-backdrop='static' style='z-index:100000;'>
                 <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -304,6 +304,10 @@
                         </div>
                         <div class="modal-body">
                             <div id="divReport"></div>
+                        </div>
+                        <div class='modal-footer' style='margin-top: 0px; margin-bottom: 0px;'>
+                            <button class='btn btn-danger' data-dismiss='modal'><i class='fa fa-remove'></i> Cancelar</button>
+
                         </div>
                     </div>
                 </div>

@@ -4,8 +4,11 @@
 @Html.Stimulsoft().StiMvcViewer("StiReporte", new StiMvcViewerOptions
 {
     Actions = {
-        GetReportSnapshot = "GetReportSnapshot",
-        ViewerEvent = "StimulsoftControl",
+        GetReportSnapshot  = "GetReportSnapshot",
+        ViewerEvent = "ViewerEvent",
+        PrintReport = "PrintReport",
+        ExportReport = "ExportReport",
+        Interaction = "Interaction"
     },
     Toolbar =  {
         PrintDestination = StiPrintDestination.Pdf,
@@ -44,6 +47,13 @@
         ShowExportToExcelXml = false,
         ShowExportToOpenDocumentCalc = false,
         ShowExportToDocument = false
+    },
+    Server = {
+
+        Controller = ViewData["ControllerGetSnapshot"].ToString(),
+        CacheTimeout = 10,
+        RequestTimeout = 2400
+
     },
 
     Localization = string.Format("~/Content/js/languages/stimulsoft/{0}.xml", 1)

@@ -55,12 +55,20 @@
       <HintPath>..\..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Enums.NET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7ea1c1650d506225, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Enums.NET.2.2.0\lib\net45\Enums.NET.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FastMember.Signed, Version=1.0.0.9, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
       <HintPath>..\..\packages\FastMember.Signed.1.1.0\lib\net40\FastMember.Signed.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
       <HintPath>..\..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infrastructure.CrossCutting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Infrastructure.CrossCutting.1.0.0\lib\Infrastructure.CrossCutting.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
@@ -444,6 +452,7 @@
     <Compile Include="Controllers\UsuarioController.cs" />
     <Compile Include="Core\BaseController.cs" />
     <Compile Include="Core\Mensajes.cs" />
+    <Compile Include="Core\ReportBaseController.cs" />
     <Compile Include="Core\Title.cs" />
     <Compile Include="Core\WebSession.cs" />
     <Compile Include="Filters\WebSessionFilter.cs" />
@@ -577,7 +586,6 @@
     <Content Include="Views\TipoDocumento\Index.cshtml" />
     <Content Include="Views\TipoOpcione\Index.cshtml" />
     <Content Include="Views\Parametro\Index.cshtml" />
-    <Content Include="Views\TipoOpcione\StimulsoftControl.cshtml" />
     <Content Include="Views\Reporte\StimulsoftControl.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

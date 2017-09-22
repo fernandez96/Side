@@ -739,15 +739,18 @@ function Eliminartabladetalle(id) {
 }
 
 function Imprimir(id) {
-    var modelView = {
-        Id: id
-    };
-    alert(modelView.Id);
-    webApp.Ajax({
-        url: urlMantenimiento + 'StimulsoftControl',
+     webApp.Ajax({
+        url: urlMantenimientoReport + 'StimulsoftControl',
         contentType: 'application/x-www-form-urlencoded; charset=UTF-8',
         datatype: 'html',
-        parametros: modelView,
+        parametros: {
+            parametros: [
+                          { key: 'TablaId', value: id }
+                        ],
+            controllerGetSnapshot: 'TipoOpcione',
+        },
+            
+    
     }, function (result) {
         $('#divReport').html(result);
         $("#modal-print-tabla").modal("show");

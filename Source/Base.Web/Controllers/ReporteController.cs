@@ -24,22 +24,10 @@ namespace Base.Web.Controllers
         [HttpPost]
         public ActionResult StimulsoftControl(string controllerGetSnapshot, Dictionary<string, string> parametros)
         {
-          //  return PartialView();
-            return StiMvcViewer.ViewerEventResult();
+            TempData["Parametros"] = parametros;
+            ViewData["ControllerGetSnapshot"] = controllerGetSnapshot;
+            return PartialView();
         }
-        public ActionResult GetReportSnapshot()
-        {
-            TablaRegistroDTO tablaRegistroDTO = new TablaRegistroDTO();
-            var tablaregistro = MapperHelper.Map<TablaRegistroDTO, TablaRegistro>(tablaRegistroDTO);
-            var dataDocumento = TablaRegistroBL.Instancia.GetById(new TablaRegistro { Id = 2 });
 
-            var report = new StiReport();
-            report.Load(Server.MapPath("~/Prints/M_Administrador/TablaRegistro/ReporteIngreso.mrt"));
-            //report.RegBusinessObject("Almacen", "Documento", dataDocumento);
-            //report.RegBusinessObject("Almacen", "DetalleDocumento", dataDocumento);
-            //report.GetComponentByName("txtAnulado").Enabled = dataDocumento.EstadoDocumento ==
-            //                                                  (int)EstadoDocumento.Anulado;
-            return StiMvcViewer.GetReportSnapshotResult(HttpContext, report);
-        }
     }
 }
