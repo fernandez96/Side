@@ -504,18 +504,15 @@ namespace Base.Web.Controllers
 
 
         //imprimir
-
-        public ActionResult StimulsoftControl(TablaRegistroDTO entity)
+   
+        public ActionResult StimulsoftControl()
         {
-            TempData["parametro"] = entity;
              return StiMvcViewer.ViewerEventResult();
         }
   
-        public  ActionResult GetReportSnapshot()
+        public  ActionResult GetReportSnapshot(TablaRegistroDTO entity)
         {
-            TablaRegistroDTO tablaRegistroDTO = new TablaRegistroDTO();
-            tablaRegistroDTO.Id=ViewBag["ID"];
-            var tablaregistro = MapperHelper.Map<TablaRegistroDTO, TablaRegistro>(tablaRegistroDTO);
+            var tablaregistro = MapperHelper.Map<TablaRegistroDTO, TablaRegistro>(entity);
             var dataTabla = TablaRegistroBL.Instancia.GetById(tablaregistro);
             var dataBtabladetablle = TablaRegistroBL.Instancia.GetAllPagingDetalle(new PaginationParameter<int> {
                 AmountRows = 100,
