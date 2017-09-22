@@ -1,15 +1,16 @@
-﻿@using Stimulsoft.Report.Export
+﻿
 @using Stimulsoft.Report.Mvc
 
 @{
-    ViewBag.Title = "StimulsoftControl";
+    ViewBag.Title = "";
     Layout = "";
 }
 
 @Html.Stimulsoft().StiMvcViewer("StiReporte", new StiMvcViewerOptions
 {
+
     Actions = {
-        GetReportSnapshot = "GetReportSnapshot",
+        GetReportSnapshot  = "GetReportSnapshot",
         ViewerEvent = "StimulsoftControl",
     },
     Toolbar =  {
@@ -51,7 +52,8 @@
         ShowExportToDocument = false
     },
     Server = {
-        //Controller = ViewData["ControllerGetSnapshot"].ToString(),
+
+        Controller = ViewData["ControllerGetSnapshot"].ToString(),
         CacheTimeout = 10,
         RequestTimeout = 2400
     },
