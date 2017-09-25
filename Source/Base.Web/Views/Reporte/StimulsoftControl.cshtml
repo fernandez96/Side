@@ -4,18 +4,21 @@
 @Html.Stimulsoft().StiMvcViewer("StiReporte", new StiMvcViewerOptions
 {
     Actions = {
-        GetReportSnapshot  = "GetReportSnapshot",
+        GetReport  = "GetReportSnapshot",
         ViewerEvent = "ViewerEvent",
         PrintReport = "PrintReport",
         ExportReport = "ExportReport",
         Interaction = "Interaction"
     },
     Toolbar =  {
-        PrintDestination = StiPrintDestination.Pdf,
+        PrintDestination=Stimulsoft.Report.Web.StiPrintDestination.Pdf,
+        //PrintDestination = StiPrintDestination.Pdf,
         MenuAnimation = false,
-        ShowMenuMode = StiShowMenuMode.Click
+        //ShowMenuMode = StiShowMenuMode.Click
+        ShowMenuMode=Stimulsoft.Report.Web.StiShowMenuMode.Click
     },
-    Theme = StiTheme.Office2013,
+   // Theme = StiTheme.Office2013,
+   Theme=Stimulsoft.Report.Web.StiViewerTheme.Office2003,
     Appearance =  {
         ShowPageShadow = false,
         ScrollbarsMode = true
@@ -55,6 +58,6 @@
         RequestTimeout = 2400
 
     },
-
-    Localization = string.Format("~/Content/js/languages/stimulsoft/{0}.xml", 1)
+    
+    Localization = string.Format("~/Content/js/languages/stimulsoft/es.xml")
 })

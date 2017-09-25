@@ -3105,3 +3105,5 @@ Nombre del parámetro: value
 2017-09-22 15:50:57,503 ERROR  - Controlador:TipoOpcione  Action:GetReportSnapshot  Mensaje:Referencia a objeto no establecida como instancia de un objeto.
 2017-09-22 15:51:01,149 ERROR  - Controlador:TipoOpcione  Action:Interaction  Mensaje:El valor no puede ser nulo.
 Nombre del parámetro: value
+2017-09-25 09:21:27,055 ERROR  - Controlador:Reporte  Action:StimulsoftControl  Mensaje:d:\ejemplo_01\Side\Source\Base.Web\Views\Reporte\StimulsoftControl.cshtml(14): error CS0103: El nombre 'StiPrintDestination' no existe en el contexto actual
+2017-09-25 09:21:38,753 ERROR  - Controlador:Reporte  Action:StimulsoftControl  Mensaje:d:\ejemplo_01\Side\Source\Base.Web\Views\Reporte\StimulsoftControl.cshtml(14): error CS0103: El nombre 'StiPrintDestination' no existe en el contexto actual

@@ -71,6 +71,10 @@
       <HintPath>..\..\packages\Infrastructure.CrossCutting.1.0.0\lib\Infrastructure.CrossCutting.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="LibExcel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\LibExcel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -152,20 +156,45 @@
       <HintPath>..\..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Stimulsoft.Base">
-      <HintPath>..\..\Lib\Stimulsoft.Base.dll</HintPath>
+    <Reference Include="Stimulsoft.Base, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Base.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Stimulsoft.Report">
-      <HintPath>..\..\Lib\Stimulsoft.Report.dll</HintPath>
+    <Reference Include="Stimulsoft.Report, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Stimulsoft.Report.Mvc">
-      <HintPath>..\..\Lib\Stimulsoft.Report.Mvc.dll</HintPath>
+    <Reference Include="Stimulsoft.Report.Check, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.Check.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Stimulsoft.Report.MvcMobile">
-      <HintPath>..\..\Lib\Stimulsoft.Report.MvcMobile.dll</HintPath>
+    <Reference Include="Stimulsoft.Report.Helper, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.Helper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Mobile, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.Mobile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.MobileDesign, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.MobileDesign.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Mvc, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.MvcMobile, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.MvcMobile.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.Web, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stimulsoft.Report.WebDesign, Version=2017.1.6.0, Culture=neutral, PublicKeyToken=ebe6666cba19647a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Stimulsoft.Reports.Web.2017.1.6\lib\net40\Stimulsoft.Report.WebDesign.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -427,6 +456,45 @@
     <Content Include="Content\js\viewsJs\vale.js" />
     <Content Include="Content\js\webApp.js" />
     <Content Include="Global.asax" />
+    <Content Include="Localization\ar.xml" />
+    <Content Include="Localization\be.xml" />
+    <Content Include="Localization\bg.xml" />
+    <Content Include="Localization\ca-ES.xml" />
+    <Content Include="Localization\cs.xml" />
+    <Content Include="Localization\de.ext.xml" />
+    <Content Include="Localization\de.xml" />
+    <Content Include="Localization\el-GR.xml" />
+    <Content Include="Localization\en-GB.xml" />
+    <Content Include="Localization\en.ext.xml" />
+    <Content Include="Localization\en.xml" />
+    <Content Include="Localization\es.xml" />
+    <Content Include="Localization\eu-ES.xml" />
+    <Content Include="Localization\fa.xml" />
+    <Content Include="Localization\fr.ext.xml" />
+    <Content Include="Localization\fr.xml" />
+    <Content Include="Localization\gl-ES.xml" />
+    <Content Include="Localization\hr.xml" />
+    <Content Include="Localization\hu.xml" />
+    <Content Include="Localization\id.xml" />
+    <Content Include="Localization\it.xml" />
+    <Content Include="Localization\ka.xml" />
+    <Content Include="Localization\Lt-sr-SP.xml" />
+    <Content Include="Localization\lt.xml" />
+    <Content Include="Localization\nb-NO.xml" />
+    <Content Include="Localization\nl.xml" />
+    <Content Include="Localization\pl.xml" />
+    <Content Include="Localization\pt-BR.xml" />
+    <Content Include="Localization\pt.xml" />
+    <Content Include="Localization\ro.xml" />
+    <Content Include="Localization\ru.ext.xml" />
+    <Content Include="Localization\ru.xml" />
+    <Content Include="Localization\sk.xml" />
+    <Content Include="Localization\sv.ext.xml" />
+    <Content Include="Localization\sv.xml" />
+    <Content Include="Localization\tr.xml" />
+    <Content Include="Localization\uk.xml" />
+    <Content Include="Localization\zh-CHS.xml" />
+    <Content Include="Localization\zh-CHT.xml" />
     <Content Include="Log\log.txt" />
     <Content Include="Scripts\highcharts.js" />
     <Content Include="Scripts\highcharts_exporting.js" />
@@ -572,6 +640,7 @@
     <Content Include="Views\Usuario\Index.cshtml" />
     <Content Include="Views\EnvioEmail\Index.cshtml" />
     <Content Include="Prints\M_Administrador\TablaRegistro\TablaOpciones.mrt" />
+    <Content Include="license.key" />
     <None Include="Properties\PublishProfiles\SideWeb.pubxml" />
     <None Include="Properties\PublishProfiles\Web.pubxml" />
     <Content Include="Views\_ViewStart.cshtml" />
